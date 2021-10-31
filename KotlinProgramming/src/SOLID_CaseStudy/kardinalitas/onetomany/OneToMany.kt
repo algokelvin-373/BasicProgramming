@@ -25,7 +25,7 @@ fun main() {
 
     for (x in 0 until dataUser.size) {
         println("- ${dataUser[x].name} -")
-        dataUser[x].sellers.forEach {
+        dataUser[x].sellers?.forEach {
             println(it.name)
         }
         println()
