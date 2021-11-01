@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	// Looping Array
+	// Looping Array 1
 	var text = [3] string {
 		"Algokelvin", 
 		"Algorithm", 

@@ -27,14 +27,4 @@ func main() {
 
 	fmt.Println("")
 
-	// Inizialization Array Type 2
-	var names3[4] = {
-		"Algokelvin",
-		"Jenna",
-		"Deddy",
-		"Miawaug" }
-
-	fmt.Println("Count names3: ", len(names3))
-	fmt.Println("Data names3 : ", names3)
-
 }
