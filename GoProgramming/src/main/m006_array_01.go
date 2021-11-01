@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func main() {
+	// Inizialization First Array
 	var numbers = [5] int {1, 2, 3, 4, 5} // Array Integer
 	var text = [3] string {"Algokelvin", "Algorithm", "Master"} // Array String
 
