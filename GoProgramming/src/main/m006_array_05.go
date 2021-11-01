@@ -3,11 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	// Looping Array 2
-	var numbers[5] int
+	// Array Without Count Elemen
 
+	// Number 1
+	var numbers = [...] int {1, 2, 3}
 	for x := 0; x < len(numbers); x++ {
-		numbers[x] = x * 2
 		fmt.Println("Data numbers : ", numbers[x])
 	}
+
 }
