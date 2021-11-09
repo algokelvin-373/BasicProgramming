@@ -6,10 +6,9 @@ public class DIP_No_Impl {
         Motorcycle_No_DIP motorcycleNoDip = new Motorcycle_No_DIP(engineNoDip);
         motorcycleNoDip.start();
 
-        /* Error: Cannot be applied
         DieselEngine_No_DIP dieselEngineNoDip = new DieselEngine_No_DIP();
         Motorcycle_No_DIP motorcycleNoDip2 = new Motorcycle_No_DIP(dieselEngineNoDip);
-         */
+        motorcycleNoDip2.startDiesel();
 
     }
 }

@@ -1,13 +1,22 @@
 package SOLID_Principle.solid.dip.no_impl;
 
-public class Motorcycle_No_DIP {
-    private final Engine_No_DIP engine;
+class Motorcycle_No_DIP {
+    private Engine_No_DIP engine;
+    private DieselEngine_No_DIP dieselEngine;
 
-    public Motorcycle_No_DIP(Engine_No_DIP engine) {
+    Motorcycle_No_DIP(Engine_No_DIP engine) {
         this.engine = engine;
+    }
+
+    Motorcycle_No_DIP(DieselEngine_No_DIP dieselEngine) {
+        this.dieselEngine = dieselEngine;
     }
 
     void start() {
         engine.start();
+    }
+
+    void startDiesel() {
+        dieselEngine.start();
     }
 }
