@@ -22,5 +22,11 @@ public class SRP_NoImpl {
         orderNoSrp.getItems();
         orderNoSrp.getItemCount();
 
+        orderNoSrp.showOrder();
+        orderNoSrp.printOrder();
+
+        orderNoSrp.getDailyHistory();
+        orderNoSrp.getMonthlyHistory();
+
     }
 }
