@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Web Link Basic Programming</title>
+        <script>
+            function rqShowCode() {
+                var request = new XMLHttpRequest();
+                request.open(
+                    'GET', 
+                    'https://raw.githubusercontent.com/algokelvin-373/BasicProgramming/master/JavaProgramming/src/TestProgram.java', 
+                    true
+                );
+                request.send(null);
+                request.onreadystatechange = function () {
+                    if (request.readyState === 4 && request.status === 200) {
+                        var type = request.getResponseHeader('Content-Type');
+                        if (type.indexOf("text") !== 1) {
+                            console.log(request.responseText);
+                            document.getElementById('showCode').innerHTML = request.responseText;
+                            return request.responseText;
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <code id="showCode"></code>
+        <button type="button" onclick="rqShowCode()">Click to show Source Code</button>
+    </body>
+</html>
