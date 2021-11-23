@@ -1,0 +1,9 @@
+.text1 {
+    font-size: 25px;
+    font-style: italic;
+    font-family: Georgia;
+}
+.text2 {
+    font-style: oblique;
+    color: coral;
+}
