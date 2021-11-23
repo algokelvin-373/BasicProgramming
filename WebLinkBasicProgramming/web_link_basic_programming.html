@@ -1,6 +1,14 @@
 <html>
     <head>
         <title>Web Link Basic Programming</title>
+        <style>
+            pre {
+                text-align: left;
+                color: beige;
+                font-family: serif;
+                background-color: black;
+            }
+        </style>
         <script>
             function rqShowCode() {
                 var request = new XMLHttpRequest();
@@ -24,7 +32,9 @@
         </script>
     </head>
     <body>
-        <code id="showCode"></code>
+        <pre id="showCode">
+            <code></code>
+        </pre>
         <button type="button" onclick="rqShowCode()">Click to show Source Code</button>
     </body>
 </html>
