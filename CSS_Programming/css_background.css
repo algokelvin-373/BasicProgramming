@@ -1,0 +1,35 @@
+.bg-color {
+    background-color: lightcoral;
+}
+.bg-image {
+    background-image: url("Logo AlgoKelvin 2.png");
+}
+.bg-image-repeat {
+    background-image: url("Logo AlgoKelvin.png");
+    background-repeat: repeat;
+}
+.bg-image-no-repeat-right-top {
+    background-image: url("Logo AlgoKelvin.png");
+    background-repeat: no-repeat;
+    background-position: right top; /*Position background image*/
+}
+.bg-image-no-repeat-left-bottom {
+    background-image: url("Logo AlgoKelvin.png");
+    background-repeat: no-repeat;
+    background-position: left bottom; /*Position background image*/
+}
+.bg-image-fixed {
+    background-image: url("Logo AlgoKelvin.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+}
+.bg-image-scroll {
+    background-image: url("Logo AlgoKelvin.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: scroll;
+}
+.bg-img-shorthand {
+    background: url("Logo AlgoKelvin.png") no-repeat fixed right top;
+}
