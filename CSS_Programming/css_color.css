@@ -16,3 +16,12 @@
 .txt-color3 {
     color: darkcyan;
 }
+.border-color1 {
+    border: 5px solid cornflowerblue;
+}
+.border-color2 {
+    border: 10px solid orangered;
+}
+.border-color3 {
+    border: 15px solid darkcyan;
+}
