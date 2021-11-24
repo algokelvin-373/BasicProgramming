@@ -25,3 +25,18 @@
 .border-color3 {
     border: 15px solid darkcyan;
 }
+.color-rgb {
+    color: rgb(255, 69, 0);
+}
+.color-hexa {
+    color: #ff4500;
+}
+.color-hsl {
+    color: hsl(16, 100%, 50%);
+}
+.color-rgba { /* RGB with Transparent */
+    color: rgb(255, 69, 0, 0.5);
+}
+.color-hsla { /* HSL with Transparent */
+    color: hsl(16, 100%, 50%, 0.5);
+}
