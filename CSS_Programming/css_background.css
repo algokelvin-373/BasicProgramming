@@ -30,3 +30,6 @@
     background-position: right top;
     background-attachment: scroll;
 }
+.bg-img-shorthand {
+    background: url("Logo AlgoKelvin.png") no-repeat fixed right top;
+}
