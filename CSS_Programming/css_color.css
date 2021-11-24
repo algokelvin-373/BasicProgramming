@@ -40,3 +40,15 @@
 .color-hsla { /* HSL with Transparent */
     color: hsl(16, 100%, 50%, 0.5);
 }
+.bg-op-color1 {
+    background-color: cornflowerblue;
+    opacity: 0.7;
+}
+.bg-op-color2 {
+    background-color: violet;
+    opacity: 0.6;
+}
+.bg-op-color3 {
+    background-color: greenyellow;
+    opacity: 0.5;
+}
