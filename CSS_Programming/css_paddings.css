@@ -1,0 +1,15 @@
+.bg-padding {
+    background: lightgreen;
+    border: 1px solid;
+    padding-top: 40px;
+    padding-left: 25px;
+    padding-right: 55px;
+    padding-bottom: 30px;
+    width: 20%;
+}
+.bg-padding-short {
+    width: 25%;
+    background: lightsalmon;
+    border: 1px solid;
+    padding: 10px 50px 20px 25px;
+}
