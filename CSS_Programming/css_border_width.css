@@ -14,3 +14,16 @@ p.four {
     border-style: dotted;
     border-width: thick;
 }
+p.specific-width-one {
+    border-style: solid;
+    /*l eft: 5px, other sides: 10px */
+    border-width: 5px 10px;
+}
+p.specific-width-two {
+    border-style: solid;
+    /*
+    top   : 5px , right: 10px
+    bottom: 20px, left : 5px
+    */
+    border-width: 5px 10px 20px 5px;
+}
