@@ -49,3 +49,8 @@ p.border-specific-4 {
 p.border-specific-5 {
     border-style: dotted;
 }
+p.border-radius {
+    border: 5px red solid;
+    border-radius: 10px;
+    height: 5%;
+}
