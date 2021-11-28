@@ -1,0 +1,8 @@
+p.border-color {
+    border-style: solid;
+    border-color: red;
+}
+p.border-specific-color {
+    border-style: solid;
+    border-color: red green blue yellow;
+}
