@@ -11,3 +11,17 @@
     border: 1px solid;
     margin: 10px 15px 20px 25px;
 }
+.bg-margin-auto {
+    width: 40%;
+    background: lightseagreen;
+    margin: auto;
+    border: 1px red solid;
+}
+.bg-margin-inherit {
+    background: lightcyan;
+    margin-left: 25px;
+    border: 1px red solid;
+}
+.ex {
+    margin-left: inherit;
+}
