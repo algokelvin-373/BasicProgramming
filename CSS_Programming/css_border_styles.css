@@ -31,3 +31,21 @@ p.hidden {
 p.mix {
     border-style: dotted dashed solid double;
 }
+p.border-specific-1 {
+    border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: inset;
+    border-left-style: ridge;
+}
+p.border-specific-2 {
+    border-style: dotted dashed solid double;
+}
+p.border-specific-3 {
+    border-style: dotted solid double;
+}
+p.border-specific-4 {
+    border-style: dotted solid;
+}
+p.border-specific-5 {
+    border-style: dotted;
+}
