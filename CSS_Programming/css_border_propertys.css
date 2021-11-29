@@ -1,0 +1,12 @@
+p.border-property-1 {
+    background: lightblue;
+    height: 10%;
+    border-top: 2px solid red;
+    border-bottom: 5px dotted blue;
+    border-right: 10px dotted green;
+    border-left: 20px solid purple; 
+}
+p.border-property-2 {
+    background: lightblue;
+    border-bottom: 10px solid red;
+}
