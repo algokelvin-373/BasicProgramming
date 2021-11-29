@@ -1,0 +1,15 @@
+.box-model-1 {
+    border: 2px solid red;
+    margin: 20px;
+    padding: 10px;
+    width: 200px;
+    background: lightgreen;
+}
+.box-model-2 {
+    border: 1px solid blue;
+    margin: 10px;
+    padding: 25px;
+    width: 150px;
+    height: 100px;
+    background: lightsalmon;
+}
