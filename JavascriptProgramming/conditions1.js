@@ -1,7 +1,7 @@
 function SingleIf(x) {
-    var msg = "$x is negative"
+    var msg = x + " is negative"
     if (x > 0) {
-        msg = "$x is positive"
+        msg = x + " is positive"
     }
     return msg
 }
