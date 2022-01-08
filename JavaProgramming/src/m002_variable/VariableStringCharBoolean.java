@@ -1,6 +1,6 @@
 package m002_variable;
 
-public class VariableOther {
+public class VariableStringCharBoolean {
     public static void main(String[] args) {
         boolean booleanData = true; // Boolean
         String stringData = "AlgoKelvin"; // String
