@@ -1,7 +1,8 @@
 package m003_type_data
 
 fun main() {
-    println("Type Data 3: Number - using 'val'")
+    // Type Data 3 - Number using "val"
+
     val x1 = 10 // Int
     val x2 = 3.14 // Double
     val x3 = 9.1f // Float
