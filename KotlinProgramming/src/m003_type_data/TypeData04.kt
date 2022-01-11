@@ -1,7 +1,8 @@
 package m003_type_data
 
 fun main() {
-    println("Type Data 4: Number - Specific variable")
+    // Type Data 4 - Number Specific variable
+
     val x1: Int? = 10 // Int
     val x2: Double? = 3.14 // Double
     val x3: Float? = 9.1f // Float
