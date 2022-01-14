@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func main() {
+	
 	// Using Initialize Variable
 	var a int // initialize 'int'
 	var b float32 // initialize 'float32'
@@ -13,13 +14,6 @@ func main() {
 	fmt.Println("b = ", + b)
 	fmt.Println("c = ", c)
 	fmt.Println("x = ", x)
-
-	// Without Initialize Variable
-	var d, e, f, y = 10, 1.41, "Algokelvin 2", true
-	fmt.Println("d = ", + d) 
-	fmt.Println("e = ", + e)
-	fmt.Println("f = ", f)
-	fmt.Println("y = ", y)
 
 }
 
