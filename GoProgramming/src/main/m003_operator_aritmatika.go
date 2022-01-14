@@ -16,3 +16,4 @@ func main() {
 	fmt.Println("a / b = ", rDivided)
 	fmt.Println("a % b = ", rModule)
 }
+
