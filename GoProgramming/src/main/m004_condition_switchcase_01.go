@@ -15,3 +15,4 @@ func main() {
 		default: fmt.Println("Your set a other number")
 	}
 }
+
