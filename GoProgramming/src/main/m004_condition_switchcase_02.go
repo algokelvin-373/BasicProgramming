@@ -13,3 +13,4 @@ func main() {
 			fmt.Println(a ,": bukan bilangan prima")
 	}
 }
+

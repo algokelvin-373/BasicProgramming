@@ -12,3 +12,4 @@ func main() {
 		fmt.Println(a ," kurang dari 10")
 	}
 }
+
