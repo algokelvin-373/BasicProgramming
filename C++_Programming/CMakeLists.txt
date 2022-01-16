@@ -3,4 +3,4 @@ project(C___Programming)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(C___Programming m002_variable/Variable03.cpp)
+add_executable(C___Programming m003_input_output/InputOutput.cpp)
