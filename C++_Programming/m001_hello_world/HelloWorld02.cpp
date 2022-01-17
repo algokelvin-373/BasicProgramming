@@ -2,9 +2,10 @@
 using namespace std;
 
 int main() {
-  cout << "C++ Programming Basic";
-  cout << "Number - 123456789";
-  cout << "String - I'm Algokelvin";
-  cout << "Focus on finding Solutions";
+    // Using '\n' to new line
+    cout << "C++ Programming Basic \n";
+    cout << "Number - 123456789 \n";
+    cout << "String - I'm Algokelvin \n";
+    cout << "Focus on finding Solutions \n";
   return 0;
 }
