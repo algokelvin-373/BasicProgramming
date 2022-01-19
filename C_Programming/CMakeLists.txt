@@ -3,4 +3,4 @@ project(C_Programming C)
 
 set(CMAKE_C_STANDARD 23)
 
-add_executable(C_Programming m007_switch_operator/SwitchOperator.c)
+add_executable(C_Programming m008_looping/Looping03.c)
