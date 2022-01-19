@@ -3,4 +3,4 @@ project(C_Programming C)
 
 set(CMAKE_C_STANDARD 23)
 
-add_executable(C_Programming m002_variable/Variable03.c)
+add_executable(C_Programming m005_operator/Operator06.c)
