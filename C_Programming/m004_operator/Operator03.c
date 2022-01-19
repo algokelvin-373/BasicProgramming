@@ -6,6 +6,7 @@
 
 int main() {
 
+    // Relational Operators
     int a = 10, b = 5, c = 10, d = 20;
 
     printf("a = %d, b = %d, c = %d, d = %d \n", a, b, c, d);
