@@ -3,4 +3,4 @@ project(C_Programming C)
 
 set(CMAKE_C_STANDARD 23)
 
-add_executable(C_Programming m008_looping/Looping03.c)
+add_executable(C_Programming m009_nested_statement/NestedLooping.c)
