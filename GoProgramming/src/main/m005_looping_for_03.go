@@ -1,3 +1,5 @@
+
+
 package main
 
 import "fmt"
@@ -9,12 +11,11 @@ func main() {
 		fmt.Println("Algokelvin ", x + 1 , " time")
 		x++
 
-		/* 
-		To Stop Looping
-		Using 'break'
-		*/
+		// To Stop Looping Using 'break'
 		if (x == 5) {
 			break
 		}
 	}
 }
+
+
