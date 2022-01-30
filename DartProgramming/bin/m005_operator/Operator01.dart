@@ -8,6 +8,5 @@ void main() {
   print('$b % $a = ${b % a}'); // modulo
 
   double c = 25;
-  // divided by for double
-  print('$c ~/ $a = ${c ~/ a}');
+  print('$c ~/ $a = ${c ~/ a}'); // divided by for double
 }

@@ -1,8 +1,10 @@
-// Type Data String Boolean
+//Type Data 'num'
 void main() {
-  String a = "AlgoKelvin";
-  bool b = true;
+  int a = 373;
+  double b = 3.14;
 
-  print('a: ' + a);
-  print('b: ' + b.toString());
+  num x = a; // integer
+  print('num x before : ' + x.toString());
+  x = b; // double
+  print('num x after  : ' + x.toString());
 }
