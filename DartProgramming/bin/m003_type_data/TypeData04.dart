@@ -1,3 +1,4 @@
+
 // Type Data 'var'
 void main() {
   int a = 373;

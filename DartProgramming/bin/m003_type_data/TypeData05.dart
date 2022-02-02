@@ -1,3 +1,4 @@
+
 //Type Data 'dynamic'
 void main() {
   int a = 273; // integer
