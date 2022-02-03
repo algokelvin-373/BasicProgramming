@@ -1,3 +1,4 @@
+
 //Type Data 'num'
 void main() {
   int a = 373;

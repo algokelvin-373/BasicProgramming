@@ -1,3 +1,4 @@
+
 //Operator Logic 'NOT'
 void main() {
   bool p = true, q = false;
