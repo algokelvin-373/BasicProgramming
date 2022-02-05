@@ -3,24 +3,6 @@ import UIKit
 
 let dataNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-// Continue
-for i in dataNumber {
-    if (i % 2 == 0) {
-        continue
-    }
-    print("\(i)", terminator: ",")
-}
-print("")
-
-// Break
-for j in dataNumber {
-    if (j % 2 == 0) && (j % 3 == 0) {
-        print("Stop")
-        break
-    }
-    print("\(j)", terminator: ",")
-}
-print("")
 
 // Fallthrough
 let integerToDescribe = 5
