@@ -1,3 +1,4 @@
+
 // Type Data Number
 void main() {
   int a = 273; // integer

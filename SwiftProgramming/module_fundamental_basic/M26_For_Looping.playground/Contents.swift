@@ -1,10 +1,5 @@
 import UIKit
 
-// Basic Looping
-for index in 1...5 {
-   print("\(index) times 3 is \(index * 3)")
-}
-print("")
 
 // Looping Array Case
 print("Looping Array")
