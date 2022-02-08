@@ -1,4 +1,5 @@
 
+
 import Cocoa
 
 var language = "Swift"
@@ -13,7 +14,9 @@ print(language, terminator: "")
 print()
 
 // Print Separator and Terminator
-print(22, 33, 44, 55, separator: "***", terminator: " done")
+print(22, 33, 44, 55,
+      separator: "***", terminator: " done")
 print()
-print("Swift", "Kotlin", "Java", "Python", separator: "<->", terminator: " oke")
+print("Swift", "Kotlin", "Java", "Python",
+      separator: "<->", terminator: " oke")
 print()
