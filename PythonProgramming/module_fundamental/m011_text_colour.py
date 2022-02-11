@@ -1,0 +1,8 @@
+print("\033[30m Black Text")
+print("\033[31m Red Text")
+print("\033[32m Green Text")
+print("\033[33m Yellow Text")
+print("\033[34m Blue Text")
+print("\033[35m Purple Text")
+print("\033[36m Cyan Text")
+print("\033[37m White Text")

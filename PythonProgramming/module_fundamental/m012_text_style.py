@@ -1,0 +1,5 @@
+print("\033[1;32;40m Green-Bold-Black Background Text")
+print("\033[2;33;41m Yellow-Underline-Red Background Text")
+print("\033[3;34;42m Blue-Negative-1-Green Background Text")
+print("\033[5;35;43m Purple-Negative-2-Yellow Background Text")
+print("\033[0;36;44m Cyan-No Effect-Blue Background Text")

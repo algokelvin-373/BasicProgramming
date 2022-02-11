@@ -1,0 +1,8 @@
+print("\nInput Formula 1")
+a = input("Input Your Math: ")
+print("Result a = ", eval(a))
+
+print("\nInput Formula 2")
+b = input("Input Your Math: ")
+x = int(input("Input x: "))
+print('Result b = ', eval(b))
