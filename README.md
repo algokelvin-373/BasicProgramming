@@ -41,9 +41,6 @@
       <a href="Comming Soon">
         <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/fb_logo.png" alt="Facebook" width="20" height="20">
       </a>
-      <a href="Comming Soon">
-        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/twitter_logo.png" alt="Twitter" width="20" height="20">
-      </a>
     </td>
     <td>Hello World with Java Language Programming</td>
   </tr>
@@ -61,9 +58,6 @@
       </a>
       <a href="Comming Soon">
         <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/fb_logo.png" alt="Facebook" width="20" height="20">
-      </a>
-      <a href="Comming Soon">
-        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/twitter_logo.png" alt="Twitter" width="20" height="20">
       </a>
     </td>
     <td>Variable Number: <b>int, double, float, and long</b></td>
@@ -83,9 +77,6 @@
       <a href="Comming Soon">
         <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/fb_logo.png" alt="Facebook" width="20" height="20">
       </a>
-      <a href="Comming Soon">
-        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/twitter_logo.png" alt="Twitter" width="20" height="20">
-      </a>
     </td>
     <td>Variable Other: <b>String, boolean, and char</b></td>
   </tr>
@@ -104,11 +95,98 @@
       <a href="Comming Soon">
         <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/fb_logo.png" alt="Facebook" width="20" height="20">
       </a>
-      <a href="Comming Soon">
-        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/twitter_logo.png" alt="Twitter" width="20" height="20">
-      </a>
     </td>
     <td>Variable Integer: <b>byte and short</b></td>
+  </tr>
+  <tr>
+    <td>05. Variable Widening Casting</td>
+    <td>
+      <a href="Comming Soon">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/youtube_logo.png" alt="Youtube" width="20" height="20">
+      </a>
+      <a href="https://www.instagram.com/p/CYkrUINl9iI/">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/ig_logo.png" alt="Instagram" width="20" height="20">
+      </a>
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:6897800995678638080">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/linkedln_logo.png" alt="Linkedln" width="20" height="20">
+      </a>
+      <a href="Comming Soon">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/fb_logo.png" alt="Facebook" width="20" height="20">
+      </a>
+    </td>
+    <td>Variable Widening Casting: <b>The basic technique for converting a variable to another variable ( small to large )</b></td>
+  </tr>
+  <tr>
+    <td>06. Variable Narrowing Casting</td>
+    <td>
+      <a href="Comming Soon">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/youtube_logo.png" alt="Youtube" width="20" height="20">
+      </a>
+      <a href="https://www.instagram.com/p/CYnQHUerrxU/">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/ig_logo.png" alt="Instagram" width="20" height="20">
+      </a>
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:6897811093520048128">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/linkedln_logo.png" alt="Linkedln" width="20" height="20">
+      </a>
+      <a href="Comming Soon">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/fb_logo.png" alt="Facebook" width="20" height="20">
+      </a>
+    </td>
+    <td>Variable Narrowing Casting: <b>The basic technique for converting a variable to another variable ( large to small )</b></td>
+  </tr>
+  <tr>
+    <td>07. Single Conditional ( If )</td>
+    <td>
+      <a href="Comming Soon">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/youtube_logo.png" alt="Youtube" width="20" height="20">
+      </a>
+      <a href="https://www.instagram.com/p/CYpxe4UFHKz/">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/ig_logo.png" alt="Instagram" width="20" height="20">
+      </a>
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:6898198501776343040">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/linkedln_logo.png" alt="Linkedln" width="20" height="20">
+      </a>
+      <a href="Comming Soon">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/fb_logo.png" alt="Facebook" width="20" height="20">
+      </a>
+    </td>
+    <td>Single Conditional: <b>If Statement</b></td>
+  </tr>
+  <tr>
+    <td>08. Double Conditional ( If - Else )</td>
+    <td>
+      <a href="Comming Soon">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/youtube_logo.png" alt="Youtube" width="20" height="20">
+      </a>
+      <a href="https://www.instagram.com/p/CYsZs9Nr18o/">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/ig_logo.png" alt="Instagram" width="20" height="20">
+      </a>
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:6898204010399068160">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/linkedln_logo.png" alt="Linkedln" width="20" height="20">
+      </a>
+      <a href="Comming Soon">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/fb_logo.png" alt="Facebook" width="20" height="20">
+      </a>
+    </td>
+    <td>Double Conditional: <b>If Else Statement</b></td>
+  </tr>
+  <tr>
+    <td>09. Multi Conditional ( If - Else - Else if )</td>
+    <td>
+      <a href="Comming Soon">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/youtube_logo.png" alt="Youtube" width="20" height="20">
+      </a>
+      <a href="https://www.instagram.com/p/CY0IFjBvmXv/">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/ig_logo.png" alt="Instagram" width="20" height="20">
+      </a>
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:6898210499050258432">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/linkedln_logo.png" alt="Linkedln" width="20" height="20">
+      </a>
+      <a href="Comming Soon">
+        <img src="https://github.com/algokelvin-373/algokelvin-373/blob/master/my_resources/fb_logo.png" alt="Facebook" width="20" height="20">
+      </a>
+    </td>
+    <td>Multi Conditional: <b>If - Else If - Else Statement</b></td>
   </tr>
 </table>
 
