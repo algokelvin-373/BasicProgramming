@@ -1,3 +1,5 @@
+
+
 print("\n***** Short Ternary *****")
 output = None
 
