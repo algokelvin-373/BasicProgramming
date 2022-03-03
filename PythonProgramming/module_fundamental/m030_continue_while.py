@@ -1,9 +1,11 @@
-# Implement 'break' at for
+# Implement 'continue' for while
 
+x = 0
 dt = ""
-for x in range(1, 10):
+while x < 10:
+    x += 1
     if x % 2 == 0 and x % 3 == 0:
-        break
+        continue
     elif x % 2 == 0:
         dt += str(x)
 print(dt)
