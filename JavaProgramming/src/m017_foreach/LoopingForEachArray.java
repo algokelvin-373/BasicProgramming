@@ -1,6 +1,6 @@
-package m013_looping_while;
+package m017_foreach;
 
-public class LoopingForEach {
+public class LoopingForEachArray {
     public static void main(String[] args) {
         // This loop for case array
         int[] data = {1, 2, 3, 4, 5};
