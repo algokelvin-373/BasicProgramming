@@ -1,4 +1,4 @@
-package m003_conditional;
+package m011_ternary_operator;
 
 import java.util.Scanner;
 

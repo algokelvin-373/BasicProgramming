@@ -1,11 +1,10 @@
-package m004_looping;
+package m012_looping_for;
 
-public class LoopingWhile {
+public class LoopingFor {
     public static void main(String[] args) {
-        int n = 10, x = 0;
-        while (x < n) {
+        int n = 10;
+        for (int x = 0; x < n; x++) {
             System.out.print((x + 1) + " ");
-            x++;
         }
         System.out.println();
     }

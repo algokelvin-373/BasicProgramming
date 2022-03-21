@@ -1,4 +1,4 @@
-package m003_conditional;
+package m010_switch_operator;
 
 import java.util.Scanner;
 
