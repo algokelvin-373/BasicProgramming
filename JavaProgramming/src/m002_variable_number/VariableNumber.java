@@ -1,4 +1,4 @@
-package m002_variable;
+package m002_variable_number;
 
 public class VariableNumber {
     public static void main(String[] args) {

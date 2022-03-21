@@ -1,4 +1,4 @@
-package m002_variable;
+package m005_variable_widening_casting;
 
 public class VariableWideningCasting {
     public static void main(String[] args) {

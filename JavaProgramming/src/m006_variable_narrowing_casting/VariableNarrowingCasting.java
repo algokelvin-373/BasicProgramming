@@ -1,4 +1,4 @@
-package m002_variable;
+package m006_variable_narrowing_casting;
 
 public class VariableNarrowingCasting {
     public static void main(String[] args) {
