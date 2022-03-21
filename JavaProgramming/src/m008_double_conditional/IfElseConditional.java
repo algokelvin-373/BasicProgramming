@@ -1,8 +1,8 @@
-package m003_conditional;
+package m008_double_conditional;
 
 import java.util.Scanner;
 
-public class SingleConditional {
+public class IfElseConditional {
     public static void main(String[] args) {
         // Input from Keyboard using Scanner
         Scanner input = new Scanner(System.in);
@@ -10,10 +10,11 @@ public class SingleConditional {
         System.out.print("Input number: ");
         int number = input.nextInt();
 
-        // Single Conditional ( If )
+        // Double Conditional ( If-Else )
         if (number % 2 == 0) {
             System.out.println(number + " is even");
+        } else {
+            System.out.println(number + " is odd");
         }
-        System.out.println("Done");
     }
 }

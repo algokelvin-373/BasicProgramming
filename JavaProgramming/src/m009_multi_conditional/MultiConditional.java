@@ -1,4 +1,4 @@
-package m003_conditional;
+package m009_multi_conditional;
 
 import java.util.Scanner;
 

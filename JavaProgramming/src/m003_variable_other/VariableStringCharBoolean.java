@@ -1,4 +1,4 @@
-package m002_variable;
+package m003_variable_other;
 
 public class VariableStringCharBoolean {
     public static void main(String[] args) {
