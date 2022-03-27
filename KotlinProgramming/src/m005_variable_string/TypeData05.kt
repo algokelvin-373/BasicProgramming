@@ -1,4 +1,4 @@
-package m003_type_data
+package m005_variable_string
 
 fun main() {
     // Type Data 5 - String

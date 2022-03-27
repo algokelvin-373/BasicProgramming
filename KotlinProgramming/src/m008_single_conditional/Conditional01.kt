@@ -1,13 +1,12 @@
-package m004_conditionals
+package m008_single_conditional
 
 fun main() {
     print("Input number: ")
     val a = readLine() // Input from Keyboard
 
-    // Double Conditional (If-Else)
+    // Single Conditional (If)
     if (a?.toInt()!! % 2 == 0) {
         println("$a is even")
-    } else {
-        println("$a is odd")
     }
+    println("Done")
 }

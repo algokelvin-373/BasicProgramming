@@ -1,4 +1,4 @@
-package m003_type_data
+package m006_variable_char
 
 fun main() {
     println("Type Data 6: Char")

@@ -1,4 +1,4 @@
-package m003_type_data
+package m003_val_var
 
 fun main() {
     // Type Data 02 - "var"
