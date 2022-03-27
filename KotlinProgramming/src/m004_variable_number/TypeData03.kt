@@ -1,4 +1,4 @@
-package m003_type_data
+package m004_variable_number
 
 fun main() {
     // Type Data 3 - Number using "val"

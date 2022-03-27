@@ -1,4 +1,4 @@
-package m003_type_data
+package m007_variable_boolean
 
 fun main() {
     println("Type Data 7: Boolean")
