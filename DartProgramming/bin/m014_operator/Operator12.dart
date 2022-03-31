@@ -1,0 +1,5 @@
+// Operator 'as'
+
+void main() {
+
+}
