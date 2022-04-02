@@ -1,5 +1,0 @@
-// Element "map"
-
-void main() {
-
-}
