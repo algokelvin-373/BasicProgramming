@@ -1,5 +1,0 @@
-// Element 'list'
-
-void main() {
-
-}
