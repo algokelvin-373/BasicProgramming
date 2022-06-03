@@ -1,4 +1,5 @@
-import UIKit
+
+import Cocoa
 
 var biner1: UInt8 = 0011 // biner = 3
 var biner2: UInt8 = 0110 // biner = 6
