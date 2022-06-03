@@ -1,19 +1,20 @@
-import UIKit
+
+import Cocoa
 
 var StringA = "Kelvin"
 var StringB = "Tandrio"
+var StringC = "Herwanda"
 
 // Using '\()'
 print("My name is \(StringA) \(StringB)")
 
 // Using '+'
-var StringC = StringA + StringB
-print("My name is \(StringC)")
+var StringD = StringA + StringB
+print("My name is \(StringD)")
 
 // Using '+='
-var StringD = "Herwanda"
 var StringE = ""
 StringE += StringA
-StringE += StringD
+StringE += StringC
 StringE += StringB
 print("My name is \(StringE)")
