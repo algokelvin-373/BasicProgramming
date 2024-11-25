@@ -1,0 +1,13 @@
+// Success Make Data Set Array
+        int y = 0, z = 0;
+        for (int x = 0; x < removeSpace.length(); x++) {
+            if (removeSpace.charAt(x) == ',') {
+                dataNumber[y] = Integer.parseInt(removeSpace.substring(z, x));
+                y++;
+                z = x + 1;
+            }
+        }
+        for (int d: dataNumber) {
+            System.out.print(d + " ");
+        }
+
