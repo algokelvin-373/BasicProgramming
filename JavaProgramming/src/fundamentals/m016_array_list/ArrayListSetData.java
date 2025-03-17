@@ -1,5 +1,3 @@
-package m016_array_list;
-
 import java.util.ArrayList;
 
 public class ArrayListSetData {

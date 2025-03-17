@@ -1,5 +1,3 @@
-package m009_multi_conditional;
-
 import java.util.Scanner;
 
 public class MultiConditional {

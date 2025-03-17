@@ -1,5 +1,3 @@
-package m008_double_conditional;
-
 import java.util.Scanner;
 
 public class IfElseConditional {

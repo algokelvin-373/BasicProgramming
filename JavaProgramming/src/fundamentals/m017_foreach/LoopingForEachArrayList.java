@@ -1,5 +1,3 @@
-package m017_foreach;
-
 import java.util.ArrayList;
 
 public class LoopingForEachArrayList {

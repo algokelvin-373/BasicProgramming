@@ -1,5 +1,3 @@
-package m002_variable_number;
-
 public class VariableNumber {
     public static void main(String[] args) {
         int intNumber = 373; // integer

@@ -1,5 +1,3 @@
-package m017_foreach;
-
 public class LoopingForEachArray {
     public static void main(String[] args) {
         // This loop for case array

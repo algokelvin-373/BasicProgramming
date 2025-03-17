@@ -1,5 +1,3 @@
-package m001_hello_world;
-
 public class HelloWorld02 {
     public static void main(String[] args) {
         System.out.println("Java Programming Basic");

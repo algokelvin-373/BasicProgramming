@@ -1,5 +1,3 @@
-package m012_looping_for;
-
 public class LoopingFor {
     public static void main(String[] args) {
         int n = 10;

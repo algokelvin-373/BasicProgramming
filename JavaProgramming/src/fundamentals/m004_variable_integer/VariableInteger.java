@@ -1,5 +1,3 @@
-package m004_variable_integer;
-
 public class VariableInteger {
     public static void main(String[] args) {
         byte byteNum = 100;

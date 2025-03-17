@@ -1,5 +1,3 @@
-package m010_switch_operator;
-
 import java.util.Scanner;
 
 public class SwitchOperator {

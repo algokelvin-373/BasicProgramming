@@ -1,5 +1,3 @@
-package m011_ternary_operator;
-
 import java.util.Scanner;
 
 public class TernaryOperator {
