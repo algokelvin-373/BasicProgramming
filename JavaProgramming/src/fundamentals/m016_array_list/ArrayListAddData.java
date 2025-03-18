@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class J08_ArrayList {
+public class ArrayListAddData {
     public static void main(String[] args) {
         ArrayList<String> coding = new ArrayList<>();
 

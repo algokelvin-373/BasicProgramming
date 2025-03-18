@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class J02_Decision {
+public class ScoreMath {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

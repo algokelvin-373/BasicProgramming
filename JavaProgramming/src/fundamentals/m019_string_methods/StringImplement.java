@@ -1,4 +1,4 @@
-public class J06_String {
+public class StringImplement {
     public static void main(String[] args) {
         String word = "AlgoKelvin - Class Online Private Coding";
 
