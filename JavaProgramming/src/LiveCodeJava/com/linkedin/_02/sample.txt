@@ -1,0 +1,10 @@
+ALGOKELVIN - Java Developer: Read File
+Read File .txt. Let's Coding
+
+Hi, great and amazing developer
+
+Today, I give example a small case study about Read File ".txt".
+
+This is an easy case.
+
+Just create "sample.txt" and will show your file.

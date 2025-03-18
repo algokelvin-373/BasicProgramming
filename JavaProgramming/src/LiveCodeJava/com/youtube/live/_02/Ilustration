@@ -1,0 +1,22 @@
+OOP (Object Oriented Programming)
+
+Object: People, Transport, Animal, etc
+Has attribute
+
+- People: name, domisili, profesi
+- Animal: isMammals, isFly
+
+People: Developer, Sales, Doctor (name)
+People:
+- name
+- domisili
+- profesi
+Developer:
+- id
+- institute
+Sales:
+- id
+- position
+Doctor:
+- id
+- specialist
