@@ -1,4 +1,4 @@
-public class Arithmetic {
+public class DuplicateArithmetic {
     public static void main(String[] args) {
         // 1, 3, 5, 7, 9 => 1001 algoritma
         // Cara 1:

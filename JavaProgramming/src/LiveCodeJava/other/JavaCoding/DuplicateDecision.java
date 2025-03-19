@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Decision {
+public class DuplicateDecision {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 

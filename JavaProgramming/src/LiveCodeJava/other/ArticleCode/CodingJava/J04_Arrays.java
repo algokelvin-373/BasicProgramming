@@ -1,4 +1,4 @@
-public class J04_Array {
+public class J04_Arrays {
     public static void main(String[] args) {
         
         // Data Array Number
