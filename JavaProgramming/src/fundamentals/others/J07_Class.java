@@ -1,3 +1,4 @@
+package fundamentals.others;
 
 class Message {
     private String word;

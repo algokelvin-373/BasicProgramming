@@ -1,3 +1,4 @@
+package casestudy.other;
 import java.util.Scanner;
 
 public class CSJ03_RectangleApp {

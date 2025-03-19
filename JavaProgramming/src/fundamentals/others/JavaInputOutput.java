@@ -1,4 +1,4 @@
-package casestudy.other;
+package fundamentals.others;
 import java.util.Scanner;
 
 public class JavaInputOutput {
