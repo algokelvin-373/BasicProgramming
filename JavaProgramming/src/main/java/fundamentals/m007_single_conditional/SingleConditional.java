@@ -1,3 +1,5 @@
+package fundamentals.m007_single_conditional;
+
 import java.util.Scanner;
 
 public class SingleConditional {

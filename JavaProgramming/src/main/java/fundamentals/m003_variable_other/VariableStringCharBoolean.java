@@ -1,3 +1,5 @@
+package fundamentals.m003_variable_other;
+
 public class VariableStringCharBoolean {
     public static void main(String[] args) {
         boolean booleanData = true; // Boolean

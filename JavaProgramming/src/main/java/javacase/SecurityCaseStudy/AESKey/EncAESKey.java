@@ -1,6 +1,6 @@
 package javacase.SecurityCaseStudy.AESKey;
 
-import com.tsmid.tsmformula.TripleDESEncryptionV2;
+//import com.tsmid.tsmformula.TripleDESEncryptionV2;
 
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
@@ -9,11 +9,11 @@ import java.security.NoSuchProviderException;
 
 public class EncAESKey {
     private static final char[] hexArray = "0123456789ABCDEF".toCharArray();
-    private static TripleDESEncryptionV2 tsmCipher;
+    //private static TripleDESEncryptionV2 tsmCipher;
 
     public static void main(String[] args) throws NoSuchPaddingException, NoSuchAlgorithmException, NoSuchProviderException {
         byte[] aesKey = hexStringToByteArray("4CED412F4D415243484920444556454C4F504D454E542054534D46499633A655");
-        tsmCipher = new TripleDESEncryptionV2(aesKey);
+        //tsmCipher = new TripleDESEncryptionV2(aesKey);
         byte[] iv = new byte[8];
 
         try {
@@ -47,11 +47,12 @@ public class EncAESKey {
         return data;
     }
     private static byte[] encrypt(byte[] rawText, byte[] iv) {
-        try {
+        /*try {
             return tsmCipher.encrypt(rawText, iv);
         } catch (Exception e) {
             e.printStackTrace();
             throw new CustomException("Invalid encrypt");
-        }
+        }*/
+        return null;
     }
 }
