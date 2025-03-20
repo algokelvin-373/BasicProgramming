@@ -15,19 +15,19 @@ public class FunctionPrograms {
 
     // function: Not Result No Parameter
     private static void functionMethod01() {
-        System.out.println("Function No Result No Parameter");
+        System.out.println("fundamentals.others.Function No Result No Parameter");
         System.out.println("Show Data Message");
     }
 
     // function: Not Result, With Parameter
     private static void functionMethod02(String message) {
-        System.out.println("Function No Result, With Parameter");
+        System.out.println("fundamentals.others.Function No Result, With Parameter");
         System.out.println("Data: "+ message);
     }
 
     // function: With Result, No Parameter
     private static String functionMethod03() {
-        return "Function with Result, No Parameter";
+        return "fundamentals.others.Function with Result, No Parameter";
     }
 
     // function: With Result and Parameter()

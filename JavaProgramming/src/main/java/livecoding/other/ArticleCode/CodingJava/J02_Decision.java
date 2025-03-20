@@ -1,8 +1,6 @@
-package fundamentals.m008_double_conditional;
-
 import java.util.Scanner;
 
-public class ScoreMath {
+public class J02_Decision {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
