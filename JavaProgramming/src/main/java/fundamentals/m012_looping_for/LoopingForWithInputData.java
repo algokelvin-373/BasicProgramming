@@ -1,3 +1,5 @@
+package fundamentals.m012_looping_for;
+
 import java.util.Scanner;
 
 public class LoopingForWithInputData {

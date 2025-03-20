@@ -1,3 +1,5 @@
+package fundamentals.m013_looping_while;
+
 public class LoopingWhile {
     public static void main(String[] args) {
         int n = 10, x = 0;

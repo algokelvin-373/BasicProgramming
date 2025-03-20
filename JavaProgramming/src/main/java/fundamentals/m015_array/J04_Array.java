@@ -1,3 +1,5 @@
+package fundamentals.m015_array;
+
 public class J04_Array {
     public static void main(String[] args) {
         

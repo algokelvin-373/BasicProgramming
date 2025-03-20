@@ -1,3 +1,5 @@
+package fundamentals.m015_array;
+
 public class ArrayDataInitializer {
     public static void main(String[] args) {
         int[] arrNumber = {1, 2, 3, 4, 5}; // type: number

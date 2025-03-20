@@ -1,3 +1,5 @@
+package fundamentals.m018_foreach;
+
 import java.util.ArrayList;
 
 public class LoopingForEachArrayList {
