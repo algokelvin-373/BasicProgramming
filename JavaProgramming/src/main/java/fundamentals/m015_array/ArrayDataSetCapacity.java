@@ -1,3 +1,5 @@
+package fundamentals.m015_array;
+
 public class ArrayDataSetCapacity {
     public static void main(String[] args) {
         int[] arrNumber = new int[3];

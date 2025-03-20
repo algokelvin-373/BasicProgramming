@@ -1,3 +1,5 @@
+package fundamentals.m019_string_methods;
+
 public class StringImplement {
     public static void main(String[] args) {
         String word = "AlgoKelvin - Class Online Private Coding";
