@@ -1,4 +1,4 @@
-package fundamentals._02_DataType
+package fundamentals.m003_val_var
 
 fun main() {
     // Type 'integer'
