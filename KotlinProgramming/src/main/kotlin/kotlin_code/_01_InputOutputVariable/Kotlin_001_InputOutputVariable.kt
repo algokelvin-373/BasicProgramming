@@ -1,4 +1,4 @@
-package com.youtube.kotlin_code._01_InputOutputVariable
+package kotlin_code._01_InputOutputVariable
 
 fun main() { // This is main program Kotlin Language
     // variable 'val' - constant value
