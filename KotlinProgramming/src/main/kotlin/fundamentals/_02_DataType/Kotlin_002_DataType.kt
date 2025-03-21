@@ -1,4 +1,4 @@
-package kotlin_code._02_DataType
+package fundamentals._02_DataType
 
 fun main() {
     // Type 'integer'

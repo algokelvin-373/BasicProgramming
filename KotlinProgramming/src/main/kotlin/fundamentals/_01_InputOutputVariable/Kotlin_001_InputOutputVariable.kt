@@ -1,4 +1,4 @@
-package kotlin_code._01_InputOutputVariable
+package fundamentals._01_InputOutputVariable
 
 fun main() { // This is main program Kotlin Language
     // variable 'val' - constant value

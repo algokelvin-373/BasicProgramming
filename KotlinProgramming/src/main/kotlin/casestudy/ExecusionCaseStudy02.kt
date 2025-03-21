@@ -1,4 +1,4 @@
-package kotlincase
+package casestudy
 
 fun main() {
     //Case 2: Get Time Now

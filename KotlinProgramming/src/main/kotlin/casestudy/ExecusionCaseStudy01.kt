@@ -1,4 +1,4 @@
-package kotlincase
+package casestudy
 
 fun main() {
     //Case 1: Convert Format Date

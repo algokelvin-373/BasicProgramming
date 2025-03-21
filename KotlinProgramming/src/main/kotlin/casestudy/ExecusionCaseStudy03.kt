@@ -1,4 +1,4 @@
-package kotlincase
+package casestudy
 
 fun main() {
     //Case 3: Convert Currency (Format: Rupiah - IDR)

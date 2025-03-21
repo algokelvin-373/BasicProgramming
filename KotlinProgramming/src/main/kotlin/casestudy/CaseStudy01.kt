@@ -1,4 +1,4 @@
-package kotlincase
+package casestudy
 
 import java.text.DecimalFormat
 import java.text.NumberFormat
