@@ -1,7 +1,9 @@
 import time
 
 from rembg import remove
+from PIL import Image
 
+background = f'D:/INA17Group/0S_ServerIna17/photos_result/background.jpg'
 start = int(time.time() * 1000)
 index = 0
 while index < 30:
@@ -22,6 +24,13 @@ while index < 30:
     # Write Data Image After Remove Background
     with open(output_path, 'wb') as o:
         o.write(output_data)
+
+    fg = Image.open(output_path).convert("RGBA")
+    bg = Image.open(background).convert("RGBA")
+    fg = fg.resize(bg.size)
+    combined = Image.alpha_composite(bg, fg)
+    rgb_image = combined.convert("RGB")
+    rgb_image.save(output_path)
 
     index += 1
 end = int(time.time() * 1000)
