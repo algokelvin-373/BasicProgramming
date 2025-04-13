@@ -43,7 +43,7 @@ def processing_remove_background(path_input, path_output):
 background = f'D:/INA17Group/0S_ServerIna17/photos_result/background.jpg'
 start = int(time.time() * 1000)
 index = 0
-while index < 43:
+while index < 55:
     input_path = f'D:/INA17Group/0S_ServerIna17/photos_result/photos{index + 1}.jpg'
     output_path = f'D:/INA17Group/0S_ServerIna17/photos_result/'
     if index > 99:
