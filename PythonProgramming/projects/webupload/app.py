@@ -12,6 +12,7 @@ app.config['TEST_IMAGE'] = 'test/image'
 # Ensure upload directories exist
 os.makedirs(os.path.join(app.config['UPLOAD_FOLDER'], app.config['TEST_CLOTH']), exist_ok=True)
 os.makedirs(os.path.join(app.config['UPLOAD_FOLDER'], app.config['TEST_IMAGE']), exist_ok=True)
+# os.makedirs(os.path.join('results', 'viton_demo'), exist_ok=True)
 
 
 def allowed_file(filename):
@@ -124,19 +125,18 @@ def execute():
 def datasets_files(filename):
     return send_from_directory(os.path.join(app.config['UPLOAD_FOLDER']), filename)
 
-@app.route('/result/<result>')
-def show_result(result):
-    return render_template('result.html', result=result)
+@app.route('/result')
+def show_result():
+    result_filename = "result_example.jpg"
+    return render_template('result.html', result=result_filename)
 
 @app.route('/results/<path:filename>')
 def result_files(filename):
     return send_from_directory('results/viton_demo', filename)
 
-@app.route('/results/viton_demo/<filename>')
+@app.route('/results/<filename>')
 def serve_result(filename):
-    # Get absolute path to results directory
-    results_dir = os.path.join(app.root_path, 'results', 'viton_demo')
-    return send_from_directory(results_dir, filename)
+    return send_from_directory('result/viton_demo', filename)
 
 @app.route('/check_result_file')
 def check_result_file():
