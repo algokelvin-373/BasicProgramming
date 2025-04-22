@@ -14,10 +14,8 @@
             <!-- User Photo Upload -->
             <div class="upload-section">
                 <h2>Upload User Photo</h2>
-                <form id="userUploadForm" enctype="multipart/form-data">
-                    <input type="file" name="file" id="userFile" accept="image/*" required>
-                    <button type="button" onclick="uploadUserPhoto()">Upload</button>
-                </form>
+                <button type="button" onclick="document.getElementById('userFile').click()">Upload</button>
+                <input type="file" id="userFile" accept="image/*" style="display: none" onchange="uploadUserPhoto()">
                 <div class="image-preview">
                     <img id="userPreview" src="" alt="User photo preview">
                 </div>
@@ -26,10 +24,8 @@
             <!-- Cloth Photo Upload -->
             <div class="upload-section">
                 <h2>Upload Cloth Photo</h2>
-                <form id="clothUploadForm" enctype="multipart/form-data">
-                    <input type="file" name="file" id="clothFile" accept="image/*" required>
-                    <button type="button" onclick="uploadClothPhoto()">Upload</button>
-                </form>
+                <button type="button" onclick="document.getElementById('clothFile').click()">Upload</button>
+                <input type="file" id="clothFile" accept="image/*" style="display: none" onchange="uploadClothPhoto()">
                 <div class="image-preview">
                     <img id="clothPreview" src="" alt="Cloth photo preview">
                 </div>
@@ -49,8 +45,11 @@
         let clothFilename = '';
 
         function uploadUserPhoto() {
-            const formData = new FormData(document.getElementById('userUploadForm'));
+            const fileInput = document.getElementById('userFile');
+            if (!fileInput.files || fileInput.files.length === 0) return;
 
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
             fetch('/upload_user', {
                 method: 'POST',
                 body: formData
@@ -73,8 +72,11 @@
         }
 
         function uploadClothPhoto() {
-            const formData = new FormData(document.getElementById('clothUploadForm'));
+            const fileInput = document.getElementById('clothFile');
+            if (!fileInput.files || fileInput.files.length === 0) return;
 
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
             fetch('/upload_cloth', {
                 method: 'POST',
                 body: formData
