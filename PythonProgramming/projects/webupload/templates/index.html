@@ -16,6 +16,10 @@
                 <h2>Upload User Photo</h2>
                 <button type="button" onclick="document.getElementById('userFile').click()">Upload</button>
                 <input type="file" id="userFile" accept="image/*" style="display: none" onchange="uploadUserPhoto()">
+                <div class="loading-indicator" id="userLoading" style="display: none;">
+                    <div class="spinner"></div>
+                    <span>Processing image...</span>
+                </div>
                 <div class="image-preview">
                     <img id="userPreview" src="" alt="User photo preview">
                 </div>
@@ -26,6 +30,10 @@
                 <h2>Upload Cloth Photo</h2>
                 <button type="button" onclick="document.getElementById('clothFile').click()">Upload</button>
                 <input type="file" id="clothFile" accept="image/*" style="display: none" onchange="uploadClothPhoto()">
+                <div class="loading-indicator" id="clothLoading" style="display: none;">
+                    <div class="spinner"></div>
+                    <span>Processing image...</span>
+                </div>
                 <div class="image-preview">
                     <img id="clothPreview" src="" alt="Cloth photo preview">
                 </div>
@@ -46,7 +54,15 @@
 
         function uploadUserPhoto() {
             const fileInput = document.getElementById('userFile');
+            const loadingIndicator = document.getElementById('userLoading');
+            const uploadButton = fileInput.previousElementSibling; // Get the upload button
+
             if (!fileInput.files || fileInput.files.length === 0) return;
+
+            // Show loading, disable button
+            loadingIndicator.style.display = 'flex';
+            uploadButton.disabled = true;
+            uploadButton.textContent = 'Uploading...';
 
             const formData = new FormData();
             formData.append('file', fileInput.files[0]);
@@ -68,12 +84,26 @@
             .catch(error => {
                 console.error('Error:', error);
                 alert('Error uploading user photo');
+            })
+            .finally(() => {
+                // Hide loading, re-enable button
+                loadingIndicator.style.display = 'none';
+                uploadButton.disabled = false;
+                uploadButton.textContent = 'Upload';
             });
         }
 
         function uploadClothPhoto() {
             const fileInput = document.getElementById('clothFile');
+            const loadingIndicator = document.getElementById('clothLoading');
+            const uploadButton = fileInput.previousElementSibling; // Get the upload button
+
             if (!fileInput.files || fileInput.files.length === 0) return;
+
+            // Show loading, disable button
+            loadingIndicator.style.display = 'flex';
+            uploadButton.disabled = true;
+            uploadButton.textContent = 'Uploading...';
 
             const formData = new FormData();
             formData.append('file', fileInput.files[0]);
@@ -95,6 +125,12 @@
             .catch(error => {
                 console.error('Error:', error);
                 alert('Error uploading cloth photo');
+            })
+            .finally(() => {
+                // Hide loading, re-enable button
+                loadingIndicator.style.display = 'none';
+                uploadButton.disabled = false;
+                uploadButton.textContent = 'Upload';
             });
         }
 
