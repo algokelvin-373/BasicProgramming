@@ -74,11 +74,9 @@
             .then(data => {
                 if (data.status === 'success') {
                     userFilename = data.filename;
-                    document.getElementById('userPreview').src = `/static/uploads/user/${data.filename}`;
+                    document.getElementById('userPreview').src = data.display_path;
                     document.getElementById('userFilename').value = data.filename;
                     checkExecuteButton();
-                } else {
-                    alert(data.message || 'Error uploading user photo');
                 }
             })
             .catch(error => {
@@ -115,11 +113,9 @@
             .then(data => {
                 if (data.status === 'success') {
                     clothFilename = data.filename;
-                    document.getElementById('clothPreview').src = `/static/uploads/cloth/${data.filename}`;
+                    document.getElementById('clothPreview').src = data.display_path;
                     document.getElementById('clothFilename').value = data.filename;
                     checkExecuteButton();
-                } else {
-                    alert(data.message || 'Error uploading cloth photo');
                 }
             })
             .catch(error => {

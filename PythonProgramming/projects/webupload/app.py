@@ -1,18 +1,17 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
-from werkzeug.utils import secure_filename
+from datetime import datetime
+
 from PIL import Image
-import uuid
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = 'static/uploads'
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB limit
-app.config['USER_UPLOAD'] = 'user'
-app.config['CLOTH_UPLOAD'] = 'cloth'
+app.config['UPLOAD_FOLDER'] = 'datasets'
+app.config['TEST_CLOTH'] = 'test/cloth'
+app.config['TEST_IMAGE'] = 'test/image'
 
 # Ensure upload directories exist
-os.makedirs(os.path.join(app.config['UPLOAD_FOLDER'], app.config['USER_UPLOAD']), exist_ok=True)
-os.makedirs(os.path.join(app.config['UPLOAD_FOLDER'], app.config['CLOTH_UPLOAD']), exist_ok=True)
+os.makedirs(os.path.join(app.config['UPLOAD_FOLDER'], app.config['TEST_CLOTH']), exist_ok=True)
+os.makedirs(os.path.join(app.config['UPLOAD_FOLDER'], app.config['TEST_IMAGE']), exist_ok=True)
 
 
 def allowed_file(filename):
@@ -47,48 +46,48 @@ def index():
 @app.route('/upload_user', methods=['POST'])
 def upload_user():
     if 'file' not in request.files:
-        return redirect(request.url)
+        return {'status': 'error', 'message': 'No file selected'}, 400
 
     file = request.files['file']
     if file.filename == '':
-        return redirect(request.url)
+        return {'status': 'error', 'message': 'No file selected'}, 400
 
     if file and allowed_file(file.filename):
-        # Generate unique filename
-        filename = f"user_{uuid.uuid4().hex}.{file.filename.rsplit('.', 1)[1].lower()}"
-        user_upload_path = os.path.join(app.config['UPLOAD_FOLDER'], app.config['USER_UPLOAD'])
-        filepath = os.path.join(user_upload_path, filename)
+        timestamp = datetime.now().strftime("%H%M%S")
+        filename = f"50001{timestamp}_00.jpg"
+        user_path = os.path.join('datasets', 'test', 'image')
+        filepath = os.path.join(user_path, filename)
 
-        # Save original file
+        # Save the file
         file.save(filepath)
 
-        # Preprocess user image
-        preprocess_user_image(filepath)
+        return {
+            'status': 'success',
+            'filename': filename,
+            'display_path': f"/datasets/test/image/{filename}"
+        }
 
-        # Create resized version for display
-        display_filename = f"display_{filename}"
-        display_path = os.path.join(user_upload_path, display_filename)
-        resize_image(filepath, display_path)
-
-        return {'status': 'success', 'filename': display_filename}
-
-    return {'status': 'error', 'message': 'Invalid file type'}
+    return {'status': 'error', 'message': 'Invalid file type'}, 400
 
 
 @app.route('/upload_cloth', methods=['POST'])
 def upload_cloth():
     if 'file' not in request.files:
-        return redirect(request.url)
+        return {'status': 'error', 'message': 'No file selected'}, 400
 
     file = request.files['file']
     if file.filename == '':
-        return redirect(request.url)
+        return {'status': 'error', 'message': 'No file selected'}, 400
 
     if file and allowed_file(file.filename):
-        # Generate unique filename
-        filename = f"cloth_{uuid.uuid4().hex}.{file.filename.rsplit('.', 1)[1].lower()}"
-        cloth_upload_path = os.path.join(app.config['UPLOAD_FOLDER'], app.config['CLOTH_UPLOAD'])
-        filepath = os.path.join(cloth_upload_path, filename)
+        # Get original filename without extension
+        original_name = os.path.splitext(file.filename)[0]
+        ext = os.path.splitext(file.filename)[1].lower()
+
+        # Save with original filename
+        filename = f"{original_name}{ext}"
+        cloth_path = os.path.join(app.config['UPLOAD_FOLDER'], app.config['TEST_CLOTH'])
+        filepath = os.path.join(cloth_path, filename)
 
         # Save original file
         file.save(filepath)
@@ -96,40 +95,44 @@ def upload_cloth():
         # Preprocess cloth image
         preprocess_cloth_image(filepath)
 
-        # Create resized version for display
-        display_filename = f"display_{filename}"
-        display_path = os.path.join(cloth_upload_path, display_filename)
-        resize_image(filepath, display_path)
+        return {
+            'status': 'success',
+            'filename': filename,
+            'display_path': f"/{cloth_path}/{filename}"
+        }
 
-        return {'status': 'success', 'filename': display_filename}
-
-    return {'status': 'error', 'message': 'Invalid file type'}
+    return {'status': 'error', 'message': 'Invalid file type'}, 400
 
 
 @app.route('/execute', methods=['POST'])
 def execute():
+    # Get the filenames from the form
     user_filename = request.form.get('user_filename')
     cloth_filename = request.form.get('cloth_filename')
 
     if not user_filename or not cloth_filename:
         return redirect(url_for('index'))
 
-    # Remove 'display_' prefix to get original filenames
-    original_user = user_filename.replace('display_', '')
-    original_cloth = cloth_filename.replace('display_', '')
+    # Define the paths
+    test_pairs_path = os.path.join('datasets', 'test_pairs.txt')
+    user_image_path = os.path.join('datasets', 'test', 'image', user_filename)
+    cloth_image_path = os.path.join('datasets', 'test', 'cloth', cloth_filename)
 
-    # Write to text_pairs.txt for VITON
-    with open('text_pairs.txt', 'w') as f:
-        f.write(f"{original_user} {original_cloth}\n")
+    # Write to test_pairs.txt in the required format
+    with open(test_pairs_path, 'w') as f:
+        f.write(f"{user_filename} {cloth_filename}\n")
 
-    # Here you would typically call your VITON method
-    # For now, we'll just redirect to a result page
+    # Here you would typically call your VITON processing
+    # result_filename = process_viton(user_image_path, cloth_image_path)
 
-    # Generate a result filename (in a real app, this would be from VITON)
-    result_filename = f"result_{uuid.uuid4().hex}.jpg"
+    # For now, we'll just use a placeholder result
+    result_filename = "result_example.jpg"
 
     return redirect(url_for('show_result', result=result_filename))
 
+@app.route('/datasets/<path:filename>')
+def datasets_files(filename):
+    return send_from_directory(os.path.join(app.config['UPLOAD_FOLDER']), filename)
 
 @app.route('/result/<result>')
 def show_result(result):
