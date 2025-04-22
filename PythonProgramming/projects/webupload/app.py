@@ -106,28 +106,18 @@ def upload_cloth():
 
 @app.route('/execute', methods=['POST'])
 def execute():
-    # Get the filenames from the form
     user_filename = request.form.get('user_filename')
     cloth_filename = request.form.get('cloth_filename')
 
     if not user_filename or not cloth_filename:
         return redirect(url_for('index'))
 
-    # Define the paths
+    # Write to test_pairs.txt
     test_pairs_path = os.path.join('datasets', 'test_pairs.txt')
-    user_image_path = os.path.join('datasets', 'test', 'image', user_filename)
-    cloth_image_path = os.path.join('datasets', 'test', 'cloth', cloth_filename)
-
-    # Write to test_pairs.txt in the required format
     with open(test_pairs_path, 'w') as f:
         f.write(f"{user_filename} {cloth_filename}\n")
 
-    # Here you would typically call your VITON processing
-    # result_filename = process_viton(user_image_path, cloth_image_path)
-
-    # For now, we'll just use a placeholder result
     result_filename = "result_example.jpg"
-
     return redirect(url_for('show_result', result=result_filename))
 
 @app.route('/datasets/<path:filename>')
@@ -136,8 +126,27 @@ def datasets_files(filename):
 
 @app.route('/result/<result>')
 def show_result(result):
-    return render_template('result.html', result_image=result)
+    return render_template('result.html', result=result)
 
+@app.route('/results/<path:filename>')
+def result_files(filename):
+    return send_from_directory('results/viton_demo', filename)
+
+@app.route('/results/viton_demo/<filename>')
+def serve_result(filename):
+    # Get absolute path to results directory
+    results_dir = os.path.join(app.root_path, 'results', 'viton_demo')
+    return send_from_directory(results_dir, filename)
+
+@app.route('/check_result_file')
+def check_result_file():
+    file_path = os.path.join('results', 'viton_demo', 'result_example.jpg')
+    exists = os.path.exists(file_path)
+    return {
+        'file_exists': exists,
+        'absolute_path': os.path.abspath(file_path),
+        'current_working_dir': os.getcwd()
+    }
 
 @app.route('/download/<filename>')
 def download(filename):
