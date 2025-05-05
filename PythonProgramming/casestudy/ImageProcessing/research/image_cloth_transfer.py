@@ -51,31 +51,37 @@ def transfer_cloth_rgb(base_img_path, cloth_rgb_img_path, mask_img_path, output_
 def main():
     # Path setup
     base_dir = "D:/My_Research/"
-    paths = {
-        "original": os.path.join(base_dir, "gambar1.jpg"),
-        "img_viton": os.path.join(base_dir, "gambar2_result.jpg"),
-        "parsing": os.path.join(base_dir, "gambar2_result.png"),
-        "cloth_only": os.path.join(base_dir, "hasil_cloth_only.jpg"),
-        "bw_mask": os.path.join(base_dir, "hasil_cloth_mask_bw.jpg"),
-        "final_output": os.path.join(base_dir, "gambar1_fixed.jpg")
-    }
 
-    # Step 1: Generate hasil_cloth_only.jpg
-    cloth_only = get_cloth_mask_from_parsing(paths["parsing"], paths["original"])
-    save_image(cloth_only, paths["cloth_only"])
+    # Loop for multi process data
+    data = 1
+    while data <= 5:
+        paths = {
+            "original": os.path.join(base_dir, f"gambar{data}.jpg"),
+            "img_viton": os.path.join(base_dir, f"gambar{data}_result.jpg"),
+            "parsing": os.path.join(base_dir, f"gambar{data}_result.png"),
+            "cloth_only": os.path.join(base_dir, f"gambar{data}_hasil_cloth_only.jpg"),
+            "bw_mask": os.path.join(base_dir, f"gambar{data}_hasil_cloth_mask_bw.jpg"),
+            "final_output": os.path.join(base_dir, f"gambar{data}_fixed.jpg")
+        }
 
-    # Step 2: Generate hasil_cloth_mask_bw.jpg
-    cloth_only_img = Image.open(paths["cloth_only"]).convert("RGB")
-    cloth_bw = generate_bw_mask(cloth_only_img)
-    save_image(cloth_bw, paths["bw_mask"])
+        # Step 1: Generate hasil_cloth_only.jpg
+        cloth_only = get_cloth_mask_from_parsing(paths["parsing"], paths["original"])
+        save_image(cloth_only, paths["cloth_only"])
 
-    # Step 3: Apply RGB transfer
-    transfer_cloth_rgb(
-        base_img_path=paths["original"],
-        cloth_rgb_img_path=paths["img_viton"],
-        mask_img_path=paths["bw_mask"],
-        output_path=paths["final_output"]
-    )
+        # Step 2: Generate hasil_cloth_mask_bw.jpg
+        cloth_only_img = Image.open(paths["cloth_only"]).convert("RGB")
+        cloth_bw = generate_bw_mask(cloth_only_img)
+        save_image(cloth_bw, paths["bw_mask"])
+
+        # Step 3: Apply RGB transfer
+        transfer_cloth_rgb(
+            base_img_path=paths["original"],
+            cloth_rgb_img_path=paths["img_viton"],
+            mask_img_path=paths["bw_mask"],
+            output_path=paths["final_output"]
+        )
+
+        data += 1
 
 
 if __name__ == "__main__":
