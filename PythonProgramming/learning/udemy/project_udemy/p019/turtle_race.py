@@ -9,6 +9,14 @@ def position_turtle(all_turtle, color, position):
     gui.goto(x=-230, y=position)
     all_turtle.append(gui)
 
+def display_message(text):
+    writer = Turtle()
+    writer.hideturtle()
+    writer.penup()
+    writer.color("white")
+    writer.goto(0, 160)
+    writer.write(text, align="center", font=("Arial", 16, "bold"))
+
 is_race_on = False
 screen = Screen()
 screen.bgcolor("black")
@@ -45,9 +53,10 @@ while is_race_on:
             is_race_on = False
             winning_color = turtle.pencolor()
             if winning_color == user_bet:
-                print(f"You win! The {winning_color} turtle is the winner")
+                message = f"You win! The {winning_color} turtle is the winner"
             else:
-                print(f"You lose! The {winning_color} turtle is the winner")
+                message = f"You lose! The {winning_color} turtle is the winner"
+            display_message(message)
         rand_distance = random.randint(0, 10)
         turtle.forward(rand_distance)
 
