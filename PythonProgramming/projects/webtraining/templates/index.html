@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Selamat Datang di Web Python Saya</h1>
+
+        <div class="content">
+            <p>Ini adalah contoh halaman web dengan Python Flask.</p>
+
+            <button id="apiButton" class="btn">Get Data from API</button>
+
+            <div id="result" class="result-container">
+                <!-- Hasil dari API akan muncul di sini -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('apiButton').addEventListener('click', function() {
+            // Menggunakan fetch API untuk memanggil endpoint backend
+            fetch('/api/data', {
+                method: 'POST',  // Bisa juga GET jika tidak perlu mengirim data
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({action: 'get_data'})  // Data yang dikirim ke backend
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Menampilkan hasil di halaman web
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = `
+                    <h3>Response from API:</h3>
+                    <p>Status: ${data.status}</p>
+                    <p>Message: ${data.message}</p>
+                    <h4>Items:</h4>
+                    <ul>
+                        ${data.items.map(item => `<li>${item.id}: ${item.name}</li>`).join('')}
+                    </ul>
+                `;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('result').innerHTML =
+                    `<p class="error">Error fetching data from API</p>`;
+            });
+        });
+    </script>
+</body>
+</html>
