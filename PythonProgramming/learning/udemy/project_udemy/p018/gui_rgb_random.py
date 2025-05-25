@@ -1,9 +1,23 @@
 import turtle as t
 import random
 
-color = ['Red', 'Blue', 'Yellow', 'Green', 'Orange', 'Pink', 'Purple', 'Black', 'Grey', 'Brown']
+color = [
+    'Red',
+    'Blue',
+    'Yellow',
+    'Green',
+    'Orange',
+    'Pink',
+    'Purple',
+    'Grey',
+    'Brown'
+]
 
-t.colormode(255)
+# Make screen become black
+screen = t.Screen()
+screen.bgcolor("black")
+
+t.colormode(0)
 gui = t.Turtle()
 gui.speed('fastest')
 gui.penup()
@@ -14,7 +28,7 @@ gui.setheading(-90)
 gui.forward(300)
 
 data = 1
-while data <= 120:
+while data <= 144:
     gui.dot(20, random.choice(color))
     gui.setheading(360)
     gui.forward(50)
