@@ -1,4 +1,6 @@
 void main() {
+  print('');
+
   int dataInt = 100;
   int dataIntInHex = 0xFF;
   double dataDouble = 3.14;
@@ -11,4 +13,6 @@ void main() {
   print("Data Double        : " + dataDouble.toString());
   print("Data String        : " + dataStr.toString());
   print("Data Boolean       : " + dataBool.toString());
+
+  print('');
 }
