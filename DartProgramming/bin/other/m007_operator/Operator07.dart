@@ -1,4 +1,3 @@
-
 //Operator Logic 'AND'
 void main() {
   bool p = true, q = false;
