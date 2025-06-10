@@ -1,6 +1,5 @@
-//Single If
-
 import 'dart:io';
+
 void main() {
   int number;
   stdout.write('Input number : ');
@@ -8,5 +7,7 @@ void main() {
 
   if (number > 0) {
     print('The number that you input is positive');
+  } else {
+    print('The number that you input is negative');
   }
 }
