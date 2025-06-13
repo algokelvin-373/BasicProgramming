@@ -24,7 +24,7 @@ void main() {
 
   print('后递增运算符');
   print('之前 b 的值 : $b');
-  print('后递增运算  : ${++b}');
+  print('后递增运算  : ${b++}');
   print('现在 b 的值 : $b');
 
   print('');
