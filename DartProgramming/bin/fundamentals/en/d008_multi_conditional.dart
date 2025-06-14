@@ -6,10 +6,10 @@ void main() {
   number = int.parse(stdin.readLineSync()!);
 
   if (number > 0) {
-    print('The number that you input is positive');
+    print('Positive');
   } else if (number == 0) {
-    print('The number that you input is zero');
+    print('Zero');
   } else {
-    print('The number that you input is negative');
+    print('Negative');
   }
 }

@@ -6,8 +6,8 @@ void main() {
   number = int.parse(stdin.readLineSync()!);
 
   if (number > 0) {
-    print('The number that you input is positive');
+    print('Positive');
   } else {
-    print('The number that you input is negative');
+    print('Negative');
   }
 }
