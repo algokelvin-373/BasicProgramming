@@ -4,48 +4,48 @@ void main() {
   print('');
 
   int number;
-  stdout.write('Input number : ');
+  stdout.write('输入数字 : ');
   number = int.parse(stdin.readLineSync()!);
 
   switch (number) {
     case 1:
-      print('January');
+      print('一月');
       break;
     case 2:
-      print('February');
+      print('二月');
       break;
     case 3:
-      print('March');
+      print('三月');
       break;
     case 4:
-      print('April');
+      print('四月');
       break;
     case 5:
-      print('May');
+      print('五月');
       break;
     case 6:
-      print('June');
+      print('六月');
       break;
     case 7:
-      print('July');
+      print('七月');
       break;
     case 8:
-      print('August');
+      print('八月');
       break;
     case 9:
-      print('September');
+      print('九月');
       break;
     case 10:
-      print('October');
+      print('十月');
       break;
     case 11:
-      print('November');
+      print('十一月');
       break;
     case 12:
-      print('December');
+      print('十二月');
       break;
     default:
-      print('No Valid');
+      print('Error');
       break;
   }
 
