@@ -1,4 +1,4 @@
-str1 = "大家好，我是Kelvin。我正在学习Python代码。"
+str1 = "Hi, My name is Kelvin. I am learning Python Code."
 
 str2 = "I am Kelvin. " \
     "I'm ready to learn Python " \
