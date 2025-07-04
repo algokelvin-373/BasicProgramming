@@ -7,31 +7,31 @@
 <h4>Fundamentals</h4>
 <table>
     <td>
-        d000.你好
-        d001.类型数据
-        d002.类型数据
-        d003.输入输出
-        d004.操作员
-        d005.操作员
-        d006.单一条件
-    <td>
-    <td>
-        d007. Double Conditional
-        d008. Multi Conditional
-        d009. Switch
-        d010. Ternary
-        d011. Looping for
-        d012. Looping while
-        d013. Looping do-while
+        d000.你好 <br>
+        d001.类型数据 <br>
+        d002.类型数据 <br>
+        d003.输入输出 <br>
+        d004.操作员 <br>
+        d005.操作员 <br>
+        d006.单一条件 <br>
     </td>
     <td>
-        d014. Break Continue
-        d015. Double Looping
-        d016. Try Catch
-        d017. Spesific Catch and Finally
-        d018. Function
-        d019. Function
-        d020. Function
+        d007. Double Conditional <br>
+        d008. Multi Conditional <br>
+        d009. Switch <br>
+        d010. Ternary <br>
+        d011. Looping for <br>
+        d012. Looping while <br>
+        d013. Looping do-while <br>
+    </td>
+    <td>
+        d014. Break Continue <br>
+        d015. Double Looping <br>
+        d016. Try Catch <br>
+        d017. Spesific Catch and Finally <br>
+        d018. Function <br>
+        d019. Function <br>
+        d020. Function <br>
     </td>
 </table>
 
