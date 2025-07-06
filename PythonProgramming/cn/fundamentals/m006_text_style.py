@@ -1,4 +1,4 @@
-print('Text with Color')
+print('带颜色的文本')
 print("\033[30m Black Text")
 print("\033[31m Red Text")
 print("\033[32m Green Text")
@@ -10,7 +10,7 @@ print("\033[37m White Text")
 
 print()
 
-print('Text With Color, Style, and Background Color')
+print('带有颜色、样式和背景颜色的文本')
 print("\033[1;32;40m Green-Bold-Black Background Text")
 print("\033[2;33;41m Yellow-Underline-Red Background Text")
 print("\033[3;34;42m Blue-Negative-1-Green Background Text")
