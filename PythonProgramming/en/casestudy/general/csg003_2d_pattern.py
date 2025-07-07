@@ -1,6 +1,6 @@
 from sys import stdout
 
-def create_hole(line, length):
+def triangle_with_hole(line, length):
     for x1 in range(line):
         if line == length:
             stdout.write('*')
@@ -11,17 +11,20 @@ def create_hole(line, length):
             stdout.write(' ')
     print()
 
-def without_hole(line):
+def triangle_without_hole(line):
     for x1 in range(line):
         stdout.write('*')
     print()
 
-def triangle(count, with_hole):
-    for line in range(1, count + 1):
-        if with_hole:
-            create_hole(line, count)
+def triangle():
+    s = int(input('Input s: '))
+    hole = input('With Hole (y/n): ')
+    is_hole = (False, True)[hole == 'y']
+    for line in range(1, s + 1):
+        if is_hole:
+            triangle_with_hole(line, s)
         else:
-            without_hole(line)
+            triangle_without_hole(line)
 
 print('''
 Type 2D:
@@ -31,24 +34,29 @@ Type 2D:
 ''')
 type_2d = input('Choose Type 2D: ')
 
+match type_2d:
+    case '1': triangle()
+
+
+
 # n = int(input('Input n: '))
 
-width = int(input('width: '))
-height = int(input('height: '))
-
-hole = input('With Hole (y/n): ')
-isHole = (False, True)[hole == 'y']
-
-for h in range(height):
-    for w in range(width):
-        if h == 0 or h == height - 1:
-            stdout.write('*')
-            continue
-        if w == 0 or w == width - 1:
-            stdout.write('*')
-        else:
-            stdout.write(' ')
-    print()
+# width = int(input('width: '))
+# height = int(input('height: '))
+#
+# hole = input('With Hole (y/n): ')
+# isHole = (False, True)[hole == 'y']
+#
+# for h in range(height):
+#     for w in range(width):
+#         if h == 0 or h == height - 1:
+#             stdout.write('*')
+#             continue
+#         if w == 0 or w == width - 1:
+#             stdout.write('*')
+#         else:
+#             stdout.write(' ')
+#     print()
 
 # for h in range(height):
 #     for w in range(width):
