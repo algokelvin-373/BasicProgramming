@@ -31,8 +31,28 @@ Type 2D:
 ''')
 type_2d = input('Choose Type 2D: ')
 
-n = int(input('Input n: '))
+# n = int(input('Input n: '))
+
+width = int(input('width: '))
+height = int(input('height: '))
+
 hole = input('With Hole (y/n): ')
 isHole = (False, True)[hole == 'y']
 
-triangle(n, isHole)
+for h in range(height):
+    for w in range(width):
+        if h == 0 or h == height - 1:
+            stdout.write('*')
+            continue
+        if w == 0 or w == width - 1:
+            stdout.write('*')
+        else:
+            stdout.write(' ')
+    print()
+
+# for h in range(height):
+#     for w in range(width):
+#         stdout.write('*')
+#     print()
+
+# triangle(n, isHole)
