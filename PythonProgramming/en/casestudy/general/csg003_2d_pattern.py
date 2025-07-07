@@ -26,6 +26,34 @@ def triangle():
         else:
             triangle_without_hole(line)
 
+def rectangle_with_hole(line, width, height):
+    for w in range(width):
+        if line == 0 or line == height - 1:
+            stdout.write('*')
+            continue
+        if w == 0 or w == width - 1:
+            stdout.write('*')
+        else:
+            stdout.write(' ')
+    print()
+
+def rectangle_without_hole(width):
+    for w in range(width):
+        stdout.write('*')
+    print()
+
+def rectangle():
+    width = int(input('width: '))
+    height = int(input('height: '))
+    hole = input('With Hole (y/n): ')
+    is_hole = (False, True)[hole == 'y']
+    for h in range(height):
+        if is_hole:
+            rectangle_with_hole(h, width, height)
+        else:
+            rectangle_without_hole(width)
+
+
 print('''
 Type 2D:
 1. Triangle
@@ -36,31 +64,4 @@ type_2d = input('Choose Type 2D: ')
 
 match type_2d:
     case '1': triangle()
-
-
-
-# n = int(input('Input n: '))
-
-# width = int(input('width: '))
-# height = int(input('height: '))
-#
-# hole = input('With Hole (y/n): ')
-# isHole = (False, True)[hole == 'y']
-#
-# for h in range(height):
-#     for w in range(width):
-#         if h == 0 or h == height - 1:
-#             stdout.write('*')
-#             continue
-#         if w == 0 or w == width - 1:
-#             stdout.write('*')
-#         else:
-#             stdout.write(' ')
-#     print()
-
-# for h in range(height):
-#     for w in range(width):
-#         stdout.write('*')
-#     print()
-
-# triangle(n, isHole)
+    case '2': rectangle()
