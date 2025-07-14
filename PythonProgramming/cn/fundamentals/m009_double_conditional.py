@@ -2,8 +2,8 @@ numberStr = input("Input number: ")
 
 numberInt = int(numberStr)
 if numberInt > 0:
-    print('Positive')
+    print('正数')
 else:
-    print('Negative')
+    print('负数')
 
-print('Done')
+print('完成')
