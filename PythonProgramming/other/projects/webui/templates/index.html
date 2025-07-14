@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Modex – AI Styling Made Easy</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons Bootstrap (untuk arrow / plus, opsional) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- CSS kustom -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="container d-flex align-items-center justify-content-between position-relative">
+            <!-- logo -->
+            <a href="#" class="navbar-brand p-0">
+                <img src="assets/img/logo.svg" alt="Modex logo" height="44">
+            </a>
+
+            <!-- nav – posisi tengah -->
+            <nav class="site-nav mx-auto">
+                <ul class="nav justify-content-center gap-4">
+                    <li class="nav-item"><a class="nav-link fw-medium active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="/terms">Terms &amp;
+                            Conditions</a></li>
+                </ul>
+            </nav>
+
+            <!-- CTA kanan -->
+            <button class="btn-primary">Virtual Try On</button>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-section py-5 position-relative overflow-hidden">
+        <div class="container">
+            <div class="row align-items-center g-4">
+
+                <!-- teks -->
+                <div class="col-lg-5 order-2 order-lg-1">
+                    <h1 class="display-5 fw-bold mb-3">AI Styling Made Easy</h1>
+                    <p class="lead mb-4">
+                        Dengan teknologi AI VITON-HD, kamu bisa coba berbagai model pakaian secara realistis hanya dari
+                        satu foto.
+                    </p>
+                    <a href="/upload_page" class="btn btn-primary rounded-pill px-4 d-inline-flex align-items-center">
+                        Coba Sekarang
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+
+                    <!-- mini preview 3 outfit -->
+                    <div class="mt-3">
+                        <img src="assets/img/hero/example-process-guide.png" alt="" class="">
+                    </div>
+                </div>
+
+                <!-- gambar utama -->
+                <div class="col-lg-7 text-center order-1 order-lg-2 position-relative">
+                    <img src="assets/img/hero/model-couple.png" class="img-fluid hero-img overlap-lg"
+                        alt="Couple model">
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <!-- ornamen pola silang -->
+        <div class="pattern-bg"></div>
+    </section>
+
+    <!-- ===== RUNNING TICKER ===== -->
+    <div class="ticker-bar bg-dark text-white small py-1">
+        <div class="ticker-content fw-medium">
+            ✦ WELCOME TO MODEX ✦ WELCOME TO MODEX ✦ WELCOME TO MODEX ✦ WELCOME TO MODEX
+        </div>
+    </div>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section id="how-it-works" class="py-5 how-section">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-5">How it Works</h2>
+
+            <div class="row g-5 justify-content-center">
+                <div class="col-10 col-sm-6 col-lg-3">
+                    <img src="assets/img/hero/upload-your-photo.png" width="160" alt="">
+                    <h5 class="mt-3 fw-semibold">Upload Your Photo</h5>
+                    <p class="small text-secondary">Unggah foto badanmu agar AI bisa menyesuaikan pakaian secara
+                        proporsional.</p>
+                </div>
+                <div class="col-10 col-sm-6 col-lg-3">
+                    <img src="assets/img/hero/add-your-outfits.png" width="160" alt="">
+                    <h5 class="mt-3 fw-semibold">Add Your Outfits</h5>
+                    <p class="small text-secondary">Masukkan gambar baju atau pilih dari koleksi kami.</p>
+                </div>
+                <div class="col-10 col-sm-6 col-lg-3">
+                    <img src="assets/img/hero/see-the-match.png" width="160" alt="">
+                    <h5 class="mt-3 fw-semibold">See the Match</h5>
+                    <p class="small text-secondary">AI akan mencocokkan outfit ke tubuhmu, dan kamu bisa eksplorasi
+                        kombinasi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DISCOVER YOUR LOOK WITH AI (placeholder image) ===== -->
+    <section id="discover" class="discover-section">
+        <div class="container px-0"> <!-- px-0 agar gambar full-bleed -->
+            <!-- <img src="assets/img/discover-placeholder.png" alt="Discover your look mockup" class="discover-img"> -->
+            <div class="container text-center">
+                <h2 class="fw-bold mb-5">DISCOVER YOUR LOOK WITH AI</h2>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-wrapper container">
+
+            <img src="assets/img/logo.svg" alt="Modex logo" class="footer-logo">
+            <hr>
+            <div class="footer-meta d-flex justify-content-between align-items-center">
+                <small>© 2025 Modex. All Right Reserved.</small>
+                <a href="/terms" class="footer-link">Terms &amp; Conditions</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (opsional, untuk komponen yg butuh JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

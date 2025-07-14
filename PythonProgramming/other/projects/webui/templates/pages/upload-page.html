@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>AI Virtual Try On – Modex</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS utama -->
+    <link rel="stylesheet" href="/assets/css/upload-page.css">
+</head>
+
+<body>
+
+    <!-- =========== HEADER =========== -->
+    <header class="site-header">
+        <img src="/assets/img/logo.svg" alt="Modex Logo" class="logo">
+
+        <nav class="nav-links">
+            <a href="../index.html" class="">Home</a>
+            <a href="#">Terms &amp; Conditions</a>
+        </nav>
+
+        <button class="btn-primary">Virtual Try On</button>
+    </header>
+
+    <!-- =========== INTRO =========== -->
+    <section class="section-intro">
+        <h1>AI Virtual Try On&nbsp;&nbsp;– Pengubah Pakaian AI Online</h1>
+        <p>Unggah foto &amp; coba berbagai outfit secara instan dengan teknologi AI.</p>
+    </section>
+
+    <!-- =========== FORM + REKOMENDASI =========== -->
+    <div class="form-wrapper">
+
+        <!-- Kolom KIRI – langkah upload -->
+        <form class="steps">
+
+            <!-- STEP 1 – Model Image -->
+            <div class="step-block">
+                <div class="step-title">
+                    <span class="num">1</span>
+                    <h3>Model Image</h3>
+                </div>
+                <p class="small">Upload image half body atau full body dengan posisi menghadap ke depan untuk hasil
+                    terbaik</p>
+
+                <label class="file-box">
+                    <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
+                    <button type="button" class="btn-upload">Unggah</button>
+                    <input type="file" name="model_img" accept="image/*">
+                </label>
+
+                <p class="allowed">JPG, JPEG, PNG</p>
+            </div>
+
+            <!-- STEP 2 – Upper Item -->
+            <div class="step-block">
+                <div class="step-title">
+                    <span class="num">2</span>
+                    <h3>Upper Item</h3>
+                </div>
+                <p class="small">Upload image atasan tanpa latar belakang <strong>(768 × 1024 px)</strong></p>
+
+                <div class="file-grid">
+                    <!-- 3 kotak upload atasan -->
+                    <label class="file-box">
+                        <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
+                        <button type="button" class="btn-upload">Unggah</button>
+                        <input type="file" name="top1" accept="image/*">
+                    </label>
+
+                    <label class="file-box">
+                        <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
+                        <button type="button" class="btn-upload">Unggah</button>
+                        <input type="file" name="top2" accept="image/*">
+                    </label>
+
+                    <label class="file-box">
+                        <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
+                        <button type="button" class="btn-upload">Unggah</button>
+                        <input type="file" name="top3" accept="image/*">
+                    </label>
+                </div>
+                <p class="allowed">JPG, JPEG, PNG</p>
+            </div>
+
+            <!-- STEP 3 – Lower Item -->
+            <div class="step-block">
+                <div class="step-title">
+                    <span class="num">3</span>
+                    <h3>Lower Item</h3>
+                </div>
+                <p class="small">Upload image bawahan tanpa latar belakang <strong>(768 × 1024 px)</strong></p>
+
+                <div class="file-grid">
+                    <!-- 3 kotak upload bawahan -->
+                    <label class="file-box">
+                        <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
+                        <button type="button" class="btn-upload">Unggah</button>
+                        <input type="file" name="bottom1" accept="image/*">
+                    </label>
+
+                    <label class="file-box">
+                        <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
+                        <button type="button" class="btn-upload">Unggah</button>
+                        <input type="file" name="bottom2" accept="image/*">
+                    </label>
+
+                    <label class="file-box">
+                        <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
+                        <button type="button" class="btn-upload">Unggah</button>
+                        <input type="file" name="bottom3" accept="image/*">
+                    </label>
+                </div>
+                <p class="allowed">JPG, JPEG, PNG</p>
+            </div>
+
+            <!-- STEP 4 – Occasion -->
+            <div class="step-block">
+                <div class="step-title">
+                    <span class="num">4</span>
+                    <h3>Occasion</h3>
+                </div>
+
+                <textarea class="textarea-occasion" name="occasion"
+                    placeholder="Contoh : Hangout ke Mall Sore Hari"></textarea>
+
+                <div class="action-btns">
+                    <button type="reset" class="btn-outline">Ulangi</button>
+                    <button type="submit" class="btn-disabled" disabled>Proses</button>
+                </div>
+            </div>
+
+        </form>
+
+        <!-- Kolom KANAN – Rekomendasi Mix & Match -->
+        <div class="rekomendasi-box">
+            <div>
+                <img src="/assets/img/illustration-mixmatch.png" alt="Ilustrasi Mix &amp; Match">
+                <p>Belum bisa tampil.<br>Yuk, upload item dan isi occasion dulu!</p>
+            </div>
+        </div>
+
+    </div><!-- /form-wrapper -->
+
+    <!-- =========== CONTOH HASIL ======= -->
+    <section class="gallery-section">
+
+        <h2>Contoh Hasil AI Virtual Try On</h2>
+        <p>Lihat contoh simulasi Virtual Try On dengan teknologi AI.</p>
+
+        <!-- STYLE 1 -->
+        <div class="style-group" style="position:relative; margin-bottom:96px;">
+            <span class="bg-word">CLASSIC STYLE</span>
+
+            <div class="card-stack">
+                <div class="card">
+                    <span class="badge">1</span>
+                    <img src="/assets/img/examples/classic-1.png" alt="Classic Style 1" loading="lazy">
+                </div>
+                <div class="card">
+                    <span class="badge">2</span>
+                    <img src="/assets/img/examples/classic-2.png" alt="Classic Style 2" loading="lazy">
+                </div>
+                <div class="card">
+                    <span class="badge">3</span>
+                    <img src="/assets/img/examples/classic-3.png" alt="Classic Style 3" loading="lazy">
+                </div>
+            </div>
+
+            <div class="style-desc">
+                <h4>Classic Luxury Style</h4>
+                <p>Gaya klasik dan elegan dengan potongan rapi, warna netral, dan tanpa logo mencolok.</p>
+            </div>
+        </div>
+
+        <!-- STYLE 2 -->
+        <div class="style-group" style="position:relative;">
+            <span class="bg-word" style="left:-12px;">KOREAN STYLE</span>
+
+            <div class="card-stack">
+                <div class="card">
+                    <span class="badge">1</span>
+                    <img src="/assets/img/examples/korean-1.png" alt="Korean Style 1" loading="lazy">
+                </div>
+                <div class="card">
+                    <span class="badge">2</span>
+                    <img src="/assets/img/examples/korean-2.png" alt="Korean Style 2" loading="lazy">
+                </div>
+                <div class="card">
+                    <span class="badge">3</span>
+                    <img src="/assets/img/examples/korean-3.png" alt="Korean Style 3" loading="lazy">
+                </div>
+            </div>
+
+            <div class="style-desc">
+                <h4>Korean Minimalist Style</h4>
+                <p>Gaya simpel dan bersih dengan siluet longgar dan warna lembut khas Korea.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- =========== FOOTER =========== -->
+    <footer class="site-footer">
+        <div class="footer-wrapper container">
+
+            <img src="/assets/img/logo.svg" alt="Modex logo" class="footer-logo">
+            <hr>
+            <div class="footer-meta d-flex justify-content-between align-items-center">
+                <small>© 2025 Modex. All Right Reserved.</small>
+                <a href="terms.html" class="footer-link">Terms &amp; Conditions</a>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

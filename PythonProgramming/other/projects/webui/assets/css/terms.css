@@ -1,0 +1,65 @@
+.terms-section {
+    padding: 4rem 0 5rem;
+}
+
+.terms-section ul {
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.btn-accept {
+    background: #889061;
+    color: #fff;
+    transition: .25s;
+}
+
+.btn-accept:hover {
+    background: #70784d;
+}
+
+@media (max-width:576px) {
+    .terms-buttons .btn {
+        padding-inline: 2.25rem;
+    }
+}
+
+.site-header {
+    z-index: 50;
+}
+
+/* ===== FOOTER ====================================================== */
+.site-footer {
+    background: #f2f2f2;
+    padding-block: 3rem 2.5rem;
+}
+
+.footer-wrapper {
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-inline: 2rem;
+}
+
+.footer-logo {
+    height: 44px;
+    margin-bottom: 1.75rem;
+}
+
+/* Garis halus */
+.footer-wrapper hr {
+    border: 0;
+    border-top: 1px solid #dddddd;
+    margin: 0 0 1.25rem;
+}
+
+/* baris copyright & link */
+.footer-meta {
+    font-size: .875rem;
+    color: #555;
+}
+
+.footer-link {
+    color: #555;
+    text-decoration: none;
+}
+
+/* =================================================================== */

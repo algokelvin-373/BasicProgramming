@@ -1,0 +1,298 @@
+/* ---------- Font & Variable minimal ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --bs-body-font-family: "Poppins", sans-serif;
+    --clr-primary: #101010;
+    --clr-accent: #f5d347;
+    --accent: #c6cbb1;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+    background: #fff;
+    padding: 0.75rem 0;
+}
+
+/* === NAVBAR ACTIVE/INACTIVE === */
+.site-nav .nav-link {
+    color: #aaa;
+    /* default: abu-abu */
+    opacity: 0.7;
+    font-weight: 500;
+    transition: .2s;
+}
+
+.site-nav .nav-link.active,
+.site-nav .nav-link[aria-current="page"] {
+    color: #222;
+    /* hitam gelap untuk yang aktif */
+    opacity: 1;
+    font-weight: 600;
+}
+
+.site-nav .nav-link:hover {
+    color: #222;
+    opacity: 1;
+}
+
+/* ---------- Hero ---------- */
+.hero-section{
+    background:
+        url("../img/hero/hero-bg-dots.png")
+        left 48px center / 2% auto no-repeat,
+        url("../img/hero/hero-bg.png")
+        right bottom / 100% no-repeat;
+  }
+  
+
+.hero-img {
+    max-width: 420px;
+}
+
+.hero-thumbs img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover
+}
+
+/* pola silang */
+.pattern-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("../img/hero/pattern-cross.png");
+    opacity: .12;
+    pointer-events: none
+}
+
+/* ---------- Ticker ---------- */
+.ticker-bar {
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.ticker-content {
+    display: inline-block;
+    animation: scroll 28s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%)
+    }
+
+    100% {
+        transform: translateX(-100%)
+    }
+}
+
+/* ---------- How it Works background wave ---------- */
+.how-section {
+    background: url("../img/how-it-works-bg.png") center/85% auto no-repeat;
+}
+
+/* ---------- Gallery Grid ---------- */
+.gallery-grid .card-img {
+    transition: .4s transform;
+}
+
+.gallery-grid .card:hover .card-img {
+    transform: scale(1.05)
+}
+
+/* ---------- CTA Section ---------- */
+.cta-section {
+    background: #fffdf8;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ---------- Style Showcase ---------- */
+.style-showcase {
+    background: #f8f8f8;
+}
+
+.style-bg-text {
+    position: absolute;
+    font-size: 9rem;
+    font-weight: 700;
+    color: #eaeaea;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ---------- Utilities override ---------- */
+.text-outline {
+    -webkit-text-stroke: 1px var(--clr-primary);
+    color: transparent;
+}
+
+@media (max-width:768px) {
+    .style-bg-text {
+        font-size: 4.5rem
+    }
+}
+
+/* ===== HERO IMAGE OVERLAP ================================= */
+.hero-img--overlap {
+    /* full-width seperti biasa */
+    width: 100%;
+    height: auto;
+}
+
+/* di layar ≥992 px, angkat gambar ke atas */
+@media (min-width:992px) {
+    .hero-img--overlap {
+        margin-top: -100px;
+        /* sesuaikan ± tinggi header */
+    }
+}
+
+/* opsional: di layar ekstra besar, angkat sedikit lagi */
+@media (min-width:1400px) {
+    .hero-img--overlap {
+        margin-top: -120px;
+    }
+}
+
+/* ===== HEADER ================================================= */
+.site-header {
+    position: relative;
+    z-index: 10;
+}
+
+/* ===== HERO IMAGE di atas NAVBAR ============================== */
+.hero-over-navbar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 20;
+    pointer-events: none;
+}
+
+@media (min-width:992px) {
+    .hero-over-navbar {
+        margin-top: -160px;
+    }
+}
+
+@media (min-width:1400px) {
+    .hero-over-navbar {
+        margin-top: -190px;
+    }
+}
+
+/* ==========  MOBILE  (<=767px)  ========== */
+@media (max-width: 767px) {
+
+    /* tombol hamburger muncul */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      width: 28px;
+      height: 24px;
+      cursor: pointer;
+      z-index: 9999;
+    }
+  
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: #000;
+      border-radius: 2px;
+      transition: transform .3s, opacity .3s;
+    }
+  
+    /* kontainer link jadi panel geser */
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 75%;
+      max-width: 260px;
+      height: 100vh;
+      background: #fff;
+      flex-direction: column;
+      gap: 28px;
+      padding: 96px 24px 24px;
+      transform: translateX(100%);
+      transition: transform .3s ease;
+      box-shadow: -4px 0 12px rgba(0, 0, 0, .08);
+    }
+  
+    .nav-links a {
+      font-size: 16px;
+      color: #000;
+    }
+  
+    /* buka panel saat checkbox dicentang */
+    .nav-toggle:checked ~ .nav-links {
+      transform: translateX(0);
+    }
+  
+    /* animasi hamburger → X */
+    .nav-toggle:checked + .hamburger span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+    .nav-toggle:checked + .hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle:checked + .hamburger span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  
+    /* opsional: sembunyikan tombol utama agar header tidak penuh */
+    .btn-primary { display: none; }
+  }
+
+/* ===== FOOTER ====================================================== */
+.site-footer {
+    background: #f2f2f2;
+    padding-block: 3rem 2.5rem;
+}
+
+.footer-wrapper {
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-inline: 2rem;
+}
+
+.footer-logo {
+    height: 44px;
+    margin-bottom: 1.75rem;
+}
+
+/* Garis halus */
+.footer-wrapper hr {
+    border: 0;
+    border-top: 1px solid #dddddd;
+    margin: 0 0 1.25rem;
+}
+
+/* baris copyright & link */
+.footer-meta {
+    font-size: .875rem;
+    color: #555;
+}
+
+.footer-link {
+    color: #555;
+    text-decoration: none;
+}
+
+/* =================================================================== */

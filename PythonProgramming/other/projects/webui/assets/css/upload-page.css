@@ -1,0 +1,418 @@
+/* -------------------------------------------------
+   RESET & BASE
+--------------------------------------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.55;
+}
+
+/* Palet warna */
+:root {
+  --accent: #7d8460;
+  /* tombol “Virtual Try On” */
+  --primary: #0066ff;
+  /* tombol “Unggah” */
+  --danger: #e00026;
+  /* lingkaran nomor */
+  --gray: #9ca1ab;
+  /* teks non-aktif */
+  --bg: #f5f6f4;
+  /* latar ornamen/wave */
+}
+
+/* -------------------------------------------------
+   HEADER
+--------------------------------------------------*/
+.site-header {
+  width: 100%;
+  padding: 24px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 48px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--gray);
+  transition: .2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #000;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: 24px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+/* -------------------------------------------------
+   INTRO
+--------------------------------------------------*/
+.section-intro {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.section-intro h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.section-intro p {
+  font-size: 15px;
+  color: var(--gray);
+}
+
+/* -------------------------------------------------
+   FORM WRAPPER (2 kolom)
+--------------------------------------------------*/
+.form-wrapper {
+  width: 90%;
+  max-width: 1160px;
+  margin: 56px auto 0;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 48px;
+  position: relative;
+}
+
+/* dekorasi garis wave kanan */
+.form-wrapper::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  background: url('../img/wave-lines.svg') repeat-y;
+  opacity: .25;
+}
+
+/* -------- Kirian: Step Upload -------- */
+.step-block+.step-block {
+  margin-top: 32px;
+}
+
+.step-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.step-title .num {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  background: var(--danger);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 50%;
+}
+
+.step-title h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.small {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+/* file upload kotak */
+.file-box {
+  width: 110px;
+  height: 140px;
+  border: 2px dashed #d6d8dd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--gray);
+  position: relative;
+  overflow: hidden;
+}
+
+.file-box input[type=file] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-box .btn-upload {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 12px;
+  padding: 6px 18px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+/* grid 3 kolom */
+.file-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  gap: 24px;
+}
+
+.allowed {
+  font-size: 10px;
+  margin-top: 6px;
+  color: var(--gray);
+}
+
+/* occasion textarea + buttons */
+.textarea-occasion {
+  width: 100%;
+  height: 120px;
+  border: 2px solid #d6d8dd;
+  border-radius: 12px;
+  padding: 16px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.action-btns {
+  margin-top: 16px;
+  display: flex;
+  gap: 24px;
+}
+
+.btn-outline {
+  background: #fff;
+  border: 1.8px solid #d6d8dd;
+  padding: 8px 40px;
+  border-radius: 24px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-disabled {
+  background: #bcbcbc;
+  color: #fff;
+  padding: 8px 40px;
+  border-radius: 24px;
+  font-size: 14px;
+  border: none;
+  cursor: not-allowed;
+}
+
+/* -------- Kanan: Rekomendasi -------- */
+.rekomendasi-box {
+  min-height: 340px;
+  border-radius: 12px;
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.rekomendasi-box img {
+  max-width: 120px;
+  margin-bottom: 12px;
+}
+
+.rekomendasi-box p {
+  font-size: 15px;
+  color: var(--gray);
+}
+
+/* -------------------------------------------------
+   GALLERY
+--------------------------------------------------*/
+.gallery-section {
+  margin: 96px auto 0;
+  width: 90%;
+  max-width: 1160px;
+}
+
+.gallery-section h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.gallery-section p {
+  color: var(--gray);
+  margin-bottom: 48px;
+}
+
+/* latar kata besar */
+.bg-word {
+  position: absolute;
+  font-size: clamp(80px, 14vw, 180px);
+  font-weight: 700;
+  color: var(--bg);
+  z-index: -1;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* tumpukan kartu gambar */
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.card-stack {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  align-items: flex-end;
+}
+
+.card-stack .card {
+  width: 220px;
+  aspect-ratio: 3/4;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .06);
+  position: relative;
+}
+
+.card-stack .card:nth-child(2) {
+  transform: translateY(28px);
+}
+
+.card-stack .card:nth-child(3) {
+  transform: translateY(56px);
+}
+
+.card-stack .badge {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* deskripsi style */
+.style-desc {
+  margin-top: 24px;
+}
+
+.style-desc h4 {
+  color: var(--danger);
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.style-desc p {
+  font-size: 13px;
+  max-width: 300px;
+}
+
+/* -------------------------------------------------
+   FOOTER
+--------------------------------------------------*/
+.site-footer {
+  background: #f2f2f2;
+  padding-block: 3rem 2.5rem;
+}
+
+.footer-wrapper {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+.footer-logo {
+  height: 44px;
+  margin-bottom: 1.75rem;
+}
+
+/* Garis halus */
+.footer-wrapper hr {
+  border: 0;
+  border-top: 1px solid #dddddd;
+  margin: 0 0 1.25rem;
+}
+
+/* baris copyright & link */
+.footer-meta {
+  font-size: .875rem;
+  color: #555;
+}
+
+.footer-link {
+  color: #555;
+  text-decoration: none;
+}
+
+/* -------------------------------------------------
+   RESPONSIVE (≤ 767px)
+--------------------------------------------------*/
+@media (max-width:767px) {
+  .form-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .file-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  /* menu disembunyikan untuk demo mobile */
+  .site-header {
+    justify-content: space-between;
+  }
+
+  .card-stack .card {
+    width: 140px;
+  }
+}
