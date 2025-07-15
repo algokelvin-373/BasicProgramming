@@ -359,26 +359,6 @@
     transition: transform .3s, opacity .3s;
 }
 
-/* ---------- HAMBURGER ---------- */
-.hamburger {
-    width: 32px;
-    height: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10001;
-}
-
-.hamburger span {
-    height: 3px;
-    width: 100%;
-    background: #000;
-    border-radius: 2px;
-    transition: transform .3s, opacity .3s;
-}
-
 /* ---------- OFF-CANVAS NAV ---------- */
 @media (max-width: 991.98px) {
 
