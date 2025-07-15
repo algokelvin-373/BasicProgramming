@@ -39,7 +39,7 @@
     <div class="form-wrapper">
 
         <!-- Kolom KIRI – langkah upload -->
-        <form class="steps">
+        <form action="/upload" method="post" enctype="multipart/form-data">
 
             <!-- STEP 1 – Model Image -->
             <div class="step-block">
@@ -51,8 +51,12 @@
                     terbaik</p>
 
                 <label class="file-box">
-                    <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
-                    <button type="button" class="btn-upload">Unggah</button>
+                    {% if uploaded_files is defined and uploaded_files.model_img %}
+                        <img src="{{ uploaded_files.model_img }}" class="preview-img">
+                    {% else %}
+                        <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
+                        <button type="button" class="btn-upload">Unggah</button>
+                    {% endif %}
                     <input type="file" name="model_img" accept="image/*">
                 </label>
 

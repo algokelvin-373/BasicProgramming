@@ -152,6 +152,15 @@ body {
   margin-bottom: 12px;
 }
 
+/* preview success upload */
+.preview-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
 /* file upload kotak */
 .file-box {
   width: 110px;
