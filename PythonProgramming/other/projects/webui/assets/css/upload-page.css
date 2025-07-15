@@ -19,15 +19,33 @@ body {
 /* Palet warna */
 :root {
   --accent: #7d8460;
-  /* tombol “Virtual Try On” */
   --primary: #0066ff;
-  /* tombol “Unggah” */
   --danger: #e00026;
-  /* lingkaran nomor */
   --gray: #9ca1ab;
-  /* teks non-aktif */
   --bg: #f5f6f4;
-  /* latar ornamen/wave */
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-lg-block {
+  display: block !important;
+}
+
+.d-lg-none {
+  display: none !important;
+}
+
+@media (min-width: 992px) {
+
+  .d-lg-block {
+    display: block !important;
+  }
+
+  .d-lg-none {
+    display: none !important;
+  }
 }
 
 /* -------------------------------------------------
@@ -150,15 +168,6 @@ body {
   font-size: 13px;
   color: #555;
   margin-bottom: 12px;
-}
-
-/* preview success upload */
-.preview-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 8px;
 }
 
 /* file upload kotak */
@@ -375,22 +384,27 @@ body {
   max-width: 1180px;
   margin-inline: auto;
   padding-inline: 2rem;
+  display: grid;
+  gap: 1.75rem;
 }
 
 .footer-logo {
   height: 44px;
-  margin-bottom: 1.75rem;
+  justify-self: start;
 }
 
-/* Garis halus */
 .footer-wrapper hr {
   border: 0;
-  border-top: 1px solid #dddddd;
-  margin: 0 0 1.25rem;
+  border-top: 1px solid #ddd;
+  width: 100%;
+  height: 0;
+  margin: 0;
 }
 
-/* baris copyright & link */
 .footer-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: .875rem;
   color: #555;
 }
@@ -400,9 +414,99 @@ body {
   text-decoration: none;
 }
 
-/* -------------------------------------------------
-   RESPONSIVE (≤ 767px)
---------------------------------------------------*/
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* ======================================================
+   HAMBURGER ICON  (selalu ada di DOM, tapi tampil di mobile)
+======================================================*/
+.hamburger {
+  width: 32px;
+  height: 24px;
+  display: none;
+  /* default sembunyi (desktop) */
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 10001;
+  /* di atas panel */
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+
+/* ===========================================
+   1. HAMBURGER & PANEL NAV
+===========================================*/
+/* ikon */
+.hamburger{
+  width:32px;height:24px;
+  display:none;flex-direction:column;gap:6px;
+  justify-content:center;cursor:pointer;z-index:10001;
+}
+.hamburger span{
+  height:3px;width:100%;background:#000;border-radius:2px;
+  transition:transform .30s,opacity .30s;
+}
+
+/* panel */
+.mobile-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@media (max-width:991.98px){
+  .site-header .logo{display:none;}
+  .hamburger{display:flex;}
+
+  .nav-links{
+    position:fixed;top:0;left:0;
+    width:80%;max-width:300px;height:100vh;
+    background:#fff;padding:96px 24px 24px;
+    display:flex !important;flex-direction:column;gap:28px;
+    transform:translateX(-100%);transition:.3s ease;
+    box-shadow:4px 0 12px rgba(0,0,0,.08);
+    overflow-y:auto;z-index:10000;
+  }
+  .nav-links a{font-size:16px;color:#000;text-decoration:none;}
+
+  .nav-toggle:checked ~ .nav-links{transform:translateX(0);}
+
+  .nav-toggle:checked + .hamburger span:nth-child(1){
+    transform:translateY(9px) rotate(45deg);
+  }
+  .nav-toggle:checked + .hamburger span:nth-child(2){
+    opacity:0;
+  }
+  .nav-toggle:checked + .hamburger span:nth-child(3){
+    transform:translateY(-9px) rotate(-45deg);
+  }
+}
+
+@media (min-width:992px){
+  .nav-links{display:flex !important;position:static;
+    transform:none;background:transparent;padding:0;box-shadow:none;}
+  .hamburger{display:none;}
+}
+
+@media (max-width:576px){
+  .bg-word{
+    font-size:48px;
+    white-space:normal;
+    line-height:1.1;
+  }
+  .card-stack{gap:16px;}
+  .card-stack .card{width:120px;}
+}
+
 @media (max-width:767px) {
   .form-wrapper {
     grid-template-columns: 1fr;
@@ -416,12 +520,29 @@ body {
     display: none;
   }
 
-  /* menu disembunyikan untuk demo mobile */
   .site-header {
     justify-content: space-between;
   }
 
   .card-stack .card {
     width: 140px;
+  }
+}
+
+.nav-links {
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.nav-links a,
+.nav-links .mobile-logo {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+/* Sembunyikan logo mobile di desktop */
+@media (min-width: 768px) {
+  .nav-links .mobile-logo {
+    display: none;
   }
 }

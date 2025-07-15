@@ -18,29 +18,42 @@
 
     <!-- ===== HEADER ===== -->
     <header class="site-header">
-        <div class="container d-flex align-items-center justify-content-between position-relative">
-            <!-- logo -->
-            <a href="#" class="navbar-brand p-0">
+        <div class="container-xl d-flex align-items-center justify-content-between position-relative">
+
+            <!-- LOGO – hanya desktop -->
+            <a href="#" class="navbar-brand p-0 d-none d-lg-block">
                 <img src="assets/img/logo.svg" alt="Modex logo" height="44">
             </a>
 
-            <!-- nav – posisi tengah -->
+            <!-- SAKLAR & HAMBURGER -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+            <label for="nav-toggle" class="hamburger d-lg-none">
+                <span></span><span></span><span></span>
+            </label>
+
+            <!-- PANEL NAV -->
             <nav class="site-nav mx-auto">
-                <ul class="nav justify-content-center gap-4">
+                <!-- logo khusus mobile di dalam panel -->
+                <div class="mobile-logo d-lg-none mb-4">
+                    <img src="assets/img/logo.svg" alt="Modex logo" height="40">
+                </div>
+
+                <ul class="nav flex-lg-row flex-column gap-lg-4 gap-3">
                     <li class="nav-item"><a class="nav-link fw-medium active" href="#">Home</a></li>
                     <li class="nav-item"><a class="nav-link fw-medium" href="/terms">Terms &amp;
                             Conditions</a></li>
                 </ul>
             </nav>
 
-            <!-- CTA kanan -->
-            <button class="btn-primary">Virtual Try On</button>
+            <!-- CTA selalu tampil -->
+            <button class="btn-primary ms-lg-3">Virtual Try On</button>
+
         </div>
     </header>
 
     <!-- ===== HERO ===== -->
     <section class="hero-section py-5 position-relative overflow-hidden">
-        <div class="container">
+        <div class="container-xl">
             <div class="row align-items-center g-4">
 
                 <!-- teks -->
@@ -50,7 +63,8 @@
                         Dengan teknologi AI VITON-HD, kamu bisa coba berbagai model pakaian secara realistis hanya dari
                         satu foto.
                     </p>
-                    <a href="/upload_page" class="btn btn-primary rounded-pill px-4 d-inline-flex align-items-center">
+                    <a href="pages/upload-page.html"
+                        class="btn btn-primary rounded-pill px-4 d-inline-flex align-items-center">
                         Coba Sekarang
                         <i class="bi bi-arrow-right ms-2"></i>
                     </a>
@@ -66,22 +80,37 @@
                     <img src="assets/img/hero/model-couple.png" class="img-fluid hero-img overlap-lg"
                         alt="Couple model">
                 </div>
-
-
-
             </div>
         </div>
-
-        <!-- ornamen pola silang -->
-        <div class="pattern-bg"></div>
     </section>
 
     <!-- ===== RUNNING TICKER ===== -->
-    <div class="ticker-bar bg-dark text-white small py-1">
-        <div class="ticker-content fw-medium">
-            ✦ WELCOME TO MODEX ✦ WELCOME TO MODEX ✦ WELCOME TO MODEX ✦ WELCOME TO MODEX
+    <section class="ticker-bar">
+        <div class="ticker-track">
+            <ul class="ticker-list">
+                <!-- satu set item -->
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+            </ul>
+            <ul class="ticker-list" aria-hidden="true">
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+            </ul>
         </div>
-    </div>
+    </section>
+
 
     <!-- ===== HOW IT WORKS ===== -->
     <section id="how-it-works" class="py-5 how-section">
@@ -112,14 +141,43 @@
 
     <!-- ===== DISCOVER YOUR LOOK WITH AI (placeholder image) ===== -->
     <section id="discover" class="discover-section">
-        <div class="container px-0"> <!-- px-0 agar gambar full-bleed -->
-            <!-- <img src="assets/img/discover-placeholder.png" alt="Discover your look mockup" class="discover-img"> -->
-            <div class="container text-center">
-                <h2 class="fw-bold mb-5">DISCOVER YOUR LOOK WITH AI</h2>
-            </div>
-        </div>
-    </section>
 
+        <h2 class="discover-title">DISCOVER YOUR LOOK WITH AI</h2>
+
+        <div class="gallery-grid">
+            <figure class="card" style="--rs:2; --cs:8;">
+                <img src="assets/img/discover/gallery-grid-1.png" alt="">
+                <figcaption>Biarkan AI membuatmu agar lebih pede</figcaption>
+            </figure>
+            
+            <figure class="card" style="--rs:4; --cs:7;">
+                <img src="assets/img/discover/gallery-grid-2.png" alt="">
+                <figcaption>Solusi Fashion Kekinian</figcaption>
+            </figure>
+            
+
+            <figure class="card" style="--rs:2;--cs:9">
+                <img src="assets/img/discover/gallery-grid-3.png" alt="">
+                <figcaption>Mix & Match Fashion</figcaption>
+            </figure>
+
+            <figure class="card" style="--rs:2;--cs:4">
+                <img src="assets/img/discover/gallery-grid-4.png" alt="">
+                <figcaption>Tampilkan Sisi Kerenmu</figcaption>
+            </figure>
+
+            <figure class="card" style="--rs:2;--cs:4">
+                <img src="assets/img/discover/gallery-grid-5.png" alt="">
+                <figcaption>Gaya Yang Trendy</figcaption>
+            </figure>
+
+            <figure class="card" style="--rs:2;--cs:9">
+                <img src="assets/img/discover/gallery-grid-6.png" alt="">
+                <figcaption>Dengan AI, pilihan fashionmu lebih variasi</figcaption>
+            </figure>
+        </div>
+
+    </section>
 
     <!-- ===== FOOTER ===== -->
     <footer class="site-footer">
@@ -129,13 +187,12 @@
             <hr>
             <div class="footer-meta d-flex justify-content-between align-items-center">
                 <small>© 2025 Modex. All Right Reserved.</small>
-                <a href="/terms" class="footer-link">Terms &amp; Conditions</a>
+                <a href="pages/terms.html" class="footer-link">Terms &amp; Conditions</a>
             </div>
 
         </div>
     </footer>
 
-    <!-- Bootstrap JS (opsional, untuk komponen yg butuh JS) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
