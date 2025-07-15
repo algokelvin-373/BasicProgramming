@@ -361,40 +361,56 @@
 
 /* ---------- OFF-CANVAS NAV ---------- */
 @media (max-width: 991.98px) {
+  .site-nav-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75%;
+    max-width: 280px;
+    height: 100vh;
+    background: #fff;
+    padding: 96px 24px 24px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08);
+    overflow-y: auto;
+    z-index: 10000;
+  }
 
-    .site-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 75%;
-        max-width: 280px;
-        height: 100vh;
-        background: #fff;
-        padding: 96px 24px 24px;
-        transform: translateX(-100%);
-        transition: transform .3s ease;
-        box-shadow: 4px 0 12px rgba(0, 0, 0, .08);
-        overflow-y: auto;
-        z-index: 10000;
-    }
+  .nav-toggle:checked ~ .site-nav-mobile {
+    transform: translateX(0);
+  }
 
-    /* saat checkbox dicentang, geser masuk */
-    .nav-toggle:checked~.site-nav {
-        transform: translateX(0);
-    }
+  .hamburger {
+    width: 32px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 10001;
+  }
 
-    /* animasi hamburger → X -– tetap sama */
-    .nav-toggle:checked+.hamburger span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
+  .hamburger span {
+    width: 100%;
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
+    transition: transform .3s, opacity .3s;
+  }
 
-    .nav-toggle:checked+.hamburger span:nth-child(2) {
-        opacity: 0;
-    }
+  .nav-toggle:checked + .hamburger span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
 
-    .nav-toggle:checked+.hamburger span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-    }
+  .nav-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle:checked + .hamburger span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
 }
 
 /* ---------- DESKTOP (>992px) ---------- */
