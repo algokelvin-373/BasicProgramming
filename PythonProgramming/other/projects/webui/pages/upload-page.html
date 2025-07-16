@@ -19,24 +19,35 @@
 
     <!-- =========== HEADER =========== -->
     <header class="site-header">
-        <img src="/assets/img/logo.svg" alt="Modex Logo" class="logo">
-
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
-        <label for="nav-toggle" class="hamburger">
-            <span></span><span></span><span></span>
-        </label>
-
-        <!-- panel nav -->
-        <nav class="nav-links">
-            <div class="mobile-logo ">
+        <div class="header-inner">
+            <a href="../index.html" class="navbar-brand">
                 <img src="/assets/img/logo.svg" alt="Modex logo" height="44">
+            </a>
+            <div class="header-actions">
+                <!-- Tombol mobile -->
+                <button class="btn-primary btn-tryon-mobile">Virtual Try On</button>
+                <label for="nav-toggle" class="hamburger" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
             </div>
+            <!-- Nav desktop -->
+            <nav class="nav-links nav-links-desktop">
+                <a class="active" href="../index.html">Home</a>
+                <a href="/pages/terms.html">Terms &amp; Conditions</a>
+            </nav>
+            <!-- Tombol desktop -->
+            <button class="btn-primary btn-tryon-desktop">Virtual Try On</button>
+        </div>
+        <!-- Offcanvas menu mobile (dropdown) + overlay -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
 
-            <a href="../index.html">Home</a>
-            <a href="#">Terms&nbsp;&amp;&nbsp;Conditions</a>
+        <div class="nav-overlay"></div>
+        <nav class="nav-links-mobile">
+            <a class="active" href="#">Home</a>
+            <a href="pages/terms.html">Terms &amp; Conditions</a>
         </nav>
-
-        <button class="btn-primary">Virtual Try On</button>
     </header>
 
 
@@ -68,6 +79,7 @@
                 <p class="allowed">JPG, JPEG, PNG</p>
             </div>
 
+            <!-- Upper Item Section -->
             <div class="step-block">
                 <div class="step-title">
                     <span class="num">2</span>
@@ -75,28 +87,19 @@
                 </div>
                 <p class="small">Upload image atasan tanpa latar belakang <strong>(768 × 1024 px)</strong></p>
 
-                <div class="file-grid">
-                    <label class="file-box">
-                        <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
-                        <button type="button" class="btn-upload">Unggah</button>
-                        <input type="file" name="top1" accept="image/*">
-                    </label>
-
-                    <label class="file-box">
-                        <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
-                        <button type="button" class="btn-upload">Unggah</button>
-                        <input type="file" name="top2" accept="image/*">
-                    </label>
-
-                    <label class="file-box">
-                        <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
-                        <button type="button" class="btn-upload">Unggah</button>
-                        <input type="file" name="top3" accept="image/*">
-                    </label>
+                <div class="file-grid" id="top-items-container">
+                    <button type="button" class="btn-add-item" id="add-top-btn">
+                        <img src="/assets/img/plus-icon.svg" alt="Tambah" class="add-icon">
+                    </button>
                 </div>
-                <p class="allowed">JPG, JPEG, PNG</p>
+
+                <div class="file-notes">
+                    <p class="allowed">JPG, JPEG, PNG</p>
+                    <p class="max-upload">*Maks upload 3 gambar</p>
+                </div>
             </div>
 
+            <!-- Lower Item Section (identical structure) -->
             <div class="step-block">
                 <div class="step-title">
                     <span class="num">3</span>
@@ -104,26 +107,16 @@
                 </div>
                 <p class="small">Upload image bawahan tanpa latar belakang <strong>(768 × 1024 px)</strong></p>
 
-                <div class="file-grid">
-                    <label class="file-box">
-                        <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
-                        <button type="button" class="btn-upload">Unggah</button>
-                        <input type="file" name="bottom1" accept="image/*">
-                    </label>
-
-                    <label class="file-box">
-                        <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
-                        <button type="button" class="btn-upload">Unggah</button>
-                        <input type="file" name="bottom2" accept="image/*">
-                    </label>
-
-                    <label class="file-box">
-                        <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
-                        <button type="button" class="btn-upload">Unggah</button>
-                        <input type="file" name="bottom3" accept="image/*">
-                    </label>
+                <div class="file-grid" id="bottom-items-container">
+                    <button type="button" class="btn-add-item" id="add-bottom-btn">
+                        <img src="/assets/img/plus-icon.svg" alt="Tambah" class="add-icon">
+                    </button>
                 </div>
-                <p class="allowed">JPG, JPEG, PNG</p>
+
+                <div class="file-notes">
+                    <p class="allowed">JPG, JPEG, PNG</p>
+                    <p class="max-upload">*Maks upload 3 gambar</p>
+                </div>
             </div>
 
             <div class="step-block">
@@ -152,61 +145,6 @@
 
     </div>
 
-    <!-- =========== CONTOH HASIL ======= -->
-    <section class="gallery-section">
-
-        <h2>Contoh Hasil AI Virtual Try On</h2>
-        <p>Lihat contoh simulasi Virtual Try On dengan teknologi AI.</p>
-
-        <div class="style-group" style="position:relative; margin-bottom:96px;">
-            <span class="bg-word">CLASSIC STYLE</span>
-
-            <div class="card-stack">
-                <div class="card">
-                    <span class="badge">1</span>
-                    <img src="/assets/img/examples/classic-1.png" alt="Classic Style 1" loading="lazy">
-                </div>
-                <div class="card">
-                    <span class="badge">2</span>
-                    <img src="/assets/img/examples/classic-2.png" alt="Classic Style 2" loading="lazy">
-                </div>
-                <div class="card">
-                    <span class="badge">3</span>
-                    <img src="/assets/img/examples/classic-3.png" alt="Classic Style 3" loading="lazy">
-                </div>
-            </div>
-
-            <div class="style-desc">
-                <h4>Classic Luxury Style</h4>
-                <p>Gaya klasik dan elegan dengan potongan rapi, warna netral, dan tanpa logo mencolok.</p>
-            </div>
-        </div>
-
-        <div class="style-group" style="position:relative;">
-            <span class="bg-word" style="left:-12px;">KOREAN STYLE</span>
-
-            <div class="card-stack">
-                <div class="card">
-                    <span class="badge">1</span>
-                    <img src="/assets/img/examples/korean-1.png" alt="Korean Style 1" loading="lazy">
-                </div>
-                <div class="card">
-                    <span class="badge">2</span>
-                    <img src="/assets/img/examples/korean-2.png" alt="Korean Style 2" loading="lazy">
-                </div>
-                <div class="card">
-                    <span class="badge">3</span>
-                    <img src="/assets/img/examples/korean-3.png" alt="Korean Style 3" loading="lazy">
-                </div>
-            </div>
-
-            <div class="style-desc">
-                <h4>Korean Minimalist Style</h4>
-                <p>Gaya simpel dan bersih dengan siluet longgar dan warna lembut khas Korea.</p>
-            </div>
-        </div>
-
-    </section>
 
     <!-- =========== FOOTER =========== -->
     <footer class="site-footer">
@@ -224,6 +162,314 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const uploadedFiles = {
+                model: null,
+                topItems: [],
+                bottomItems: []
+            };
+
+            // Get all necessary elements
+            const form = document.querySelector('.steps');
+            const textarea = document.querySelector('.textarea-occasion');
+            const submitBtn = document.querySelector('button[type="submit"]');
+            const resetBtn = document.querySelector('button[type="reset"]');
+            const rekomendasiBox = document.querySelector('.rekomendasi-box');
+
+            // Item management elements
+            const topItemsContainer = document.getElementById('top-items-container');
+            const bottomItemsContainer = document.getElementById('bottom-items-container');
+            const addTopBtn = document.getElementById('add-top-btn');
+            const addBottomBtn = document.getElementById('add-bottom-btn');
+            const modelImgInput = document.querySelector('input[name="model_img"]');
+
+            // Initialize with one item each
+            addItem('top');
+            addItem('bottom');
+
+            // Add event listeners
+            addTopBtn.addEventListener('click', () => addItem('top'));
+            addBottomBtn.addEventListener('click', () => addItem('bottom'));
+            textarea.addEventListener('input', checkFormCompletion);
+            resetBtn.addEventListener('click', resetForm);
+            modelImgInput.addEventListener('change', handleFileSelect);
+
+            // Form submission
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                // Add form submission logic here
+                console.log('Form submitted!');
+            });
+
+            // Function to add a new item (top or bottom)
+            function addItem(type) {
+                const container = document.getElementById(`${type}-items-container`);
+                const addButton = container.querySelector('.btn-add-item');
+                const currentItems = container.querySelectorAll('.file-box').length;
+
+                if (currentItems >= 3) {
+                    addButton.style.display = 'none';
+                    return;
+                }
+
+                const index = currentItems + 1;
+                const name = `${type}_item_${index}`;
+
+                // Hanya tampilkan delete button jika sudah ada item sebelumnya (currentItems > 0)
+                const deleteButtonHTML = currentItems > 0 ? `
+        <button type="button" class="delete-btn" title="Hapus item">
+            <img src="/assets/img/icon/trash-icon.svg" alt="Hapus" width="10" height="10">
+        </button>
+    ` : '';
+
+                const fileBox = document.createElement('label');
+                fileBox.className = 'file-box';
+                fileBox.innerHTML = `
+        <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
+        <button type="button" class="btn-upload">Unggah</button>
+        <input type="file" name="${name}" accept="image/*">
+        ${deleteButtonHTML}
+    `;
+
+                const fileInput = fileBox.querySelector('input[type="file"]');
+                const deleteBtn = fileBox.querySelector('.delete-btn');
+
+                fileInput.addEventListener('change', function (e) {
+                    handleFileSelect(e);
+                    checkFormCompletion();
+                });
+
+                if (deleteBtn) {
+                    deleteBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        container.removeChild(fileBox);
+
+                        // Update semua item yang tersisa
+                        updateDeleteButtonsVisibility(type);
+
+                        if (container.querySelectorAll('.file-box').length < 3) {
+                            addButton.style.display = 'flex';
+                        }
+
+                        // Update state global
+                        if (type === 'top') {
+                            uploadedFiles.topItems = uploadedFiles.topItems.filter((_, i) => i !== index - 1);
+                        } else {
+                            uploadedFiles.bottomItems = uploadedFiles.bottomItems.filter((_, i) => i !== index - 1);
+                        }
+
+                        checkFormCompletion();
+                    });
+                }
+
+                container.insertBefore(fileBox, addButton);
+
+                if (container.querySelectorAll('.file-box').length >= 3) {
+                    addButton.style.display = 'none';
+                }
+
+                // Update visibility tombol delete pada semua item
+                updateDeleteButtonsVisibility(type);
+
+            }
+            function updateDeleteButtonsVisibility(type) {
+                const container = document.getElementById(`${type}-items-container`);
+                const items = container.querySelectorAll('.file-box');
+                const shouldShowDelete = items.length > 1;
+
+                items.forEach((item, index) => {
+                    const deleteBtn = item.querySelector('.delete-btn');
+                    if (deleteBtn) {
+                        if (shouldShowDelete) {
+                            deleteBtn.style.display = 'block';
+                        } else {
+                            deleteBtn.style.display = 'none';
+                        }
+                    } else if (shouldShowDelete && index === 0) {
+                        // Tambahkan delete button jika belum ada tapi seharusnya ditampilkan
+                        const newDeleteBtn = document.createElement('button');
+                        newDeleteBtn.className = 'delete-btn';
+                        newDeleteBtn.title = 'Hapus item';
+                        newDeleteBtn.innerHTML = '<img src="/assets/img/icon/trash-icon.svg" alt="Hapus" width="10" height="10">';
+                        newDeleteBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            container.removeChild(item);
+                            updateDeleteButtonsVisibility(type);
+                            checkFormCompletion();
+                        });
+                        item.appendChild(newDeleteBtn);
+                    }
+                });
+            }
+
+            // Function to handle file selection and show preview
+            function handleFileSelect(event) {
+                const input = event.target;
+                const file = input.files[0];
+                const container = input.closest('.file-box');
+
+                if (!file) return;
+
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    // Simpan file dalam state global
+                    if (input.name === 'model_img') {
+                        uploadedFiles.model = file;
+                    } else if (input.name.startsWith('top_item_')) {
+                        const index = parseInt(input.name.split('_')[2]);
+                        uploadedFiles.topItems[index] = file;
+                    } else if (input.name.startsWith('bottom_item_')) {
+                        const index = parseInt(input.name.split('_')[2]);
+                        uploadedFiles.bottomItems[index] = file;
+                    }
+
+                    // Update preview
+                    container.innerHTML = '';
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.width = '100%';
+                    img.style.height = '100%';
+                    img.style.objectFit = 'cover';
+
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.className = 'delete-btn';
+                    deleteBtn.innerHTML = '<img src="/assets/img/icon/trash-icon.svg" alt="Hapus">';
+                    deleteBtn.onclick = () => {
+                        container.innerHTML = `
+                <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
+                <button type="button" class="btn-upload">Unggah</button>
+                <input type="file" name="${input.name}" accept="image/*">
+            `;
+                        // Reset state
+                        if (input.name === 'model_img') {
+                            uploadedFiles.model = null;
+                        } else if (input.name.startsWith('top_item_')) {
+                            const index = parseInt(input.name.split('_')[2]);
+                            uploadedFiles.topItems[index] = null;
+                        } else if (input.name.startsWith('bottom_item_')) {
+                            const index = parseInt(input.name.split('_')[2]);
+                            uploadedFiles.bottomItems[index] = null;
+                        }
+                        checkFormCompletion();
+                    };
+
+                    container.appendChild(img);
+                    container.appendChild(deleteBtn);
+
+                    // Simpan input file yang tersembunyi
+                    const hiddenInput = document.createElement('input');
+                    hiddenInput.type = 'file';
+                    hiddenInput.name = input.name;
+                    hiddenInput.style.display = 'none';
+                    hiddenInput.addEventListener('change', handleFileSelect);
+                    container.appendChild(hiddenInput);
+
+                    checkFormCompletion();
+                };
+
+                reader.readAsDataURL(file);
+            }
+
+            // Function to reset a file box to its initial state
+            function resetFileBox(container, inputName) {
+                container.innerHTML = `
+            <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
+            <button type="button" class="btn-upload">Unggah</button>
+            <input type="file" name="${inputName}" accept="image/*">
+        `;
+                container.querySelector('input').addEventListener('change', handleFileSelect);
+            }
+
+            // Check if all forms are filled
+            function checkFormCompletion() {
+                const hasModelImage = !!uploadedFiles.model;
+                const hasUpperItem = uploadedFiles.topItems.some(file => file !== null);
+                const hasLowerItem = uploadedFiles.bottomItems.some(file => file !== null);
+                const hasOccasion = textarea.value.trim().length > 0;
+
+
+                if (hasModelImage && hasUpperItem && hasLowerItem && hasOccasion) {
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('btn-disabled');
+                    submitBtn.classList.add('btn-primary');
+                } else {
+                    submitBtn.disabled = true;
+                    submitBtn.classList.add('btn-disabled');
+                    submitBtn.classList.remove('btn-primary');
+                }
+            }
+            // Reset entire form
+            function resetForm() {
+                // Reset model image
+                const modelImg = document.querySelector('input[name="model_img"]');
+                modelImg.value = '';
+                const modelFileBox = modelImg.closest('.file-box');
+                if (modelFileBox) {
+                    modelFileBox.innerHTML = `
+                <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
+                <button type="button" class="btn-upload">Unggah</button>
+                <input type="file" name="model_img" accept="image/*">
+            `;
+                    modelFileBox.querySelector('input').addEventListener('change', handleFileSelect);
+                }
+
+                // Reset top items
+                topItemsContainer.innerHTML = `
+        <button type="button" class="btn-add-item" id="add-top-btn">
+            <img src="/assets/img/plus-icon.svg" alt="Tambah" class="add-icon">
+            <span>Tambah Item</span>
+        </button>
+    `;
+                document.getElementById('add-top-btn').addEventListener('click', () => addItem('top'));
+                addItem('top'); // Akan membuat item pertama tanpa delete button
+
+                // Reset bottom items
+                bottomItemsContainer.innerHTML = `
+        <button type="button" class="btn-add-item" id="add-bottom-btn">
+            <img src="/assets/img/plus-icon.svg" alt="Tambah" class="add-icon">
+            <span>Tambah Item</span>
+        </button>
+    `;
+                document.getElementById('add-bottom-btn').addEventListener('click', () => addItem('bottom'));
+                addItem('bottom');
+
+                // Reset occasion text
+                textarea.value = '';
+
+                // Reset submit button
+                submitBtn.disabled = true;
+                submitBtn.classList.add('btn-disabled');
+                submitBtn.classList.remove('btn-primary');
+
+                // Reset recommendation box
+                rekomendasiBox.innerHTML = `
+            <div>
+                <img src="/assets/img/illustration-mixmatch.png" alt="Ilustrasi Mix &amp; Match">
+                <p>Belum bisa tampil.<br>Yuk, upload item dan isi occasion dulu!</p>
+            </div>
+        `;
+            }
+
+            // Initialize file input listeners for any dynamically added elements
+            document.addEventListener('change', function (e) {
+                if (e.target.matches('input[type="file"]')) {
+                    handleFileSelect(e);
+                }
+            });
+
+            // mobile-panel
+            const navToggle = document.querySelector('.nav-toggle');
+            const navOverlay = document.querySelector('.nav-overlay');
+            if (navOverlay && navToggle) {
+                navOverlay.addEventListener('click', function () {
+                    navToggle.checked = false;
+                });
+            }
+        });
+    </script>
 
 </body>
 

@@ -18,32 +18,36 @@
 
     <!-- ===== HEADER ===== -->
     <header class="site-header">
-        <div class="container d-flex align-items-center justify-content-between position-relative">
-
-            <a href="#" class="navbar-brand p-0 d-none d-lg-block">
+        <div class="container-xl d-flex align-items-center justify-content-between position-relative">
+            <a href="../index.html" class="navbar-brand p-0">
                 <img src="/assets/img/logo.svg" alt="Modex logo" height="44">
             </a>
-
-            <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
-            <label for="nav-toggle" class="hamburger d-lg-none">
-                <span></span><span></span><span></span>
-            </label>
-
-            <nav class="site-nav mx-auto">
-                <div class="mobile-logo d-lg-none mb-4">
-                    <img src="/assets/img/logo.svg" alt="Modex logo" height="40">
-                </div>
-
+            <div class="d-flex align-items-center gap-2">
+                <button class="btn-primary btn-tryon-mobile d-lg-none me-2">Virtual Try On</button>
+                <label for="nav-toggle" class="hamburger d-lg-none mb-0" style="margin-bottom:0;">
+                    <span></span><span></span><span></span>
+                </label>
+            </div>
+            <nav class="site-nav mx-auto d-none d-lg-block">
                 <ul class="nav flex-lg-row flex-column gap-lg-4 gap-3">
-                    <li class="nav-item"><a class="nav-link fw-medium" href="/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="../index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link fw-medium active" href="#">Terms &amp;
                             Conditions</a></li>
                 </ul>
             </nav>
-
-            <button class="btn-primary ms-lg-3">Virtual Try On</button>
-
+            <button class="btn-primary ms-lg-3 d-none d-lg-block">Virtual Try On</button>
         </div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+        <div class="offcanvas-panel">
+            <nav class="site-nav-mobile">
+                <ul class="nav flex-column text-end px-3">
+                    <li class="nav-item"><a class="nav-link fw-medium" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium active" href="#">Terms &amp;
+                            Conditions</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="nav-overlay"></div>
     </header>
 
     <!-- ===== TERMS CONTENT ===== -->
@@ -131,4 +135,5 @@
     </footer>
 
 </body>
+
 </html>

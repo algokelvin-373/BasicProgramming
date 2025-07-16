@@ -19,8 +19,10 @@
 
     <!-- =========== HEADER =========== -->
     <header class="site-header">
+        <!-- logo desktop -->
         <img src="/assets/img/logo.svg" alt="Modex Logo" class="logo">
 
+        <!-- saklar + hamburger -->
         <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
         <label for="nav-toggle" class="hamburger">
             <span></span><span></span><span></span>
@@ -28,6 +30,7 @@
 
         <!-- panel nav -->
         <nav class="nav-links">
+            <!-- logo yang tampil di panel mobile -->
             <div class="mobile-logo ">
                 <img src="/assets/img/logo.svg" alt="Modex logo" height="44">
             </div>
@@ -36,6 +39,7 @@
             <a href="#">Terms&nbsp;&amp;&nbsp;Conditions</a>
         </nav>
 
+        <!-- CTA -->
         <button class="btn-primary">Virtual Try On</button>
     </header>
 
@@ -224,6 +228,141 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all necessary elements
+            const form = document.querySelector('.steps');
+            const fileInputs = document.querySelectorAll('input[type="file"]');
+            const textarea = document.querySelector('.textarea-occasion');
+            const submitBtn = document.querySelector('button[type="submit"]');
+            const resetBtn = document.querySelector('button[type="reset"]');
+            const rekomendasiBox = document.querySelector('.rekomendasi-box');
+
+            // Function to show image preview
+            function handleFileSelect(event) {
+                const input = event.target;
+                const file = input.files[0];
+
+                if (!file) return;
+
+                const reader = new FileReader();
+                const fileBox = input.closest('.file-box');
+
+                reader.onload = function (e) {
+                    // Clear previous content
+                    fileBox.innerHTML = '';
+
+                    // Create image preview
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.width = '100%';
+                    img.style.height = '100%';
+                    img.style.objectFit = 'cover';
+                    img.style.borderRadius = '6px';
+
+                    // Create close button
+                    const closeBtn = document.createElement('button');
+                    closeBtn.className = 'close-btn';
+                    closeBtn.innerHTML = '×';
+                    closeBtn.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        input.value = '';
+                        resetFileBox(fileBox);
+                        checkFormCompletion();
+                    });
+
+                    fileBox.appendChild(img);
+                    fileBox.appendChild(closeBtn);
+
+                    // Re-attach file input event
+                    const newInput = document.createElement('input');
+                    newInput.type = 'file';
+                    newInput.name = input.name;
+                    newInput.accept = 'image/*';
+                    newInput.style.display = 'none';
+                    newInput.addEventListener('change', handleFileSelect);
+                    fileBox.appendChild(newInput);
+
+                    checkFormCompletion();
+                };
+
+                reader.readAsDataURL(file);
+            }
+
+            // Reset file box to initial state
+            function resetFileBox(fileBox) {
+                fileBox.innerHTML = `
+            <span>Pilih Gambar<br><small>atau jatuhkan di sini</small></span>
+            <button type="button" class="btn-upload">Unggah</button>
+            <input type="file" name="${fileBox.querySelector('input')?.name || ''}" accept="image/*">
+        `;
+
+                const newInput = fileBox.querySelector('input[type="file"]');
+                newInput.addEventListener('change', handleFileSelect);
+            }
+
+            // Check if all forms are filled
+            function checkFormCompletion() {
+                let allFilled = true;
+
+                fileInputs.forEach(input => {
+                    if (!input.files || input.files.length === 0) {
+                        allFilled = false;
+                    }
+                });
+
+                if (!textarea.value.trim()) {
+                    allFilled = false;
+                }
+
+                if (allFilled) {
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('btn-disabled');
+                    submitBtn.classList.add('btn-primary');
+                } else {
+                    submitBtn.disabled = true;
+                    submitBtn.classList.add('btn-disabled');
+                    submitBtn.classList.remove('btn-primary');
+                }
+            }
+
+            // Reset entire form
+            function resetForm() {
+                document.querySelectorAll('.file-box').forEach(fileBox => {
+                    resetFileBox(fileBox);
+                });
+
+                textarea.value = '';
+
+                submitBtn.disabled = true;
+                submitBtn.classList.add('btn-disabled');
+                submitBtn.classList.remove('btn-primary');
+
+                rekomendasiBox.innerHTML = `
+            <div>
+                <img src="/assets/img/illustration-mixmatch.png" alt="Ilustrasi Mix &amp; Match">
+                <p>Belum bisa tampil.<br>Yuk, upload item dan isi occasion dulu!</p>
+            </div>
+        `;
+            }
+
+            // Add event listeners
+            fileInputs.forEach(input => {
+                input.addEventListener('change', handleFileSelect);
+            });
+
+            textarea.addEventListener('input', checkFormCompletion);
+
+            resetBtn.addEventListener('click', resetForm);
+
+            // Form submission
+            // Ganti bagian form submission dengan ini:
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+            });
+        });
+    </script>
 
 </body>
 

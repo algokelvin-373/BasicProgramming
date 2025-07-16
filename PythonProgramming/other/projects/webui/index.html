@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Modex – AI Styling Made Easy</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons Bootstrap (untuk arrow / plus, opsional) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- CSS kustom -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="container-xl d-flex align-items-center justify-content-between position-sticky">
+            <a href="#" class="navbar-brand p-0">
+                <img src="assets/img/logo.svg" alt="Modex logo" height="44">
+            </a>
+            <div class="d-flex align-items-center gap-2">
+                <button class="btn-primary btn-tryon-mobile d-lg-none me-2">Virtual Try On</button>
+                <label for="nav-toggle" class="hamburger d-lg-none mb-0" style="margin-bottom:0;">
+                    <span></span><span></span><span></span>
+                </label>
+            </div>
+            <nav class="site-nav mx-auto d-none d-lg-block">
+                <ul class="nav flex-lg-row flex-column gap-lg-4 gap-3">
+                    <li class="nav-item"><a class="nav-link fw-medium active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="pages/terms.html">Terms &amp;
+                            Conditions</a></li>
+                </ul>
+            </nav>
+            <button class="btn-primary ms-lg-3 d-none d-lg-block">Virtual Try On</button>
+        </div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+        <div class="offcanvas-panel">
+            <nav class="site-nav-mobile">
+                <ul class="nav flex-column text-end px-3">
+                    <li class="nav-item"><a class="nav-link fw-medium active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="pages/terms.html">Terms &amp;
+                            Conditions</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="nav-overlay"></div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-section py-5 position-relative overflow-hidden">
+        <div class="container-xl">
+            <div class="row align-items-center g-4">
+                <!-- teks -->
+                <div class="col-lg-5 order-2 order-lg-1">
+                    <h1 class="display-5 fw-bold mb-3">AI Styling Made Easy</h1>
+                    <p class="lead mb-4">
+                        Dengan teknologi AI VITON-HD, kamu bisa coba berbagai model pakaian secara realistis hanya dari
+                        satu foto.
+                    </p>
+                    <a href="pages/upload-page.html"
+                        class="btn btn-primary rounded-pill px-4 d-inline-flex align-items-center">
+                        Coba Sekarang
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                    <!-- mini preview 3 outfit -->
+                    <div class="mt-3">
+                        <img src="assets/img/hero/example-process-guide.png" alt="" class="">
+                    </div>
+                </div>
+                <!-- gambar utama -->
+                <div class="col-lg-7 text-center order-1 order-lg-2 position-relative">
+                    <img src="assets/img/hero/model-couple.png" class="img-fluid hero-img overlap-lg"
+                        alt="Couple model">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RUNNING TICKER ===== -->
+    <section class="ticker-bar">
+        <div class="ticker-track">
+            <ul class="ticker-list">
+                <!-- satu set item -->
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+            </ul>
+            <ul class="ticker-list" aria-hidden="true">
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+                <li><img src="assets/img/bi_stars.png" alt=""><span>WELCOME TO MODEX</span><img
+                        src="assets/img/bi_stars.png" alt=""></li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section id="how-it-works" class="py-5 how-section">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-2">How it Works</h2>
+            <div class="mb-3" style="font-size:16px;">AI Virtual Try On – Pengubah Pakaian AI Online</div>
+
+            <ul class="how-steps-list">
+                <!-- Step 1 -->
+                <li class="how-step">
+                    <div class="step-img-wrap">
+                        <img src="assets/img/hero/upload-your-photo.png" alt="">
+                    </div>
+                    <div class="step-label">STEP—01</div>
+                    <div class="step-title text-danger">Upload Your Photo</div>
+                    <div class="step-desc">Unggah foto seluruh badanmu agar AI bisa menyesuaikan pakaian secara
+                        proporsional.</div>
+                </li>
+                <!-- Arrow -->
+                <li class="step-arrow" aria-hidden="true">
+                    <img src="assets/img/icon/arrow-zigzag.svg" alt="Arrow" />
+                </li>
+                <!-- Step 2 -->
+                <li class="how-step">
+                    <div class="step-img-wrap">
+                        <img src="assets/img/hero/add-your-outfits.png" alt="">
+                    </div>
+                    <div class="step-label">STEP—02</div>
+                    <div class="step-title text-danger">Add Your Outfits</div>
+                    <div class="step-desc">Masukkan gambar baju dan celana yang ingin dicoba, atau pilih dari koleksi
+                        kami.</div>
+                </li>
+                <!-- Arrow -->
+                <li class="step-arrow" aria-hidden="true">
+                    <img src="assets/img/icon/arrow-zigzag.svg" alt="Arrow" />
+                </li>
+                <!-- Step 3 -->
+                <li class="how-step">
+                    <div class="step-img-wrap">
+                        <img src="assets/img/hero/see-the-match.png" alt="">
+                    </div>
+                    <div class="step-label">STEP—03</div>
+                    <div class="step-title text-danger">See the Match</div>
+                    <div class="step-desc">AI akan mencocokkan outfit ke tubuhmu, dan kamu bisa eksplorasi berbagai
+                        kombinasi.</div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- ===== DISCOVER YOUR LOOK WITH AI (placeholder image) ===== -->
+    <section id="discover" class="discover-section">
+
+        <h3 class="discover-title">DISCOVER YOUR LOOK WITH AI</h3>
+
+        <div class="gallery-grid">
+            <figure class="card" style="--rs:2; --cs:8;">
+                <img src="assets/img/discover/gallery-grid-1.png" alt="">
+                <figcaption>Biarkan AI membuatmu agar lebih pede</figcaption>
+            </figure>
+
+            <figure class="card" style="--rs:4; --cs:7;">
+                <img src="assets/img/discover/gallery-grid-2.png" alt="">
+                <figcaption>Solusi Fashion Kekinian</figcaption>
+            </figure>
+
+
+            <figure class="card" style="--rs:2;--cs:9">
+                <img src="assets/img/discover/gallery-grid-3.png" alt="">
+                <figcaption>Mix & Match Fashion</figcaption>
+            </figure>
+
+            <figure class="card" style="--rs:2;--cs:4">
+                <img src="assets/img/discover/gallery-grid-4.png" alt="">
+                <figcaption>Tampilkan Sisi Kerenmu</figcaption>
+            </figure>
+
+            <figure class="card" style="--rs:2;--cs:4">
+                <img src="assets/img/discover/gallery-grid-5.png" alt="">
+                <figcaption>Gaya Yang Trendy</figcaption>
+            </figure>
+
+            <figure class="card" style="--rs:2;--cs:9">
+                <img src="assets/img/discover/gallery-grid-6.png" alt="">
+                <figcaption>Dengan AI, pilihan fashionmu lebih variasi</figcaption>
+            </figure>
+        </div>
+
+    </section>
+
+    <!-- ===== OOTD ===== -->
+    <section id="ootd" class="ootd-section position-relative">
+        <div class="container-xl ootd-inner d-flex align-items-center justify-content-between flex-wrap">
+
+            <div class="ootd-img-area position-relative d-flex align-items-end">
+                <img src="assets/img/icon/grid.svg" class="ootd-svg deco-rect" alt="">
+                <img src="assets/img/icon/half-circular.svg" class="ootd-svg oval-bg" alt="">
+                <img src="assets/img/hero/ootd-model.png" class="ootd-img ootd-img-front" alt="Model depan">
+            </div>
+            <div class="ootd-content ps-lg-5 pt-4 pt-lg-0">
+                <h2 class="ootd-title mb-3">Cari OOTD? Cukup Upload!</h2>
+                <div class="ootd-desc mb-2">
+                    Upload fotomu, dan lihat berbagai outfit classy & trend langsung terpasang dengan realistis.
+                </div>
+                <div class="ootd-deco-icon-center">
+                    <img src="assets/img/icon/rainbow.svg" height="36" class="rainbow-icon" alt="Rainbow">
+                    <img src="assets/img/icon/rainbow.svg" height="36" class="rainbow-icon" alt="Rainbow">
+                </div>
+            </div>
+        </div>
+        <img src="assets/img/icon/bold-line.svg" class="ootd-dot ootd-line-bottomright" alt="">
+        <img src="assets/img/icon/circle-grid.svg" class="ootd-dot ootd-dot-bottomleft" alt="">
+        <img src="assets/img/icon/dots-half.svg" class="ootd-dot ootd-dot-topright" alt="">
+        <img src="assets/img/icon/dots-half.svg" class="ootd-dot ootd-dot-topright2" alt="">
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-wrapper container">
+
+            <img src="assets/img/logo.svg" alt="Modex logo" class="footer-logo">
+            <hr>
+            <div class="footer-meta d-flex justify-content-between align-items-center">
+                <small>© 2025 Modex. All Right Reserved.</small>
+                <a href="pages/terms.html" class="footer-link">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.getElementById('nav-toggle');
+            const overlay = document.querySelector('.nav-overlay');
+            if (overlay) {
+                overlay.addEventListener('click', function () {
+                    navToggle.checked = false;
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

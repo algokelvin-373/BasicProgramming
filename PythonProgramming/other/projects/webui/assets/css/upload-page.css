@@ -38,7 +38,6 @@ body {
 }
 
 @media (min-width: 992px) {
-
   .d-lg-block {
     display: block !important;
   }
@@ -52,15 +51,32 @@ body {
    HEADER
 --------------------------------------------------*/
 .site-header {
+  position: sticky;
+  top: 0;
   width: 100%;
-  padding: 24px 5%;
+  background: #fff;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 6vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
-.logo {
-  height: 48px;
+.navbar-brand img {
+  height: 44px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .nav-links {
@@ -71,24 +87,60 @@ body {
 
 .nav-links a {
   font-size: 14px;
-  text-decoration: none;
   color: var(--gray);
+  text-decoration: none;
   transition: .2s;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: #000;
+  color: #000
 }
 
-.btn-primary {
-  background: var(--accent);
+.nav-links-mobile.open {
+  transform: translateX(0);
+}
+
+.nav-links-mobile a {
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 18px;
+  text-align: right;
+}
+
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 30, 30, 0.18);
+  z-index: 12999;
+}
+
+.nav-overlay.show {
+  display: block;
+}
+
+.btn-primary,
+.btn-tryon-mobile,
+.btn-tryon-desktop {
+  background: #c6cbb1;
   color: #fff;
-  padding: 8px 24px;
   border-radius: 24px;
   font-size: 14px;
+  padding: 8px 24px;
   border: none;
   cursor: pointer;
+}
+
+.btn-primary:hover,
+.btn-tryon-mobile:hover,
+.btn-tryon-desktop:hover {
+  background: #101010;
+}
+
+.btn-tryon-desktop,
+.nav-links-desktop {
+  display: none;
 }
 
 /* -------------------------------------------------
@@ -170,9 +222,16 @@ body {
   margin-bottom: 12px;
 }
 
-/* file upload kotak */
+/* FILE UPLOAD GRID STYLES */
+.file-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
 .file-box {
-  width: 110px;
+  width: 100%;
   height: 140px;
   border: 2px dashed #d6d8dd;
   border-radius: 8px;
@@ -186,6 +245,7 @@ body {
   color: var(--gray);
   position: relative;
   overflow: hidden;
+  background: #fafafa;
 }
 
 .file-box input[type=file] {
@@ -193,6 +253,32 @@ body {
   inset: 0;
   opacity: 0;
   cursor: pointer;
+}
+
+/* ADD BUTTON STYLES */
+.btn-add-item {
+  background: transparent;
+  color: var(--primary);
+  border: transparent;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin: 0;
+}
+
+
+/* .btn-add-item:hover {
+    background: rgba(0, 102, 255, 0.1);
+} */
+.btn-add-item:disabled {
+  display: none;
 }
 
 .file-box .btn-upload {
@@ -206,16 +292,56 @@ body {
   cursor: pointer;
 }
 
-/* grid 3 kolom */
-.file-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 110px);
-  gap: 24px;
+/* DELETE BUTTON STYLES */
+.delete-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 10;
+  border: none;
+  opacity: 1;
+  background-color: transparent;
+  transition: opacity 0.2s;
+}
+
+
+
+/* FILE NOTES STYLES */
+.file-notes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  font-size: 10px;
+  color: var(--gray);
+}
+
+.max-upload {
+  font-style: italic;
+}
+
+/* TEXT STYLES INSIDE FILE BOX */
+.file-box span {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.file-box small {
+  font-weight: normal;
+  color: var(--gray);
 }
 
 .allowed {
   font-size: 10px;
-  margin-top: 6px;
   color: var(--gray);
 }
 
@@ -233,8 +359,10 @@ body {
 
 .action-btns {
   margin-top: 16px;
+  margin-bottom: 45px;
   display: flex;
   gap: 24px;
+  justify-content: flex-end;
 }
 
 .btn-outline {
@@ -419,19 +547,18 @@ body {
 }
 
 /* ======================================================
-   HAMBURGER ICON  (selalu ada di DOM, tapi tampil di mobile)
+   HAMBURGER ICON
 ======================================================*/
 .hamburger {
   width: 32px;
   height: 24px;
-  display: none;
-  /* default sembunyi (desktop) */
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 6px;
   cursor: pointer;
-  z-index: 10001;
-  /* di atas panel */
+  background: none;
+  border: none;
 }
 
 .hamburger span {
@@ -439,77 +566,189 @@ body {
   height: 3px;
   background: #000;
   border-radius: 2px;
-  transition: transform .3s, opacity .3s;
+  transition: none;
 }
 
-/* ===========================================
-   1. HAMBURGER & PANEL NAV
-===========================================*/
-/* ikon */
-.hamburger{
-  width:32px;height:24px;
-  display:none;flex-direction:column;gap:6px;
-  justify-content:center;cursor:pointer;z-index:10001;
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
 }
-.hamburger span{
-  height:3px;width:100%;background:#000;border-radius:2px;
-  transition:transform .30s,opacity .30s;
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
 }
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
 
 /* panel */
 .mobile-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* --- Mobile only --- */
+@media (max-width: 991.98px) {
+  .btn-tryon-mobile {
+    display: inline-block;
+  }
+
+  .btn-tryon-desktop,
+  .nav-links-desktop {
+    display: none !important;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .nav-links-mobile {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    /* border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px; */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .12);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .33s cubic-bezier(.52, 2, .77, .99);
+    z-index: 1010;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0 0;
+  }
+
+  /* Panel turun saat nav-toggle dicentang */
+  .nav-toggle:checked~.nav-links-mobile {
+    max-height: 220px;
+    /* cukup untuk 2-3 menu */
+    padding: 14px 0 8px 0;
+  }
+
+  /* Overlay */
+  .nav-overlay {
+    display: none;
+  }
+
+  .nav-toggle:checked~.nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 30, 30, 0.14);
+    z-index: 1005;
+    cursor: pointer;
+  }
+
+  .nav-links-mobile a {
+    text-align: right;
+    display: block;
+    padding: 14px 28px 8px 16px;
+    font-size: 1.08rem;
+    color: #aaa;
+    text-decoration: none;
+    font-weight: 500;
+    border: none;
+    background: none;
+    transition: color .2s;
+  }
+
+  .nav-links-mobile a.active,
+  .nav-links-mobile a[aria-current="page"] {
+    color: #222;
+    font-weight: 700;
+  }
+
+  .nav-links-mobile a:hover {
+    color: #222;
+  }
+}
+
+
+/* --- Desktop breakpoint --- */
+@media (min-width: 992px) {
+
+  .header-actions,
+  .btn-tryon-mobile,
+  .hamburger,
+  .nav-links-mobile,
+  .nav-overlay {
+    display: none !important;
+  }
+
+  .btn-tryon-desktop,
+  .nav-links-desktop {
+    display: inline-block !important;
+  }
+
+  .nav-links-desktop {
+    display: flex !important;
+    gap: 32px;
     align-items: center;
-}
-
-@media (max-width:991.98px){
-  .site-header .logo{display:none;}
-  .hamburger{display:flex;}
-
-  .nav-links{
-    position:fixed;top:0;left:0;
-    width:80%;max-width:300px;height:100vh;
-    background:#fff;padding:96px 24px 24px;
-    display:flex !important;flex-direction:column;gap:28px;
-    transform:translateX(-100%);transition:.3s ease;
-    box-shadow:4px 0 12px rgba(0,0,0,.08);
-    overflow-y:auto;z-index:10000;
+    margin-left: 40px;
+    margin-right: 0;
   }
-  .nav-links a{font-size:16px;color:#000;text-decoration:none;}
 
-  .nav-toggle:checked ~ .nav-links{transform:translateX(0);}
+  .nav-links-desktop a {
+    font-size: 14px;
+    color: #aaa;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0 4px;
+    transition: color .2s;
+  }
 
-  .nav-toggle:checked + .hamburger span:nth-child(1){
-    transform:translateY(9px) rotate(45deg);
+  .nav-links-desktop a.active,
+  .nav-links-desktop a[aria-current="page"] {
+    color: #222;
+    font-weight: 700;
   }
-  .nav-toggle:checked + .hamburger span:nth-child(2){
-    opacity:0;
-  }
-  .nav-toggle:checked + .hamburger span:nth-child(3){
-    transform:translateY(-9px) rotate(-45deg);
+
+  .nav-links-desktop a:hover {
+    color: #222;
   }
 }
 
-@media (min-width:992px){
-  .nav-links{display:flex !important;position:static;
-    transform:none;background:transparent;padding:0;box-shadow:none;}
-  .hamburger{display:none;}
-}
-
-@media (max-width:576px){
-  .bg-word{
-    font-size:48px;
-    white-space:normal;
-    line-height:1.1;
+@media (max-width:576px) {
+  .bg-word {
+    font-size: 48px;
+    white-space: normal;
+    line-height: 1.1;
   }
-  .card-stack{gap:16px;}
-  .card-stack .card{width:120px;}
+
+  .card-stack {
+    gap: 16px;
+  }
+
+  .card-stack .card {
+    width: 120px;
+  }
+
+  .file-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width:767px) {
   .form-wrapper {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+    gap: 0;
+  }
+
+  .rekomendasi-box {
+    order: -1;
+    margin-bottom: 28px;
+    min-height: 220px;
+  }
+
+  .steps {
+    order: 1;
   }
 
   .file-grid {
@@ -530,14 +769,15 @@ body {
 }
 
 .nav-links {
-    text-align: left;
-    align-items: flex-start;
-    justify-content: flex-start;
+  text-align: left;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
+
 .nav-links a,
 .nav-links .mobile-logo {
-    justify-content: flex-start;
-    text-align: left;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 /* Sembunyikan logo mobile di desktop */
@@ -545,4 +785,116 @@ body {
   .nav-links .mobile-logo {
     display: none;
   }
+}
+
+/* Loading spinner */
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s ease-in-out infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* rekomendasi list */
+.rekomendasi-list {
+  width: 100%;
+  margin-top: 24px;
+  text-align: left;
+}
+
+.rekomendasi-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rekomendasi-item:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.rekomendasi-item input[type="checkbox"] {
+  margin-top: 4px;
+  accent-color: var(--accent);
+}
+
+.rekomendasi-content {
+  flex: 1;
+}
+
+.rekomendasi-content h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.rekomendasi-content p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 0;
+}
+
+.select-button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 14px;
+  margin-top: 24px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.select-button:hover {
+  background: #6a7255;
+}
+
+/* Model Image Specific Styles */
+.model-image-box {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+.model-image-box .image-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.model-image-box .default-text {
+  position: relative;
+  z-index: 2;
+}
+
+.model-image-box.has-image .default-text,
+.model-image-box.has-image .btn-upload {
+  display: none;
+}
+
+.model-image-box.has-image .delete-btn {
+  display: block;
+  z-index: 3;
 }
