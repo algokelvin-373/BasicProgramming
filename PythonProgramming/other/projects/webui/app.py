@@ -25,17 +25,18 @@ def allowed_file(filename):
 
 @app.route("/upload", methods=["POST"])
 def upload_files():
-    uploaded_files = {}
-    fields = ["model_img", "top1", "top2", "top3", "bottom1", "bottom2", "bottom3"]
-    for field in fields:
-        file = request.files.get(field)
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            save_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
-            file.save(save_path)
-            uploaded_files[field] = f"/static/upload/{filename}"
-    occasion = request.form.get("occasion", "")
-    return render_template("pages/upload-page.html", uploaded_files=uploaded_files, occasion=occasion)
+    # uploaded_files = {}
+    # fields = ["model_img", "top1", "top2", "top3", "bottom1", "bottom2", "bottom3"]
+    # for field in fields:
+    #     file = request.files.get(field)
+    #     if file and allowed_file(file.filename):
+    #         filename = secure_filename(file.filename)
+    #         save_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+    #         file.save(save_path)
+    #         uploaded_files[field] = f"/static/upload/{filename}"
+    # occasion = request.form.get("occasion", "")
+    return render_template("pages/upload-page-recomendation.html")
+    # return render_template("pages/upload-page.html", uploaded_files=uploaded_files, occasion=occasion)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
