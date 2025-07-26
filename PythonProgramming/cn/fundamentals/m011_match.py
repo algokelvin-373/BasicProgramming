@@ -1,6 +1,6 @@
-data = int(input('Input Number: '))
+data = int(input('输入数字：'))
 
 match data:
-    case 1: print('One')
-    case 2: print('Two')
-    case 3: print('Three')
+    case 1: print('一')
+    case 2: print('二')
+    case 3: print('三')
