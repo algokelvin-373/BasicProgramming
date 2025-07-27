@@ -1,6 +1,6 @@
 from sys import stdout
 
-index = 0
-while index <= 5:
-    stdout.write(f'{index} ')
-    index += 1
+data = 1
+while data <= 5:
+    stdout.write(f'{data} ')
+    data += 1
