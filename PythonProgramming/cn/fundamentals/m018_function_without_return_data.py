@@ -1,11 +1,11 @@
 # function general
 def get_begin():
-    print("Python Programming")
+    print('Python编程')
 
 # function with parameter
 def get_name(name):
-    print("Your name is ", name)
+    print(f'我是{name}')
 
 get_begin()
-data = input("Input your name: ")
+data = input('输入您的姓名：')
 get_name(data)
