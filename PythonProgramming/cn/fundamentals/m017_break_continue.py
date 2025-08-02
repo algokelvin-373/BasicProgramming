@@ -1,6 +1,7 @@
 from sys import stdout
 
-for data in range(1, 10):
+# Break
+for data in range(1, 20):
     if data % 2 == 0 and data % 3 == 0:
         break
     else:
@@ -8,8 +9,11 @@ for data in range(1, 10):
 
 print()
 
-for data in range(1, 10):
+# Continue
+for data in range(1, 20):
     if data % 2 == 0 and data % 3 == 0:
         continue
     else:
         stdout.write(f'{data} ')
+
+print()
