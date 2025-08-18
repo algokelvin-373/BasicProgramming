@@ -12,6 +12,6 @@ def triangle_with_hole(lines, length):
             stdout.write(' ')
     print()
 
-s = int(input('输入: '))
+s = int(input('Input: '))
 for line in range(1, s + 1):
     triangle_with_hole(line, s)

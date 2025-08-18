@@ -6,6 +6,6 @@ def triangle_without_hole(lines):
         stdout.write('*')
     print()
 
-s = int(input('输入: '))
+s = int(input('Input: '))
 for line in range(1, s + 1):
     triangle_without_hole(line)
