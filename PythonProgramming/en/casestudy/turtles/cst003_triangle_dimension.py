@@ -1,31 +1,21 @@
 import turtle
 
-
-def equilateral_triangle(side_length):
-    height = (side_length * (3 ** 0.5)) / 2
-    x_start = -side_length / 2
-    y_start = -height / 2
-
-    turtle.penup()
-    turtle.goto(x_start, y_start)
-    turtle.pendown()
-
-    for _ in range(3):
-        turtle.forward(side_length)
-        turtle.left(120)  # Turn Left 120
-
-def draw_triangles(count, initial_side, step):
-    side = initial_side
-    for _ in range(count):
-        equilateral_triangle(side)
-        side += 2 * step
+def draw_triangles(count, side, step):
+    for i in range(count):
+        turtle.penup()
+        turtle.goto(-side/2, -side/2)
+        turtle.pendown()
+        for _ in range(3):
+            turtle.forward(side)
+            turtle.left(120)
+        side += step
 
 
 turtle.setup(width=500, height=500)
 turtle.color('black')
 turtle.pensize(0)
 
-draw_triangles(count=20, initial_side=20, step=10)
+draw_triangles(count=20, side=40, step=20)
 
 turtle.hideturtle()
 turtle.done()
