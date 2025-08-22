@@ -1,38 +1,42 @@
 def unit(number):
-    if number == 1:
-        return "Satu"
-    elif number == 2:
-        return "Dua"
-    elif number == 3:
-        return "Tiga"
-    elif number == 4:
-        return "Empat"
-    elif number == 5:
-        return "Lima"
-    elif number == 6:
-        return "Enam"
-    elif number == 7:
-        return "Tujuh"
-    elif number == 8:
-        return "Delapan"
-    elif number == 9:
-        return "Sembilan"
+    match number:
+        case 0: return ""
+        case 1: return "Satu"
+        case 2: return "Dua"
+        case 3: return "Tiga"
+        case 4: return "Empat"
+        case 5: return "Lima"
+        case 6: return "Enam"
+        case 7: return "Tujuh"
+        case 8: return "Delapan"
+        case 9: return "Sembilan"
+
+def unit100(number):
+    div_100 = int(number / 100)
+    if div_100 == 1:
+        return ' Seratus '
+    elif 2 <= div_100 <= 9:
+        return unit(div_100) + " Ratus "
+    else:
+        return ""
+
+def unit10(number):
+    div_10 = int(number / 10)
+    if div_10 == 1:
+        return ' Sepuluh '
+    elif 2 <= div_10 <= 9:
+        return unit(div_10) + " Puluh "
+    else:
+        return ""
 
 numbers = int(input('Input number: '))
 
 num_count = ''
-div_100 = int(numbers / 100)
-if div_100 == 1:
-    num_count += ' Seratus '
-elif 2 <= div_100 <= 9:
-    num_count += unit(div_100) + " Ratus "
+
+num_count += unit100(numbers)
 
 mod_100 = numbers % 100
-div_10 = int(mod_100 / 10)
-if div_10 == 1:
-    num_count += ' Sepuluh '
-elif 2 <= div_10 <= 9:
-    num_count += unit(div_10) + " Puluh "
+num_count += unit10(mod_100)
 
 mod_10 = mod_100 % 10
 num_count += unit(mod_10)
