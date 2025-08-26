@@ -8,7 +8,8 @@ turtle.speed(0)
 s = 500
 j = 0
 colors = ['red', 'green', 'blue']
-for i in range(50):
+back = False
+for i in range(150):
     if j == len(colors):
         j = 0
     color = colors[j]
@@ -21,7 +22,14 @@ for i in range(50):
         turtle.forward(s)
         turtle.left(90)
     turtle.end_fill()
-    s -= 10
+    if s == 0:
+        back = True
+    elif s == 500:
+        back = False
+    if back:
+        s += 10
+    else:
+        s -= 10
     j += 1
 
 turtle.hideturtle()
