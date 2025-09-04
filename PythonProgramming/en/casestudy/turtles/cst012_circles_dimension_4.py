@@ -7,7 +7,7 @@ turtle.pensize(1)
 turtle.speed(0)
 
 for i in range(180):
-    turtle.circle(i, i)
+    turtle.circle(i * 2, 90)
 
 turtle.hideturtle()
 turtle.done()
