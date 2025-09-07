@@ -26,11 +26,13 @@ turtle.speed(0)
 
 n = 10
 side = 100
-# while n >= 4:
-#     radial_circles(100,  n)
-#     turtle.clear()
-#     n -= 2
+while n >= 4:
+    radial_circles(100,  n)
+    turtle.clear()
+    n -= 2
 
+n = 10
+side = 100
 while side >= 10:
     radial_circles(side,  n)
     turtle.clear()
