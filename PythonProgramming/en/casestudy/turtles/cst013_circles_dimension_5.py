@@ -14,19 +14,5 @@ for _ in range(4):
     turtle.end_fill()
     turtle.left(90)
 
-# turtle.begin_fill()
-# turtle.circle(100, 180)
-# turtle.circle(50, 180)
-# turtle.circle(-50, 180)
-# turtle.end_fill()
-#
-# turtle.left(90)
-#
-# turtle.begin_fill()
-# turtle.circle(100, 180)
-# turtle.circle(50, 180)
-# turtle.circle(-50, 180)
-# turtle.end_fill()
-
 turtle.hideturtle()
 turtle.done()
