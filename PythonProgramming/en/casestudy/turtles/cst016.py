@@ -6,7 +6,7 @@ turtle.color('lightblue')
 turtle.pensize(1)
 turtle.speed(0)
 
-for i in range(90):
+for i in range(60):
     turtle.circle(i * 2)
     turtle.right(10)
 
