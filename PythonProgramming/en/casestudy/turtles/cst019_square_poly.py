@@ -9,7 +9,7 @@ turtle.speed(1)
 turtle.penup()
 turtle.goto(0, 150)
 turtle.write(
-    f"用poly画三角形\n"
+    f"用poly绘制角形\n"
     f"Draw Square with Poly\n"
     f"Menggambar Persegi dengan Poly",
     align="center",
