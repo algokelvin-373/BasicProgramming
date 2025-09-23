@@ -9,7 +9,7 @@ turtle.speed(1)
 turtle.penup()
 turtle.goto(0, 150)
 turtle.write(
-    f"用poly画三角形\n"
+    f"绘制点\n"
     f"Draw Dot\n"
     f"Menggambar Titik",
     align="center",
