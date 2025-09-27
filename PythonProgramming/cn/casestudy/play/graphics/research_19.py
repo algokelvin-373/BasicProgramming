@@ -1,7 +1,7 @@
 import turtle
 
+# Curva Bezier
 def bezier(t, p0, p1, p2):
-    """Hitung titik pada kurva kuadrat Bézier"""
     x = (1-t)**2 * p0[0] + 2*(1-t)*t * p1[0] + t**2 * p2[0]
     y = (1-t)**2 * p0[1] + 2*(1-t)*t * p1[1] + t**2 * p2[1]
     return (x, y)
