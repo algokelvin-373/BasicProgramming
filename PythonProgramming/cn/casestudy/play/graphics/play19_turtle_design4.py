@@ -45,7 +45,7 @@ turtle.color('salmon')
 turtle.pensize(2)
 turtle.speed(0)
 
-design4(100, 100)
+design4(200, 200)
 
 turtle.hideturtle()
 turtle.done()

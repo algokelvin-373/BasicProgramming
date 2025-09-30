@@ -35,7 +35,7 @@ turtle.setup(width=500, height=500)
 turtle.bgcolor('black')
 turtle.color('salmon')
 turtle.pensize(2)
-turtle.speed(10)
+turtle.speed(0)
 
 design9(200, 200)
 

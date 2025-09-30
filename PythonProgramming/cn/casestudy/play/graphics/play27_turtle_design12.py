@@ -1,6 +1,6 @@
 import turtle
 
-def design11(x, y):
+def design12(x, y):
     side = x + y
 
     turtle.penup()
@@ -29,7 +29,7 @@ turtle.color('salmon')
 turtle.pensize(2)
 turtle.speed(0)
 
-design11(200, 200)
+design12(200, 200)
 
 turtle.hideturtle()
 turtle.done()
