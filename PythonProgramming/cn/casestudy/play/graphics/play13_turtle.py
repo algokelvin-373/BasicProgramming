@@ -4,7 +4,7 @@ turtle.setup(width=500, height=500)
 turtle.bgcolor('black')
 turtle.color('salmon')
 turtle.pensize(1)
-turtle.speed(0)
+turtle.speed(100)
 
 colors = 'salmon'
 for i in range(180):
