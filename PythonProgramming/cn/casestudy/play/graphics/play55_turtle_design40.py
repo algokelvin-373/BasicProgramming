@@ -40,7 +40,7 @@ def draw_curva2(xt, yt, p0, p1, side):
             xt += step
         pc = (xt, yt)
 
-def design38(x, y):
+def design40(x, y):
     side = x + y
 
     turtle.penup()
@@ -81,7 +81,7 @@ turtle.color('salmon')
 turtle.pensize(1)
 turtle.speed(0)
 
-design38(200, 200)
+design40(200, 200)
 
 turtle.hideturtle()
 turtle.done()

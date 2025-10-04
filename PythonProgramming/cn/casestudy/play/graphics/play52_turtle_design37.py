@@ -31,7 +31,7 @@ def step_discrete2(point, step=10):
 
     return x, y
 
-def design35(x, y):
+def design37(x, y):
     side = x + y
 
     turtle.penup()
@@ -96,7 +96,7 @@ turtle.color('salmon')
 turtle.pensize(1)
 turtle.speed(0)
 
-design35(200, 200)
+design37(200, 200)
 
 turtle.hideturtle()
 turtle.done()

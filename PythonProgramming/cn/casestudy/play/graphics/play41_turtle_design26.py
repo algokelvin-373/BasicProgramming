@@ -24,7 +24,7 @@ def draw_pattern_right(x, y, side, step, y_ratio, y_targets):
             turtle.goto(x_side, y_side)
         x_side += step
 
-def design23(x, y):
+def design26(x, y):
     side = x + y
 
     turtle.penup()
@@ -63,7 +63,7 @@ turtle.color('salmon')
 turtle.pensize(1)
 turtle.speed(0)
 
-design23(200, 200)
+design26(200, 200)
 
 turtle.hideturtle()
 turtle.done()
