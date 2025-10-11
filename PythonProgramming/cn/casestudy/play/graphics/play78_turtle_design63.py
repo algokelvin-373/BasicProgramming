@@ -1,7 +1,7 @@
 import turtle
 
 
-def design62(r, angle):
+def design63(r, angle):
     alfa = 180
     for i in range(int(180/angle)):
         if i % 2 == 0:
@@ -21,7 +21,7 @@ turtle.color('aqua')
 turtle.pensize(2)
 turtle.speed(0)
 
-design62(100, 5)
+design63(100, 5)
 
 turtle.hideturtle()
 turtle.done()

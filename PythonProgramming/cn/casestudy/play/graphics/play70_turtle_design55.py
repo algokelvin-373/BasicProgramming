@@ -1,6 +1,6 @@
 import turtle
 
-def design54(r, angle):
+def design55(r, angle):
     step = int(360/angle)
     for i in range(step):
         turtle.penup()
@@ -37,7 +37,7 @@ turtle.color('aqua')
 turtle.pensize(1)
 turtle.speed(0)
 
-design54(100, 10)
+design55(100, 10)
 
 turtle.hideturtle()
 turtle.done()

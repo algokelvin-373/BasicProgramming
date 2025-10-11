@@ -18,7 +18,7 @@ turtle.color('aqua')
 turtle.pensize(1)
 turtle.speed(0)
 
-design52(200)
+design52(300)
 
 turtle.hideturtle()
 turtle.done()
