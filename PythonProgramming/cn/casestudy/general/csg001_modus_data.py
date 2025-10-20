@@ -2,7 +2,7 @@ from collections import Counter
 
 
 def find_modus_data_collection(numbers):
-    if not numbers:     # if numbers is None
+    if not numbers:     #  if numbers is None
         return -1
     counts = Counter(numbers)
     max_count = max(counts.values())
@@ -10,7 +10,7 @@ def find_modus_data_collection(numbers):
     return modus[0]
 
 
-result1 = find_modus_data_collection([1, 2, 2, 3, 3, 3])
-result2 = find_modus_data_collection([4, 5, 6, 5, 4, 4, 5, 4, 4, 6])
+result1 = find_modus_data_collection([1, 2, 2, 3, 3, 3])        # Modus: 3
+result2 = find_modus_data_collection([4, 5, 6, 5, 4, 4, 5, 4, 4, 6]) # Modus: 4
 print(f'Modus for Result1: {result1}')
 print(f'Modus for Result2: {result2}')

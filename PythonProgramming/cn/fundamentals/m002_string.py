@@ -1,13 +1,13 @@
-str1 = "Hi, My name is Kelvin. I am learning Python Code."
+str1 = "你好，我是 Kelvin。我正在学习 Python 代码。"
 
-str2 = "I am Kelvin. " \
-    "I'm ready to learn Python " \
-    "Programming"
+str2 = "大家好，我是 Kelvin。 " \
+    "我正在学习" \
+    "Python 编程"
 
-str3 = '''\nHello, I am Kelvin.
-Python is
-My Favorite'''
+str3 = '''\n你好，我是 Kelvin。
+我是印尼人。
+Python 是我最喜欢的编程语言。'''
 
-print("Value str1 = ", str1, ", type = ", type(str1))
-print("Value str2 = ", str2, ", type = ", type(str2))
-print("Value str3 = ", str3, ", type = ", type(str3))
+print("值 str1 = ", str1, ", 类型 = ", type(str1))
+print("值 str2 = ", str2, ", 类型 = ", type(str2))
+print("值 str3 = ", str3, ", 类型 = ", type(str3))
