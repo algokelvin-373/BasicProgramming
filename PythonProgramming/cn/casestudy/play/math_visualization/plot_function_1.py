@@ -21,10 +21,10 @@ def create_plot(x_min, x_max, y_min, y_max):
     ax.set_ylabel('Y')
 
 
-min_x = -20
-max_x = 20
-min_y = -20
-max_y = 20
+min_x = -10
+max_x = 10
+min_y = -10
+max_y = 10
 
 fig, ax = plt.subplots(figsize=(8, 8))  # Make figure dan axis
 create_plot(min_x, max_x, min_y, max_y) # Create Plot
