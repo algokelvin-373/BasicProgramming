@@ -48,8 +48,8 @@ def animate_plot(f, fx_label, x_min=-10, x_max=10, y_min=-10, y_max=10, color='r
 
 
 # === Implement ===
-min_x, max_x = -10, 10
-min_y, max_y = -10, 10
+min_x, max_x = -5, 5
+min_y, max_y = -5, 5
 label = 'y = 2x + 1'
 
 # Animation!
