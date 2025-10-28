@@ -13,17 +13,17 @@ def setup_axes(axis, x_min, x_max, y_min, y_max):
     axis.set_xlabel('X')
     axis.set_ylabel('Y')
 
-def animate_plot(f, fx_label, x_min=-10, x_max=10, y_min=-10, y_max=10, color='red'):
+def animate_plot(f, fx, x_min, x_max, y_min, y_max, color='red'):
     figure, ax = plt.subplots(figsize=(8, 8))
     setup_axes(ax, x_min, x_max, y_min, y_max)
-    ax.set_title(fx_label)
+    ax.set_title(fx)
 
     # Calculate data
     x = np.linspace(x_min, x_max, 400)
     y = f(x)
 
-    # Create Line
-    line, = ax.plot([], [], color=color, linewidth=2, label=fx_label)
+    # Create line
+    line, = ax.plot([], [], color=color, linewidth=2, label=fx)
     ax.legend()
 
     # Function init
@@ -36,7 +36,7 @@ def animate_plot(f, fx_label, x_min=-10, x_max=10, y_min=-10, y_max=10, color='r
         line.set_data(x[:i], y[:i])
         return line,
 
-    # Create animation
+    # Create Animation!
     anim = animation.FuncAnimation(
         figure, animate, init_func=init,
         frames=len(x),
@@ -46,20 +46,18 @@ def animate_plot(f, fx_label, x_min=-10, x_max=10, y_min=-10, y_max=10, color='r
     )
     return figure, anim
 
-
-# === Implement ===
 min_x, max_x = -5, 5
 min_y, max_y = -5, 5
 label = 'y = 2x + 1'
 
-# Animation!
+# Animation Create Plot!
 fig, ani = animate_plot(
     f=lambda x: 2*x + 1,
-    fx_label=label,
+    fx=label,
     x_min=min_x,
     x_max=max_x,
     y_min=min_y,
-    y_max=max_y
+    y_max=max_y,
 )
 
 plt.show()
