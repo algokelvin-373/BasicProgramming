@@ -56,14 +56,14 @@ min_y, max_y = -4, 25
 
 func = [
     lambda x: x**2,
-    lambda x: x**2 + 2*x,
-    lambda x: x**2 + 2*x + 5,
+    lambda x: x**2 + x,
+    lambda x: x**2 + x + 1,
 ]
 
 labels = [
     r'$y = x^2$',
-    r'$y = x^2 + 2x$',
-    r'$y = x^2 + 2x + 5$',
+    r'$y = x^2 + x$',
+    r'$y = x^2 + x + 1$',
 ]
 
 d_colors = ['red', 'blue', 'green']
