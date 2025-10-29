@@ -13,28 +13,33 @@ def setup_axes(axis, x_min, x_max, y_min, y_max):
     axis.set_xlabel('X')
     axis.set_ylabel('Y')
 
-def animate_plot(f, fx, x_min, x_max, y_min, y_max, color='red'):
+def animate_plot(functions, fx, colors, x_min, x_max, y_min, y_max):
     figure, ax = plt.subplots(figsize=(8, 8))
     setup_axes(ax, x_min, x_max, y_min, y_max)
     ax.set_title(fx)
 
     # Calculate data
     x = np.linspace(x_min, x_max, 400)
-    y = f(x)
+    y_data = [f(x) for f in functions]
 
     # Create line
-    line, = ax.plot([], [], color=color, linewidth=2, label=fx)
+    lines = []
+    for label, color in zip(labels, colors):
+        line, = ax.plot([], [], color=color, linewidth=2, label=label)
+        lines.append(line)
     ax.legend()
 
     # Function init
     def init():
-        line.set_data([], [])
-        return line,
+        for line in lines:
+            line.set_data([], [])
+        return lines
 
     # Function animation
     def animate(i):
-        line.set_data(x[:i], y[:i])
-        return line,
+        for line, y in zip(lines, y_data):
+            line.set_data(x[:i], y[:i])
+        return lines
 
     # Create Animation!
     anim = animation.FuncAnimation(
@@ -48,12 +53,26 @@ def animate_plot(f, fx, x_min, x_max, y_min, y_max, color='red'):
 
 min_x, max_x = -5, 5
 min_y, max_y = -5, 25
-label =  r'$y = x^2$'
+
+func = [
+    lambda x: x,
+    lambda x: x + 2,
+    lambda x: x**2
+]
+
+labels = [
+    r'$y = x$',
+    r'$y = x + 2$',
+    r'$y = x^2$'
+]
+
+d_colors = ['red', 'blue', 'green']
 
 # Animation Create Plot!
 fig, ani = animate_plot(
-    f=lambda x: x**2,
-    fx=label,
+    functions=func,
+    fx=labels,
+    colors=d_colors,
     x_min=min_x,
     x_max=max_x,
     y_min=min_y,
