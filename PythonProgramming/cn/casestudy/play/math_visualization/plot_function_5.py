@@ -51,22 +51,24 @@ def animate_plot(functions, fx, colors, x_min, x_max, y_min, y_max):
     )
     return figure, anim
 
-min_x, max_x = -4, 4
-min_y, max_y = -4, 25
+min_x, max_x = -10, 10
+min_y, max_y = -10, 10
 
 func = [
-    lambda x: x**2,
-    lambda x: x**2 + x,
-    lambda x: x**2 + x + 1,
+    lambda x: x,
+    lambda x: 2*x,
+    lambda x: -x,
+    lambda x: -2*x,
 ]
 
 labels = [
-    r'$y = x^2$',
-    r'$y = x^2 + x$',
-    r'$y = x^2 + x + 1$',
+    r'$y = x$',
+    r'$y = 2x$',
+    r'$y = -x$',
+    r'$y = -2x$',
 ]
 
-d_colors = ['red', 'blue', 'green']
+d_colors = ['red', 'blue', 'green', 'orange']
 
 # Animation Create Plot!
 fig, ani = animate_plot(
