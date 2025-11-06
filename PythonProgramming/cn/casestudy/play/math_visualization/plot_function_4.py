@@ -56,18 +56,18 @@ min_y, max_y = -10, 10
 
 func = [
     lambda x: x,
+    lambda x: x + 1,
     lambda x: x + 2,
-    lambda x: 2*x + 2,
-    lambda x: x - 3,
-    lambda x: 2*x - 3,
+    lambda x: x - 1,
+    lambda x: x - 2,
 ]
 
 labels = [
     r'$y = x$',
+    r'$y = x + 1$',
     r'$y = x + 2$',
-    r'$y = 2x + 2$',
-    r'$y = x - 3$',
-    r'$y = 2x - 3$'
+    r'$y = x - 1$',
+    r'$y = x - 2$'
 ]
 
 d_colors = ['red', 'blue', 'green', 'orange', 'purple']
