@@ -58,19 +58,17 @@ func = [
     lambda x: x,
     lambda x: x + 1,
     lambda x: x + 2,
-    lambda x: x - 1,
-    lambda x: x - 2,
+    lambda x: x + 3,
 ]
 
 labels = [
     r'$y = x$',
     r'$y = x + 1$',
     r'$y = x + 2$',
-    r'$y = x - 1$',
-    r'$y = x - 2$'
+    r'$y = x + 3$',
 ]
 
-d_colors = ['red', 'blue', 'green', 'orange', 'purple']
+d_colors = ['red', 'blue', 'green', 'orange']
 
 # Animation Create Plot!
 fig, ani = animate_plot(
