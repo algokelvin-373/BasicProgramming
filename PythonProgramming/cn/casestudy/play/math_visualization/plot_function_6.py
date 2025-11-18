@@ -51,41 +51,21 @@ def animate_plot(functions, fx, colors, x_min, x_max, y_min, y_max):
     )
     return figure, anim
 
-min_x, max_x = -4, 4
-min_y, max_y = -25, 25
+min_x, max_x = -10, 10
+min_y, max_y = -10, 10
 
 func = [
-    # lambda x: x**2 + x + 1,
-    # lambda x: x**2 + x + 2,
-    # lambda x: x**2 + x + 3,
-    # lambda x: x**2 + x,
-    # lambda x: x**2 + x - 1,
-    # lambda x: x**2 + x + 1,
-    # lambda x: x**2 + 2*x + 1,
-    # lambda x: x**2 + 1,
-    # lambda x: x**2 - x + 1,
-    # lambda x: x**2 - 2*x + 1,
-    lambda x: x**2 + x + 1,
-    lambda x: 2*x**2 + x + 1,
-    lambda x: -x**2 + x + 1,
-    lambda x: -2*x**2 + x + 1,
+    lambda x: x,
+    lambda x: x - 1,
+    lambda x: x - 2,
+    lambda x: x - 3,
 ]
 
 labels = [
-    # r'$y = x^2 + x + 1$',
-    # r'$y = x^2 + x + 2$',
-    # r'$y = x^2 + x + 3$',
-    # r'$y = x^2 + x$',
-    # r'$y = x^2 + x - 1$',
-    # r'$y = x^2 + x + 1$',
-    # r'$y = x^2 + 2x + 1$',
-    # r'$y = x^2 + 1$',
-    # r'$y = x^2 - x + 1$',
-    # r'$y = x^2 - 2x + 1$',
-    r'$y = x^2 + x + 1$',
-    r'$y = 2x^2 + x + 1$',
-    r'$y = -x^2 + x + 1$',
-    r'$y = -2x^2 + x + 1$',
+    r'$y = x$',
+    r'$y = x - 1$',
+    r'$y = x - 2$',
+    r'$y = x - 3$',
 ]
 
 d_colors = ['red', 'green', 'blue', 'orange']
