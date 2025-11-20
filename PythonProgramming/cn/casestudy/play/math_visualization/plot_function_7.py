@@ -55,16 +55,18 @@ min_x, max_x = -10, 10
 min_y, max_y = -10, 10
 
 func = [
-    lambda x: x**3,
-    lambda x: -x**3,
+    lambda x: -x,
+    lambda x: -2*x,
+    lambda x: -3*x,
 ]
 
 labels = [
-    r'$y = x^3$',
-    r'$y = -x^3$',
+    r'$y = -x$',
+    r'$y = -2x$',
+    r'$y = -3x$',
 ]
 
-d_colors = ['red', 'blue']
+d_colors = ['red', 'blue', 'green']
 
 # Animation Create Plot!
 fig, ani = animate_plot(
