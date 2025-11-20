@@ -11,14 +11,18 @@ def on_click(x, y):
     text_turtle.clear()
 
     if distance <= RADIUS:
-        message = "✅ Anda klik di dalam lingkaran"
+        message = "Anda klik di dalam lingkaran"
         text_turtle.color("lime")
     else:
-        message = "❌ Anda klik di luar lingkaran"
+        message = "Anda klik di luar lingkaran"
         text_turtle.color("red")
 
     text_turtle.goto(0, -150)
-    text_turtle.write(message, align="center", font=("Arial", 16, "bold"))
+    text_turtle.write(
+        message,
+        align="center",
+        font=("Arial", 16, "bold")
+    )
 
 turtle.setup(width=500, height=700)
 turtle.bgcolor('black')
@@ -29,9 +33,9 @@ turtle.speed(1)
 turtle.penup()
 turtle.goto(0, 250)
 turtle.write(
-    f"用poly画三角形\n"
+    f"‘Click’操作\n"
     f"Click Action\n"
-    f"Aksi Klik",
+    f"Aksi Click",
     align="center",
     font=("Arial", 16, "bold")
 )
