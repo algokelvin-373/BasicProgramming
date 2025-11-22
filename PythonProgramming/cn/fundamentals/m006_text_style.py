@@ -1,0 +1,18 @@
+print('带颜色的文本')
+print("\033[30m Black Text")
+print("\033[31m Red Text")
+print("\033[32m Green Text")
+print("\033[33m Yellow Text")
+print("\033[34m Blue Text")
+print("\033[35m Purple Text")
+print("\033[36m Cyan Text")
+print("\033[37m White Text")
+
+print()
+
+print('带有颜色、样式和背景颜色的文本')
+print("\033[1;32;40m Green-Bold-Black Background Text")
+print("\033[2;33;41m Yellow-Underline-Red Background Text")
+print("\033[3;34;42m Blue-Negative-1-Green Background Text")
+print("\033[5;35;43m Purple-Negative-2-Yellow Background Text")
+print("\033[0;36;44m Cyan-No Effect-Blue Background Text")
