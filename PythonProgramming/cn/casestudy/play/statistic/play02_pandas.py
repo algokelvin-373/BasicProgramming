@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 # bar
 # line
 # pie
-# scatter
 
 data = {'类别': ['A', 'B', 'C', 'D', 'E'],
         '价值': [10, 20, 40, 25, 5]}
@@ -14,7 +13,7 @@ df = pd.DataFrame(data)
 df.plot(
     x='类别',
     y='价值',
-    kind='bar',
+    kind='pie',
     color='red',
     legend=True
 )
