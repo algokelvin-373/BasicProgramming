@@ -1,41 +1,42 @@
-# Python Programming Fundamentals
+# 🐍 PythonProgramming – Eksplorasi & Studi Kasus Pribadi
 
-This repository contains a collection of Python programming exercises and case studies designed to help beginners learn the core concepts of Python programming. The content is organized into modules for easy progression, from basic syntax to control structures.
+> Belajar Python itu seperti menyusun puzzle: setiap baris kode adalah kepingan. Lama-lama, jadi gambar utuh.
 
+Repositori ini berisi kumpulan eksperimen, visualisasi, dan studi kasus kecil yang saya buat selama belajar Python. Semua kode di sini adalah **proses belajar aktif**, bukan karya jadi — dan itu yang membuatnya berharga.
 
-## 📘 Modules Overview (Fundamentals)
+---
 
-The `fundamentals` folder contains 17 modules covering essential Python topics:
+## 🎨 Visualisasi Matematika (`math_visualization/`)
 
-| Module                           | Title                            |
-|----------------------------------|----------------------------------|
-| `m000_introduction.py`           | Introduction to Python           |
-| `m001_type_data.py`              | Data Types                       |
-| `m002_string.py`                 | String Basics                    |
-| `m003_index_string.py`           | String Indexing                  |
-| `m004_multiple_assignment.py`    | Multiple Assignment              |
-| `m005_swap_variables.py`         | Swapping Variables               |
-| `m006_text_style.py`             | Text Styling (e.g., bold, color) |
-| `m007_input_output.py`           | Input and Output Operations      |
-| `m008_single_conditional.py`     | Single Conditional (if)          |
-| `m009_double_conditional.py`     | Double Conditional (if-else)     |
-| `m010_multi_conditional.py`      | Multi-Conditional (elif)         |
-| `m011_match.py`                  | Match Statement (Python 3.10+)   |
-| `m012_ternary.py`                | Ternary Operator                 |
-| `m013_looping_for.py`            | For Loop                         |
-| `m014_looping_while.py`          | While Loop                       |
-| `m015_looping_for_with_range.py` | For Loop with Range              |
-| `m016_multi_looping.py`          | Nested Loops                     |
+Saya suka melihat bagaimana fungsi matematika "berbicara" lewat grafik. Setiap file di bawah ini adalah eksplorasi visual terhadap satu jenis fungsi.
 
-> 💡 Each module file contains code examples, explanations, and sometimes small exercises to reinforce learning.
+| File                  | Topik                        | Library & Konsep                          |
+|-----------------------|------------------------------|-------------------------------------------|
+| `plot_function_1.py`  | Fungsi Linear                | `matplotlib`, `numpy`, garis lurus        |
+| `plot_function_5.py`  | Fungsi Trigonometri          | `sin`, `cos`, amplitudo, periode          |
+| `plot_function_10.py` | Fungsi Eksponensial/Logaritma| Skala log, asimtot, domain & range        |
 
-## 🎯 Case Studies
+> Semua fungsi matematika didefinisikan di `function_math.py` agar mudah dipakai ulang.
 
-The `casestudy` folder (in both `en/` and `cn/`) will contain practical applications of the fundamental concepts learned in the modules. These are real-world inspired problems to help you apply your knowledge.
+## 🐢 Turtle Graphics (`turtles/`)
 
-Examples may include:
-- Simple calculator
-- Turtle graphics projects
-- Web scraping basics (if applicable)
+Main-main dengan modul bawaan Python: `turtle`.  
+Tujuannya bukan cuma menggambar — tapi melatih **logika spasial** dan **pemahaman koordinat**.
 
-*(Note: Case studies are under development or will be added progressively.)*
+| File                  | Topik                        | Library & Konsep                          |
+|-----------------------|------------------------------|-------------------------------------------|
+| `plot_function_1.py`  | Fungsi Linear                | `matplotlib`, `numpy`, garis lurus        |
+| `plot_function_5.py`  | Fungsi Trigonometri          | `sin`, `cos`, amplitudo, periode          |
+| `plot_function_10.py` | Fungsi Eksponensial/Logaritma| Skala log, asimtot, domain & range        |
+
+## 🙌 Terima Kasih
+
+Jika repositori ini membantu Anda:
+- Beri ⭐
+- Ikuti [profil GitHub saya](https://github.com/algokelvin-373)
+- Atau kirim pesan — saya senang diskusi!
+
+> ✍️ Dibuat oleh **Kelvin**  
+> 📅 Terakhir diperbarui: 24 November 2025  
+> ☕ Dibuat dengan semangat, kopi, dan rasa penasaran yang tak pernah habis.
+```
