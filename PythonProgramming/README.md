@@ -10,11 +10,11 @@ Repositori ini berisi kumpulan eksperimen, visualisasi, dan studi kasus kecil ya
 
 Saya suka melihat bagaimana fungsi matematika "berbicara" lewat grafik. Setiap file di bawah ini adalah eksplorasi visual terhadap satu jenis fungsi.
 
-| File                  | Topik                        | Library & Konsep                          |
-|-----------------------|------------------------------|-------------------------------------------|
-| `plot_function_1.py`  | Fungsi Linear                | `matplotlib`, `numpy`, garis lurus        |
-| `plot_function_5.py`  | Fungsi Trigonometri          | `sin`, `cos`, amplitudo, periode          |
-| `plot_function_10.py` | Fungsi Eksponensial/Logaritma| Skala log, asimtot, domain & range        |
+| File                  | Topik                         | Library & Konsep                   |
+|-----------------------|-------------------------------|------------------------------------|
+| `plot_function_1.py`  | Fungsi Linear                 | `matplotlib`, `numpy`, garis lurus |
+| `plot_function_5.py`  | Fungsi Trigonometri           | `sin`, `cos`, amplitudo, periode   |
+| `plot_function_10.py` | Fungsi Eksponensial/Logaritma | Skala log, asimtot, domain & range |
 
 > Semua fungsi matematika didefinisikan di `function_math.py` agar mudah dipakai ulang.
 
@@ -23,11 +23,11 @@ Saya suka melihat bagaimana fungsi matematika "berbicara" lewat grafik. Setiap f
 Main-main dengan modul bawaan Python: `turtle`.  
 Tujuannya bukan cuma menggambar — tapi melatih **logika spasial** dan **pemahaman koordinat**.
 
-| File                  | Topik                        | Library & Konsep                          |
-|-----------------------|------------------------------|-------------------------------------------|
-| `plot_function_1.py`  | Fungsi Linear                | `matplotlib`, `numpy`, garis lurus        |
-| `plot_function_5.py`  | Fungsi Trigonometri          | `sin`, `cos`, amplitudo, periode          |
-| `plot_function_10.py` | Fungsi Eksponensial/Logaritma| Skala log, asimtot, domain & range        |
+| File                  | Topik                         | Library & Konsep                   |
+|-----------------------|-------------------------------|------------------------------------|
+| `plot_function_1.py`  | Fungsi Linear                 | `matplotlib`, `numpy`, garis lurus |
+| `plot_function_5.py`  | Fungsi Trigonometri           | `sin`, `cos`, amplitudo, periode   |
+| `plot_function_10.py` | Fungsi Eksponensial/Logaritma | Skala log, asimtot, domain & range |
 
 ## 🙌 Terima Kasih
 
