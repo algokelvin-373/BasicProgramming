@@ -5,30 +5,27 @@ min_x, max_x = -10, 10
 min_y, max_y = -10, 10
 
 func = [
+    lambda x: 0.25*x**2,
+    lambda x: 0.5*x**2,
     lambda x: x**2,
+    lambda x: 1.5*x**2,
     lambda x: 2*x**2,
-    lambda x: 3*x**2,
-    lambda x: -x**2,
-    lambda x: -2*x**2,
-    lambda x: -3*x**2,
 ]
 
 labels = [
+    r'$y = 0.25x^2$',
+    r'$y = 0.5x^2$',
     r'$y = x^2$',
+    r'$y = 1.5x^2$',
     r'$y = 2x^2$',
-    r'$y = 3x^2$',
-    r'$y = -x^2$',
-    r'$y = -2x^2$',
-    r'$y = -3x^2$',
 ]
 
 d_colors = [
     'red',
     'blue',
     'green',
-    'red',
-    'blue',
-    'green',
+    'orange',
+    'purple',
 ]
 
 # Animation Create Plot!
