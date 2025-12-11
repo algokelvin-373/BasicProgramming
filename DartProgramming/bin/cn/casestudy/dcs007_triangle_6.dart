@@ -36,7 +36,7 @@ void main() {
   print('');
 
   int n;
-  stdout.write('Input n : ');
+  stdout.write('输入 n : ');
   n = int.parse(stdin.readLineSync()!);
   triangle6(n);
 
