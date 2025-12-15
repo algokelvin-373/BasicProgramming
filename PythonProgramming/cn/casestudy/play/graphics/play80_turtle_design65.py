@@ -30,7 +30,7 @@ def design65(r, angle, xt):
 turtle.setup(width=500, height=500)
 turtle.bgcolor('black')
 turtle.color('aqua')
-turtle.pensize(2)
+turtle.pensize(1)
 turtle.speed(0)
 
 design65(200, 5, [-100, 100])

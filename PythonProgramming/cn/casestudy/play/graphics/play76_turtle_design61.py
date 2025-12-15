@@ -22,7 +22,7 @@ def design61(r, angle):
 turtle.setup(width=500, height=500)
 turtle.bgcolor('black')
 turtle.color('aqua')
-turtle.pensize(2)
+turtle.pensize(1)
 turtle.speed(0)
 
 design61(200, 10)
