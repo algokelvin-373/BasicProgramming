@@ -3,7 +3,7 @@ import turtle
 def draw_star(size):
     star = turtle.Turtle()
     star.hideturtle()
-    star.speed(0)
+    star.speed(5)
     star.color("yellow")
     star.pensize(3)
     star.begin_fill()
