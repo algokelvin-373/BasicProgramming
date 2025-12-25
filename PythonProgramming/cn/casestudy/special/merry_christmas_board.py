@@ -7,6 +7,7 @@ screen = turtle.Screen()
 screen.setup(900, 650)
 screen.title("Merry Christmas 2025")
 screen.bgcolor("#0b1b2b")
+screen.tracer(0)
 
 ui = turtle.Turtle()
 ui.hideturtle()
@@ -16,68 +17,56 @@ writer = turtle.Turtle()
 writer.hideturtle()
 writer.speed(0)
 
-decor = turtle.Turtle()
-decor.hideturtle()
-decor.speed(0)
+snow_pen = turtle.Turtle()
+snow_pen.hideturtle()
+snow_pen.speed(0)
 
+# ========= HELPERS ==========
 def jump(pen, x, y):
     pen.penup()
     pen.goto(x, y)
     pen.pendown()
 
-# ========== BACKGROUND SNOW ==========
-def snow(count=160):
-    decor.penup()
+# ========== LIVE SNOW ==========
+snowflakes = []
+
+def init_snow(count=120):
     for _ in range(count):
-        decor.goto(
-            random.randint(-430, 430),
-            random.randint(-300, 300)
-        )
-        decor.dot(random.randint(2, 4), "white")
-    decor.pendown()
+        snowflakes.append([
+            random.randint(-450, 450),
+            random.randint(-320, 320),
+            random.randint(2, 4),
+            random.uniform(0.6, 1.6)
+        ])
 
-# ========== BASIC SHAPES ==========
-def rounded_rect(pen, x, y, w, h, r, fill, outline=None, pensize=2):
-    if outline is None:
-        outline = fill
-    pen.pensize(pensize)
-    pen.pencolor(outline)
-    pen.fillcolor(fill)
-    jump(pen, x, y)
-    pen.setheading(0)
-    pen.begin_fill()
-    for _ in range(2):
-        pen.forward(w - 2*r); pen.circle(r, 90)
-        pen.forward(h - 2*r); pen.circle(r, 90)
-    pen.end_fill()
+def animate_snow():
+    snow_pen.clear()
+    for flake in snowflakes:
+        flake[1] -= flake[3]
+        if flake[1] < -330:
+            flake[0] = random.randint(-450, 450)
+            flake[1] = 330
+        snow_pen.penup()
+        snow_pen.goto(flake[0], flake[1])
+        snow_pen.dot(flake[2], "white")
+    screen.update()
+    screen.ontimer(animate_snow, 50)
 
-def rect(pen, x, y, w, h, fill):
-    pen.fillcolor(fill)
-    pen.pencolor(fill)
-    jump(pen, x, y)
-    pen.setheading(0)
-    pen.begin_fill()
-    for _ in range(2):
-        pen.forward(w); pen.left(90)
-        pen.forward(h); pen.left(90)
-    pen.end_fill()
-
-# ========== CLIPBOARD ==========
-def draw_clipboard():
-    rounded_rect(ui, -260, -250, 520, 520, 24, "#b07a4a", "#6b3f1f", 3)
-    rounded_rect(ui, -225, -220, 450, 460, 18, "#f6efe6", "#e6d8c8", 2)
-    rounded_rect(ui, -70, 200, 140, 55, 16, "#c7ced6", "#8a939c", 2)
-    rounded_rect(ui, -35, 212, 70, 30, 12, "#0b1b2b", "#0b1b2b", 1)
-
-# ========== ANIMATED WRITING ==========
-def animate_write(text, x, y, font, color, delay=0.06):
+# ========== HANDWRITTEN WRITE ==========
+def animate_write(text, x, y, font, color,
+                  delay=0.06, jitter=1.2):
     writer.color(color)
     typed = ""
     for ch in text:
         typed += ch
         writer.clear()
-        jump(writer, x, y)
+        jump(
+            writer,
+            x + random.uniform(-jitter, jitter),
+            y + random.uniform(-jitter, jitter)
+        )
         writer.write(typed, font=font)
+        screen.update()
         time.sleep(delay)
 
 def write_static(text, x, y, font, color):
@@ -86,25 +75,60 @@ def write_static(text, x, y, font, color):
     writer.write(text, font=font)
 
 # ========== RUN ==========
-snow()
-draw_clipboard()
+init_snow()
+animate_snow()
+
+txt_data = [
+    [
+        "Merry Christmas",
+        -165,
+        80,
+        ("Courier", 30, "italic"),
+        "#ff0000"
+    ],
+    [
+        "2025",
+        -40,
+        0,
+        ("Courier", 50, "bold"),
+        "#d97706",
+        0.8
+    ],
+]
 
 animate_write(
-    "Merry Christmas",
-    -165, 70,
-    ("Courier", 30, "bold"),
-    "#1f2937"
+    txt_data[0][0],
+    txt_data[0][1],
+    txt_data[0][2],
+    txt_data[0][3],
+    txt_data[0][4]
 )
+
 animate_write(
-    "2025",
-    -40, 20,
-    ("Courier", 52, "bold"),
-    "#d97706"
+    txt_data[1][0],
+    txt_data[1][1],
+    txt_data[1][2],
+    txt_data[1][3],
+    txt_data[1][4],
+    jitter=txt_data[1][5]
 )
 
 writer.clear()
-write_static("Merry Christmas", -165, 70, ("Courier", 30, "bold"), "#1f2937")
-write_static("2025", -40, 0, ("Courier", 50, "bold"), "#d97706")
-write_static("and Happy New Year ✨", -175, -40, ("Courier", 20, "normal"), "#2563eb")
 
+write_static(
+    txt_data[0][0],
+    txt_data[0][1],
+    txt_data[0][2],
+    txt_data[0][3],
+    txt_data[0][4]
+)
+write_static(
+    txt_data[1][0],
+    txt_data[1][1],
+    txt_data[1][2],
+    txt_data[1][3],
+    txt_data[1][4],
+)
+
+screen.update()
 turtle.done()
