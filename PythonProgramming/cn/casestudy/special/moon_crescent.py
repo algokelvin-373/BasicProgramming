@@ -6,7 +6,7 @@ moon_color = "yellow"
 def draw_crescent(radius):
     moon = turtle.Turtle()
     moon.hideturtle()
-    moon.speed(0)
+    moon.speed(5)
     moon.pensize(0)
 
     # Object 1
