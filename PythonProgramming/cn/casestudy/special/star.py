@@ -13,6 +13,7 @@ def draw_star(size):
     star.end_fill()
 
 screen = turtle.Screen()
+screen.setup(500, 500)
 screen.bgcolor("#0b1b2b")  # night sky
 
 draw_star(200)
