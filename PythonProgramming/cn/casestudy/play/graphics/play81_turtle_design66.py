@@ -12,7 +12,7 @@ def dgn_obj(r):
         turtle.circle(-r, 90)
     turtle.end_fill()
 
-def design69(r, angle):
+def design66(r, angle):
     times = 1
     colors = ['aqua', 'blue']
     for _ in range(int(90 / angle) + 1):
@@ -28,7 +28,7 @@ turtle.color('aqua')
 turtle.pensize(2)
 turtle.speed(0)
 
-design69(200, 5)
+design66(200, 5)
 
 turtle.hideturtle()
 turtle.done()
