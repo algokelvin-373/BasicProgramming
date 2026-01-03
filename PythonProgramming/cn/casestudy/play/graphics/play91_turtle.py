@@ -9,9 +9,8 @@ def circle_design(n, side):
         align="center",
         font=("Arial", 16, "bold")
     )
-    turtle.pendown()
-
     turtle.goto(0, 0)
+    turtle.pendown()
 
     angle = 10
     color = 250
