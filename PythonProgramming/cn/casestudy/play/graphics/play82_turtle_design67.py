@@ -2,7 +2,7 @@ import turtle
 
 colors = ['red', 'blue', 'green', 'magenta']
 
-def design70(r):
+def design67(r):
     for i in range(150):
         turtle.pencolor(colors[i % 4])
         turtle.rt(i)
@@ -16,7 +16,7 @@ turtle.color('aqua')
 turtle.pensize(1)
 turtle.speed(0)
 
-design70(100)
+design67(100)
 
 turtle.hideturtle()
 turtle.done()
