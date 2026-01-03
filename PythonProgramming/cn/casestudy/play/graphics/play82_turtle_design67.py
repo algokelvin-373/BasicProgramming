@@ -1,31 +1,22 @@
 import turtle
 
-# Binary Tree
+colors = ['red', 'blue', 'green', 'magenta']
 
-def tree(branch_len, depth):
-    if depth == 0:
-        return
-    turtle.forward(branch_len)
-    turtle.left(30)
-    tree(branch_len * 0.7, depth - 1)
-    turtle.right(60)
-    tree(branch_len * 0.7, depth - 1)
-    turtle.left(30)
-    turtle.backward(branch_len)
+def design70(r):
+    for i in range(150):
+        turtle.pencolor(colors[i % 4])
+        turtle.rt(i)
+        turtle.circle(r, i)
+        turtle.fd(i)
+        turtle.rt(90)
 
-# Setup
-turtle.setup(500, 500)
+turtle.setup(width=500, height=500)
 turtle.bgcolor('black')
-turtle.color('green')
-turtle.pensize(2)
+turtle.color('aqua')
+turtle.pensize(1)
 turtle.speed(0)
-turtle.left(90)
-turtle.penup()
-turtle.goto(0, -200)    # Start from bottom
-turtle.pendown()
 
-# Draw tree
-tree(125, 10)
+design70(100)
 
 turtle.hideturtle()
 turtle.done()
