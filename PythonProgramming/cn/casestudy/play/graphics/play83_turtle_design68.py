@@ -1,38 +1,29 @@
 import turtle
 
-# Sierpinski Triangle
+colors = ['red', 'blue', 'yellow'
+          ,'orange', 'green', 'purple']
 
-def sierpinski(length, depth):
-    if depth == 0:
-        # Draw a filled triangle
-        for _ in range(3):
-            turtle.forward(length)
-            turtle.left(120)
-    else:
-        # Recurse on 3 corners
-        sierpinski(length / 2, depth - 1)
-        turtle.forward(length / 2)
-        sierpinski(length / 2, depth - 1)
-        turtle.backward(length / 2)
-        turtle.left(60)
-        turtle.forward(length / 2)
-        turtle.right(60)
-        sierpinski(length / 2, depth - 1)
-        turtle.left(60)
-        turtle.backward(length / 2)
-        turtle.right(60)
+def obj(r):
+    for _ in range(2):
+        turtle.circle(r, 90)
+        turtle.left(90)
 
-# Setup
-turtle.setup(500, 500)
+def design71(r, angle):
+    for i in range(int(360/angle)):
+        r1 = r/2
+        turtle.color(colors[i % 6])
+        for _ in range(10):
+            obj(r1)
+            r1 += 10
+        turtle.left(angle)
+
+turtle.setup(width=500, height=500)
 turtle.bgcolor('black')
 turtle.color('aqua')
+turtle.pensize(1)
 turtle.speed(0)
-turtle.penup()
-turtle.goto(-150, -100)  # Bottom-left start
-turtle.pendown()
 
-# Draw
-sierpinski(300, 5)
+design71(150, 10)
 
 turtle.hideturtle()
 turtle.done()
