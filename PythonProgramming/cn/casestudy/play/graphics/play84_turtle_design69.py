@@ -1,40 +1,29 @@
 import turtle
 
-def dgn_obj(r):
-    turtle.penup()
-    turtle.goto(0, 0)
-    turtle.forward(r)
-    turtle.pendown()
+colors = ['magenta', 'lightblue', 'yellow'
+          ,'orange', 'lightgreen', 'pink']
 
-    turtle.begin_fill()
-    for _ in range(2):
-        turtle.circle(r, -90)
-        turtle.circle(-r, 90)
-    turtle.end_fill()
-
-def change_color(times):
-    colors = ['aqua', 'blue']
-    if times % 2 == 0:
-        turtle.color(colors[0])
-    else:
-        turtle.color(colors[1])
+def obj(r):
+    turtle.circle(r, 180)
+    turtle.circle(r / 2, 180)
+    turtle.circle(-r / 2, 180)
 
 def design69(r, angle):
-    times = 1
-    for _ in range(int(90 / angle) + 1):
-        change_color(times)
-        dgn_obj(r)
-        turtle.right(angle)
-        times += 1
-
+    for i in range(int(360/angle)):
+        r1 = r/2
+        turtle.color(colors[i % 6])
+        for _ in range(10):
+            obj(r1)
+            r1 += 10
+        turtle.left(angle)
 
 turtle.setup(width=500, height=500)
 turtle.bgcolor('black')
 turtle.color('aqua')
-turtle.pensize(2)
+turtle.pensize(1)
 turtle.speed(0)
 
-design69(200, 5)
+design69(50, 10)
 
 turtle.hideturtle()
 turtle.done()
