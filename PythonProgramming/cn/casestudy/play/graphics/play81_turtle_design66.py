@@ -1,37 +1,34 @@
 import turtle
 
-# Koch Snowflake
+def dgn_obj(r):
+    turtle.penup()
+    turtle.goto(0, 0)
+    turtle.forward(r)
+    turtle.pendown()
 
-def koch(length, depth):
-    if depth == 0:
-        turtle.forward(length)
-    else:
-        length /= 3
-        koch(length, depth - 1)
-        turtle.left(60)
-        koch(length, depth - 1)
-        turtle.right(120)
-        koch(length, depth - 1)
-        turtle.left(60)
-        koch(length, depth - 1)
+    turtle.begin_fill()
+    for _ in range(2):
+        turtle.circle(r, -90)
+        turtle.circle(-r, 90)
+    turtle.end_fill()
 
-def snowflake(length, depth):
-    for _ in range(3):
-        koch(length, depth)
-        turtle.right(120)
+def design69(r, angle):
+    times = 1
+    colors = ['aqua', 'blue']
+    for _ in range(int(90 / angle) + 1):
+        turtle.color(colors[_ % 2])
+        dgn_obj(r)
+        turtle.right(angle)
+        times += 1
 
-# Simple setup
-turtle.setup(500, 500)
+
+turtle.setup(width=500, height=500)
 turtle.bgcolor('black')
 turtle.color('aqua')
 turtle.pensize(2)
 turtle.speed(0)
-turtle.penup()
-turtle.goto(-150, 100)  # Center it a bit
-turtle.pendown()
 
-# Draw
-snowflake(300, 4)
+design69(200, 5)
 
 turtle.hideturtle()
 turtle.done()
