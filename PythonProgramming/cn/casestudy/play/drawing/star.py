@@ -6,6 +6,12 @@ def draw_star(size):
     star.speed(5)
     star.color("yellow")
     star.pensize(3)
+
+    star.penup()
+    star.goto(-(size / 2), 50)
+    star.pendown()
+
+    # Make object star
     for _ in range(5):
         star.forward(size)
         star.right(144)
