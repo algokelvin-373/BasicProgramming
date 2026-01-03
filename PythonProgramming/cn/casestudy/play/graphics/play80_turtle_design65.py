@@ -6,10 +6,8 @@ def draw_circle(r):
     turtle.pendown()
     turtle.circle(r)
 
-def design65(r, angle, xt):
-    draw_circle(r)
-
-    tc = []
+def get_coordinates(r, angle):
+    t_c = []
     for _ in range(int(360/angle)):
         turtle.penup()
         turtle.goto(0, 0)
@@ -17,9 +15,13 @@ def design65(r, angle, xt):
         turtle.pendown()
         xc = turtle.xcor()
         yc = turtle.ycor()
-        tc.append((xc, yc))
+        t_c.append((xc, yc))
         turtle.left(angle)
+    return t_c
 
+def design65(r, angle, xt):
+    draw_circle(r)
+    tc = get_coordinates(r, angle)
     for x in xt:
         for t in tc:
             turtle.penup()
