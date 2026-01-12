@@ -1,7 +1,7 @@
 import turtle
 
-colors = ['red', 'blue', 'yellow'
-          ,'orange', 'green', 'purple']
+colors = ['red', 'aqua', 'yellow'
+          ,'orange', 'green', 'magenta']
 
 def obj(r):
     for _ in range(2):
