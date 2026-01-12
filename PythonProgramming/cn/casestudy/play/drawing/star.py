@@ -4,7 +4,7 @@ def draw_star(size):
     star = turtle.Turtle()
     star.hideturtle()
     star.speed(5)
-    star.color("yellow")
+    star.color("white")
     star.pensize(3)
 
     star.penup()
