@@ -1,7 +1,7 @@
 import turtle
 
-bg = "#0b1b2b"      # background color
-moon_color = "yellow"
+bg = "#0b1b2b"          # background color
+moon_color = "#808080"  # moon color
 
 def obj_circle(t, bg_color, x, radius):
     t.color(bg_color)
