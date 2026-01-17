@@ -1,34 +1,61 @@
-import time
 import turtle
+from colorsys import hsv_to_rgb
 
-def circle_design(n, side):
-    turtle.penup()
-    turtle.goto(0, 225)
-    turtle.write(
-        f"n = {n}",
-        align="center",
-        font=("Arial", 16, "bold")
-    )
-    turtle.goto(0, 0)
-    turtle.pendown()
+def object1(d1):
+    turtle.right(30)
+    turtle.forward(d1)
+    turtle.left(60)
+    turtle.forward(d1)
+    turtle.left(120)
+    turtle.forward(d1)
+    turtle.left(60)
+    turtle.forward(d1)
+    turtle.left(150)
 
-    angle = 10
-    color = 250
-    for _ in range(int(360/angle)):
-        turtle.circle(side, steps=n)
-        turtle.left(angle)
-    turtle.clear()
+def object2(d2):
+    turtle.right(30)
+    turtle.forward(d2)
+    turtle.left(30)
+    turtle.circle(d2 / 2, 180)
+    turtle.left(30)
+    turtle.forward(d2)
+    turtle.left(150)
+
+def object3(d3):
+    turtle.right(45)
+    turtle.circle(d3, 90)
+    turtle.left(90)
+    turtle.circle(d3, 90)
+    turtle.right(-135)
+
+def draw_object(d, theta):
+    for _ in range(int(360 / theta)):
+        if i % 3 == 1:
+            object2(d)
+        elif i % 3 == 2:
+            object3(d)
+        else:
+            object1(d)
+        turtle.left(theta)
 
 turtle.setup(width=500, height=500)
 turtle.bgcolor('black')
-turtle.color('salmon')
 turtle.pensize(1)
 turtle.speed(0)
 
-for i in range(21):
-    if i < 3:
-        continue
-    circle_design(i, 100)
+s = 10
+# t = 5
+h = 0
+alpha = 30
+times = 9
+for i in range(times):
+    turtle.color(hsv_to_rgb(h, 1, 1))
+    draw_object(s, alpha)
+    # if (i+1) % 3 == 0:
+    #     t += 15
+    # s += t
+    s += 5
+    h += 0.075
 
 turtle.hideturtle()
 turtle.done()
